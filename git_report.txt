@@ -1,20 +1,150 @@
 GIT REPORT - UVM Verification of JTAG TAP Controller
 Repository: https://github.com/aadityasinghchouhan/UVM_Verification_of_JTAG_TAP_Controller
-Branch    : main (pushed to origin/main)
-Commits   : 9
+Generated : 11/20/2026 22:19:01
 
-COMMIT SUMMARY
-799d957  2026-10-19 13:16  aadityasinghchouhan  Initial commit
-be8edb1  2026-11-20 20:47  Aadityasingh Chouhan  Add project README and .gitignore
-106c03c  2026-11-20 20:49  Aadityasingh Chouhan  Add JTAG TAP controller RTL: 16-state FSM, IR, BYPASS, IDCODE
-4574e0f  2026-11-20 20:50  Aadityasingh Chouhan  Add UVM environment: agent, scoreboard with reference model, functional coverage
-c66d933  2026-11-20 20:50  Aadityasingh Chouhan  Add testbench top and SVA assertions
-9e2078e  2026-11-20 20:50  Aadityasingh Chouhan  Add UVM test cases TC1-TC8 and sequences
-5bc5bb7  2026-11-20 20:50  Aadityasingh Chouhan  Add QuestaSim Makefile and waveform script
-ce2fd0f  2026-11-20 20:50  Aadityasingh Chouhan  Add QuestaSim regression logs and coverage report
-7566885  2026-11-20 21:25  Aadityasingh Chouhan  Add run guide and one-command run script
+commit 1a23f9763aad1faeab9cdc57f83edb59d38d0882
+Author: Aadityasingh Chouhan <aadityac@pdx.edu>
+Date:   2026-11-20 22:18
 
-DETAILED HISTORY (files changed per commit)
+    Add status report, run guide, git report and HTML coverage report
+
+ ...o_Run_JTAG_TAP_Controller_UVM_Verification.docx |   Bin 0 -> 17346 bytes
+ JTAG_TAP_Controller_Project_Status_Report.docx     |   Bin 0 -> 20067 bytes
+ RESULTS/covhtmlreport/args.list                    |     3 +
+ RESULTS/covhtmlreport/covsummary.html              |   216 +
+ RESULTS/covhtmlreport/css/covsummary.css           |    45 +
+ RESULTS/covhtmlreport/css/hdl2html.css             |    45 +
+ RESULTS/covhtmlreport/css/mtitree.css              |    65 +
+ RESULTS/covhtmlreport/css/rank2html.css            |   130 +
+ RESULTS/covhtmlreport/css/testplan.css             |   423 +
+ RESULTS/covhtmlreport/css/ucdb2html.css            |   623 +
+ RESULTS/covhtmlreport/css/ucdb2htmlP.css           |   225 +
+ RESULTS/covhtmlreport/css/ucdb2html_newlook.css    |    39 +
+ RESULTS/covhtmlreport/dulist.html                  |    24 +
+ RESULTS/covhtmlreport/global.json                  |     8 +
+ RESULTS/covhtmlreport/globattrlist.html            |    18 +
+ RESULTS/covhtmlreport/icons/blank.png              |   Bin 0 -> 140 bytes
+ RESULTS/covhtmlreport/icons/closeAll-over.png      |   Bin 0 -> 242 bytes
+ RESULTS/covhtmlreport/icons/closeAll-over_new.png  |   Bin 0 -> 1329 bytes
+ RESULTS/covhtmlreport/icons/closeAll.png           |   Bin 0 -> 233 bytes
+ RESULTS/covhtmlreport/icons/closeAll_new.png       |   Bin 0 -> 1283 bytes
+ RESULTS/covhtmlreport/icons/gotoTop-over.png       |   Bin 0 -> 214 bytes
+ RESULTS/covhtmlreport/icons/gotoTop-over_new.png   |   Bin 0 -> 1510 bytes
+ RESULTS/covhtmlreport/icons/gotoTop.png            |   Bin 0 -> 190 bytes
+ RESULTS/covhtmlreport/icons/gotoTop_new.png        |   Bin 0 -> 1268 bytes
+ RESULTS/covhtmlreport/icons/information.png        |   Bin 0 -> 778 bytes
+ RESULTS/covhtmlreport/icons/join-last.png          |   Bin 0 -> 154 bytes
+ RESULTS/covhtmlreport/icons/join.png               |   Bin 0 -> 155 bytes
+ RESULTS/covhtmlreport/icons/minus-last.png         |   Bin 0 -> 171 bytes
+ RESULTS/covhtmlreport/icons/minus-nolines.png      |   Bin 0 -> 929 bytes
+ RESULTS/covhtmlreport/icons/minus.png              |   Bin 0 -> 177 bytes
+ RESULTS/covhtmlreport/icons/openAll-over.png       |   Bin 0 -> 259 bytes
+ RESULTS/covhtmlreport/icons/openAll-over_new.png   |   Bin 0 -> 851 bytes
+ RESULTS/covhtmlreport/icons/openAll.png            |   Bin 0 -> 247 bytes
+ RESULTS/covhtmlreport/icons/openAll_new.png        |   Bin 0 -> 828 bytes
+ RESULTS/covhtmlreport/icons/plus-last.png          |   Bin 0 -> 176 bytes
+ RESULTS/covhtmlreport/icons/plus-nolines.png       |   Bin 0 -> 932 bytes
+ RESULTS/covhtmlreport/icons/plus.png               |   Bin 0 -> 178 bytes
+ RESULTS/covhtmlreport/icons/square-dkBlue.png      |   Bin 0 -> 183 bytes
+ RESULTS/covhtmlreport/icons/square-green.png       |   Bin 0 -> 174 bytes
+ RESULTS/covhtmlreport/icons/square-ltBlue.png      |   Bin 0 -> 174 bytes
+ RESULTS/covhtmlreport/icons/star-gold.png          |   Bin 0 -> 250 bytes
+ RESULTS/covhtmlreport/icons/star-purple.png        |   Bin 0 -> 236 bytes
+ .../covhtmlreport/icons/stopserver-over_new.png    |   Bin 0 -> 1411 bytes
+ RESULTS/covhtmlreport/icons/stopserver_new.png     |   Bin 0 -> 1411 bytes
+ RESULTS/covhtmlreport/icons/unknown.png            |   Bin 0 -> 715 bytes
+ RESULTS/covhtmlreport/icons/vline.png              |   Bin 0 -> 149 bytes
+ RESULTS/covhtmlreport/images/dimrtr.png            |   Bin 0 -> 378 bytes
+ RESULTS/covhtmlreport/images/dtr.png               |   Bin 0 -> 308 bytes
+ RESULTS/covhtmlreport/images/linkbg_even.gif       |   Bin 0 -> 97 bytes
+ RESULTS/covhtmlreport/images/linkbg_odd.gif        |   Bin 0 -> 99 bytes
+ RESULTS/covhtmlreport/images/modelsim.png          |   Bin 0 -> 7192 bytes
+ RESULTS/covhtmlreport/images/questa.png            |   Bin 0 -> 6214 bytes
+ RESULTS/covhtmlreport/images/rtr.png               |   Bin 0 -> 308 bytes
+ RESULTS/covhtmlreport/index.html                   |    23 +
+ RESULTS/covhtmlreport/legacy.html                  |   451 +
+ RESULTS/covhtmlreport/lib/Chart/Chart.js           |  3726 +++++
+ RESULTS/covhtmlreport/lib/Chart/src/Chart.Bar.js   |   303 +
+ RESULTS/covhtmlreport/lib/Chart/src/Chart.Core.js  |  2245 +++
+ .../covhtmlreport/lib/Chart/src/Chart.Doughnut.js  |   194 +
+ RESULTS/covhtmlreport/lib/Chart/src/Chart.Line.js  |   383 +
+ .../covhtmlreport/lib/Chart/src/Chart.PolarArea.js |   250 +
+ RESULTS/covhtmlreport/lib/Chart/src/Chart.Radar.js |   346 +
+ .../lib/DataTables/css/jquery.dataTables.css       |   371 +
+ .../lib/DataTables/images/sort_asc.png             |   Bin 0 -> 160 bytes
+ .../lib/DataTables/images/sort_asc_disabled.png    |   Bin 0 -> 148 bytes
+ .../lib/DataTables/images/sort_both.png            |   Bin 0 -> 201 bytes
+ .../lib/DataTables/images/sort_desc.png            |   Bin 0 -> 158 bytes
+ .../lib/DataTables/images/sort_desc_disabled.png   |   Bin 0 -> 146 bytes
+ .../lib/DataTables/js/jquery.dataTables.js         | 14951 +++++++++++++++++++
+ .../css/themes/tooltipster-light.css               |    12 +
+ .../css/themes/tooltipster-noir.css                |    12 +
+ .../css/themes/tooltipster-punk.css                |    12 +
+ .../css/themes/tooltipster-shadow.css              |    12 +
+ .../lib/tooltipster-master/css/tooltipster.css     |   274 +
+ .../tooltipster-master/js/jquery.tooltipster.js    |  1327 ++
+ RESULTS/covhtmlreport/pages/__frametop.htm         |    34 +
+ RESULTS/covhtmlreport/pages/__head.htm             |    40 +
+ RESULTS/covhtmlreport/pages/__menu.htm             |   562 +
+ RESULTS/covhtmlreport/pages/a.htm                  |    28 +
+ RESULTS/covhtmlreport/pages/a1.json                |    32 +
+ RESULTS/covhtmlreport/pages/assertview.html        |    20 +
+ RESULTS/covhtmlreport/pages/b.htm                  |    28 +
+ RESULTS/covhtmlreport/pages/b1.json                |  2034 +++
+ RESULTS/covhtmlreport/pages/blank.htm              |     9 +
+ RESULTS/covhtmlreport/pages/c.htm                  |    28 +
+ RESULTS/covhtmlreport/pages/ce1.json               |  1502 ++
+ RESULTS/covhtmlreport/pages/coverview.html         |    21 +
+ RESULTS/covhtmlreport/pages/cvgview.html           |    22 +
+ RESULTS/covhtmlreport/pages/d.htm                  |    28 +
+ RESULTS/covhtmlreport/pages/e.htm                  |    28 +
+ RESULTS/covhtmlreport/pages/f.htm                  |    28 +
+ RESULTS/covhtmlreport/pages/f1.json                |   132 +
+ RESULTS/covhtmlreport/pages/g.htm                  |    28 +
+ RESULTS/covhtmlreport/pages/g1.json                |    30 +
+ RESULTS/covhtmlreport/pages/gBins.htm              |    30 +
+ RESULTS/covhtmlreport/pages/gTypeInst.htm          |    33 +
+ RESULTS/covhtmlreport/pages/gbins1.json            |    36 +
+ RESULTS/covhtmlreport/pages/gcons1.json            |     5 +
+ RESULTS/covhtmlreport/pages/html_map.mp            |    23 +
+ RESULTS/covhtmlreport/pages/map_file1.json         |   373 +
+ RESULTS/covhtmlreport/pages/s.htm                  |    28 +
+ RESULTS/covhtmlreport/pages/s1.json                |  2860 ++++
+ RESULTS/covhtmlreport/pages/sdb1.json              |    10 +
+ RESULTS/covhtmlreport/pages/src_map_file1.json     |    34 +
+ RESULTS/covhtmlreport/pages/t.htm                  |    28 +
+ RESULTS/covhtmlreport/pages/urls1.json             |   906 ++
+ RESULTS/covhtmlreport/pages/z.htm                  |    27 +
+ RESULTS/covhtmlreport/pages/z1.json                |  3976 +++++
+ RESULTS/covhtmlreport/scripts/buildassertpage.js   |   512 +
+ RESULTS/covhtmlreport/scripts/buildbranchpage.js   |   321 +
+ RESULTS/covhtmlreport/scripts/buildcvgpage.js      |  1229 ++
+ RESULTS/covhtmlreport/scripts/builddirpage.js      |   396 +
+ RESULTS/covhtmlreport/scripts/builddulistpage.js   |   116 +
+ RESULTS/covhtmlreport/scripts/buildecpage.js       |   852 ++
+ RESULTS/covhtmlreport/scripts/buildfsmpage.js      |   266 +
+ .../covhtmlreport/scripts/buildgenericsummary.js   |   913 ++
+ RESULTS/covhtmlreport/scripts/buildsrcpage.js      |    35 +
+ RESULTS/covhtmlreport/scripts/buildstmtpage.js     |   390 +
+ RESULTS/covhtmlreport/scripts/buildsummarypage.js  |   398 +
+ RESULTS/covhtmlreport/scripts/buildtestplanpage.js |   622 +
+ RESULTS/covhtmlreport/scripts/buildtogglepage.js   |   354 +
+ RESULTS/covhtmlreport/scripts/jquery.color.js      |   663 +
+ RESULTS/covhtmlreport/scripts/jquery.js            | 10351 +++++++++++++
+ RESULTS/covhtmlreport/scripts/mtitree.js           |   332 +
+ RESULTS/covhtmlreport/scripts/pertest.js           |    51 +
+ RESULTS/covhtmlreport/scripts/popup.js             |    68 +
+ RESULTS/covhtmlreport/scripts/rank.js              |   294 +
+ RESULTS/covhtmlreport/scripts/showhide.js          |   195 +
+ RESULTS/covhtmlreport/scripts/showhide_cvg.js      |   130 +
+ RESULTS/covhtmlreport/scripts/sort_tables.js       |   432 +
+ RESULTS/covhtmlreport/scripts/testplan.js          |   187 +
+ RESULTS/covhtmlreport/scripts/utils.js             |   101 +
+ RESULTS/covhtmlreport/scripts/warning.js           |    64 +
+ RESULTS/covhtmlreport/srcfile.list                 |    33 +
+ RESULTS/covhtmlreport/testlist.html                |    23 +
+ git_report.txt                                     |   148 +
+ 136 files changed, 59235 insertions(+)
 
 commit 7566885f6c653d8e00d4a9ba905a7571748ef6b3
 Author: Aadityasingh Chouhan <aadityac@pdx.edu>
