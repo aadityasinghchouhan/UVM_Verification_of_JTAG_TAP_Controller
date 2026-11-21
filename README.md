@@ -12,7 +12,8 @@ SystemVerilog assertions and functional coverage. Simulator: QuestaSim
 | `ENV`  | `jtag_if.sv`, `jtag_defines.sv`, `jtag_config.sv`, `jtag_trans.sv`, `jtag_base_seqs.sv`, `jtag_seqr.sv`, `jtag_drv.sv`, `jtag_mon.sv`, `jtag_agent.sv`, `jtag_sb.sv`, `jtag_cov.sv`, `jtag_env.sv` | UVM environment |
 | `TEST` | `jtag_pkg.sv`, `jtag_base_test.sv`, `*_seqs_tcN.sv`, `*_tcN.sv` | Package, test sequences and test cases |
 | `TOP`  | `jtag_top.sv`, `jtag_sva.sv` | Testbench top and assertions (bound to the DUT) |
-| `SIM`  | `Makefile`, `run.do` | Compile / run / coverage scripts |
+| `SIM`  | `run_all.do`, `Makefile`, `run.do` | Run scripts (one-command run, make targets, waveform setup) |
+| `RESULTS` | `*.log`, `coverage_report.txt` | QuestaSim logs and coverage report |
 
 ## Design (RTL)
 
@@ -60,22 +61,18 @@ SystemVerilog assertions and functional coverage. Simulator: QuestaSim
 | 7 | `jtag_corner_tc7` | Pause/resume, long pause, Exit2→Update, back-to-back scans, 8-bit IR scan, reset during shift |
 | 8 | `jtag_regression_tc8` | TC1–TC7 in one simulation (100 % functional coverage) |
 
-## How to run (from the `SIM` folder)
+## How to run
+
+**Full step-by-step instructions: [HOW_TO_RUN.md](HOW_TO_RUN.md)**
+
+Quick run – compile and run all tests with one command, from the `SIM` folder:
 
 ```
-make run_tc1        # compile + run test case 1 (same for run_tc2 ... run_tc8)
-make regress        # compile + run all test cases
-make run_merge      # all test cases with coverage, merged HTML report
-make help           # list of all targets
+cd SIM
+vsim -c -do run_all.do
 ```
 
-Without `make`:
-
-```
-vlib work
-vlog -sv +cover=bcesf ../RTL/jtag_tap.sv ../TEST/jtag_pkg.sv ../TOP/jtag_sva.sv ../TOP/jtag_top.sv +incdir+../ENV +incdir+../TEST +incdir+../TOP
-vsim -vopt jtag_top -c -do "run -all; exit" +UVM_TESTNAME=jtag_reset_tc1 -l tc1_reset.log
-```
+Every test must show `TEST PASSED` and `UVM_ERROR = 0`; `jtag_regression_tc8` shows 100 % functional coverage.
 
 ## Output
 
