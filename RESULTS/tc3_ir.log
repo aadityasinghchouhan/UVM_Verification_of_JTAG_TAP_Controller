@@ -1,0 +1,178 @@
+# vsim -vopt jtag_top -c -do "run -all; exit" "+UVM_TESTNAME=jtag_ir_tc3" -l tc3_ir.log 
+# Start time: 16:50:40 on Nov 20,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# //  Questa Sim-64
+# //  Version 10.7c win64 Aug 18 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.jtag_if(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.jtag_pkg(fast)
+# Loading work.jtag_top_sv_unit(fast)
+# Loading work.jtag_top(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading C:/questasim64_10.7c/uvm-1.1d\win64\uvm_dpi.dll
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(216) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test jtag_ir_tc3...
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# ------------------------------------------------------------------
+# Name                       Type                        Size  Value
+# ------------------------------------------------------------------
+# uvm_test_top               jtag_ir_tc3                 -     @472 
+#   env_h                    jtag_env                    -     @485 
+#     agent_h                jtag_agent                  -     @492 
+#       drv_h                jtag_drv                    -     @586 
+#         rsp_port           uvm_analysis_port           -     @601 
+#         seq_item_port      uvm_seq_item_pull_port      -     @593 
+#       mon_h                jtag_mon                    -     @571 
+#         analysis_port      uvm_analysis_port           -     @578 
+#       seqr_h               jtag_seqr                   -     @609 
+#         rsp_export         uvm_analysis_export         -     @616 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @710 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     cov_h                  jtag_cov                    -     @553 
+#       analysis_imp         uvm_analysis_imp            -     @560 
+#     sb_h                   jtag_sb                     -     @499 
+#       mon_analysis_fifo    uvm_tlm_analysis_fifo #(T)  -     @506 
+#         analysis_export    uvm_analysis_imp            -     @545 
+#         get_ap             uvm_analysis_port           -     @537 
+#         get_peek_export    uvm_get_peek_imp            -     @521 
+#         put_ap             uvm_analysis_port           -     @529 
+#         put_export         uvm_put_imp                 -     @513 
+# ------------------------------------------------------------------
+# 
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 30: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC3_IR] Loading instruction 0000
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 125: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #1 : length = 4 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 535: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #1 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 540: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC3_IR] Loading instruction 0001
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 635: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #2 : length = 4 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0001 (IDCODE) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 1045: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #2 : register = IDCODE | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0xf1cafe157 | expected = 0xf1cafe157 --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 1050: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC3_IR] Loading instruction 0010
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 1145: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #3 : length = 4 | TDI in = 0x2 | TDO out = 0x1 | expected = 0x1 | new instruction = 0010 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 1555: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #3 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 1560: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC3_IR] Loading instruction 0011
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 1655: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #4 : length = 4 | TDI in = 0x3 | TDO out = 0x1 | expected = 0x1 | new instruction = 0011 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 2065: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #4 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 2070: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC3_IR] Loading instruction 0100
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 2165: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #5 : length = 4 | TDI in = 0x4 | TDO out = 0x1 | expected = 0x1 | new instruction = 0100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 2575: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #5 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 2580: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC3_IR] Loading instruction 0101
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 2675: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #6 : length = 4 | TDI in = 0x5 | TDO out = 0x1 | expected = 0x1 | new instruction = 0101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 3085: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #6 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 3090: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC3_IR] Loading instruction 0110
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 3185: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #7 : length = 4 | TDI in = 0x6 | TDO out = 0x1 | expected = 0x1 | new instruction = 0110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 3595: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #7 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 3600: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC3_IR] Loading instruction 0111
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 3695: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #8 : length = 4 | TDI in = 0x7 | TDO out = 0x1 | expected = 0x1 | new instruction = 0111 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 4105: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #8 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 4110: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC3_IR] Loading instruction 1000
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 4205: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #9 : length = 4 | TDI in = 0x8 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 4615: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #9 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 4620: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC3_IR] Loading instruction 1001
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 4715: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #10 : length = 4 | TDI in = 0x9 | TDO out = 0x1 | expected = 0x1 | new instruction = 1001 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 5125: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #10 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 5130: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC3_IR] Loading instruction 1010
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 5225: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #11 : length = 4 | TDI in = 0xa | TDO out = 0x1 | expected = 0x1 | new instruction = 1010 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 5635: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #11 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 5640: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC3_IR] Loading instruction 1011
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 5735: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #12 : length = 4 | TDI in = 0xb | TDO out = 0x1 | expected = 0x1 | new instruction = 1011 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 6145: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #12 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 6150: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC3_IR] Loading instruction 1100
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 6245: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #13 : length = 4 | TDI in = 0xc | TDO out = 0x1 | expected = 0x1 | new instruction = 1100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 6655: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #13 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 6660: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC3_IR] Loading instruction 1101
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 6755: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #14 : length = 4 | TDI in = 0xd | TDO out = 0x1 | expected = 0x1 | new instruction = 1101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 7165: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #14 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 7170: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC3_IR] Loading instruction 1110
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 7265: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #15 : length = 4 | TDI in = 0xe | TDO out = 0x1 | expected = 0x1 | new instruction = 1110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 7675: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #15 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 7680: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC3_IR] Loading instruction 1111
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 7775: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #16 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 8185: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #16 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 8285: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #17 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 8415: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #17 : register = BYPASS | length = 8 | TDI in = 0x5a | TDO out = 0xb4 | expected = 0xb4 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 8515: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #18 : length = 4 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0001 (IDCODE) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 8885: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #18 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 8985: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #19 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 9115: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #19 : register = BYPASS | length = 8 | TDI in = 0xc3 | TDO out = 0x86 | expected = 0x86 --> MATCH
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 9170: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# -----------------------------------------------------------
+#                  JTAG FUNCTIONAL COVERAGE
+# -----------------------------------------------------------
+#  Reset                   : 100.00 %
+#  TAP states              :  75.00 %
+#  State transitions       :  50.00 %
+#  Opcodes loaded          : 100.00 %
+#  Instruction class       : 100.00 %
+#  Instruction x DR state  :  66.67 %
+#  TDI shifted in          : 100.00 %
+#  TDO shifted out         : 100.00 %
+# -----------------------------------------------------------
+#  JTAG - Total Coverage   :  85.83 %
+# -----------------------------------------------------------
+# -----------------------------------------------------------
+#                  JTAG SCOREBOARD SUMMARY
+# -----------------------------------------------------------
+#  TCK cycles checked     : 917
+#  Cycle mismatches       : 0
+#  IR scans checked       : 19
+#  DR scans checked       : 19
+#  Scans matched          : 38
+#  Scans mis-matched      : 0
+#  RESULT                 : TEST PASSED
+# -----------------------------------------------------------
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   59
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [JTAG_SB]    38
+# [Questa UVM]     2
+# [RNTST]     1
+# [TC3_IR]    16
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# ** Note: $finish    : C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 9170 ns  Iteration: 54  Instance: /jtag_top
+# End time: 16:50:42 on Nov 20,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0

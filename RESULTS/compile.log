@@ -1,0 +1,19 @@
+QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+Start time: 16:49:50 on Nov 20,2026
+vlog -sv "+cover=bcesf" ../RTL/jtag_tap.sv ../TEST/jtag_pkg.sv ../TOP/jtag_sva.sv ../TOP/jtag_top.sv "+incdir+../ENV" "+incdir+../TEST" "+incdir+../TOP" -l compile.log 
+-- Compiling module jtag_tap
+-- Compiling interface jtag_if
+-- Compiling package jtag_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+** Note: (vlog-2286) ../TEST/jtag_pkg.sv(6): Using implicit +incdir+C:/questasim64_10.7c/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+-- Compiling module jtag_sva
+-- Importing package jtag_pkg
+-- Compiling package jtag_top_sv_unit
+-- Importing package jtag_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Compiling module jtag_top
+
+Top level modules:
+	jtag_top
+End time: 16:49:51 on Nov 20,2026, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
