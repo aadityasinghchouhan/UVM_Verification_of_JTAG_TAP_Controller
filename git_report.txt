@@ -1,0 +1,148 @@
+GIT REPORT - UVM Verification of JTAG TAP Controller
+Repository: https://github.com/aadityasinghchouhan/UVM_Verification_of_JTAG_TAP_Controller
+Branch    : main (pushed to origin/main)
+Commits   : 9
+
+COMMIT SUMMARY
+799d957  2026-10-19 13:16  aadityasinghchouhan  Initial commit
+be8edb1  2026-11-20 20:47  Aadityasingh Chouhan  Add project README and .gitignore
+106c03c  2026-11-20 20:49  Aadityasingh Chouhan  Add JTAG TAP controller RTL: 16-state FSM, IR, BYPASS, IDCODE
+4574e0f  2026-11-20 20:50  Aadityasingh Chouhan  Add UVM environment: agent, scoreboard with reference model, functional coverage
+c66d933  2026-11-20 20:50  Aadityasingh Chouhan  Add testbench top and SVA assertions
+9e2078e  2026-11-20 20:50  Aadityasingh Chouhan  Add UVM test cases TC1-TC8 and sequences
+5bc5bb7  2026-11-20 20:50  Aadityasingh Chouhan  Add QuestaSim Makefile and waveform script
+ce2fd0f  2026-11-20 20:50  Aadityasingh Chouhan  Add QuestaSim regression logs and coverage report
+7566885  2026-11-20 21:25  Aadityasingh Chouhan  Add run guide and one-command run script
+
+DETAILED HISTORY (files changed per commit)
+
+commit 7566885f6c653d8e00d4a9ba905a7571748ef6b3
+Author: Aadityasingh Chouhan <aadityac@pdx.edu>
+Date:   2026-11-20 21:25
+
+    Add run guide and one-command run script
+
+ HOW_TO_RUN.md  | 182 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README.md      |  21 +++----
+ SIM/run_all.do |  54 +++++++++++++++++
+ 3 files changed, 245 insertions(+), 12 deletions(-)
+
+commit ce2fd0fed335d02cf1a720f048dfd44908d741dd
+Author: Aadityasingh Chouhan <aadityac@pdx.edu>
+Date:   2026-11-20 20:50
+
+    Add QuestaSim regression logs and coverage report
+
+ RESULTS/base_test.log       |  127 +
+ RESULTS/compile.log         |   19 +
+ RESULTS/coverage_report.txt | 5571 +++++++++++++++++++++++++++++++++++++++++++
+ RESULTS/tc1_cov.log         |  166 ++
+ RESULTS/tc1_reset.log       |  164 ++
+ RESULTS/tc2_cov.log         |  187 ++
+ RESULTS/tc2_fsm.log         |  185 ++
+ RESULTS/tc3_cov.log         |  180 ++
+ RESULTS/tc3_ir.log          |  178 ++
+ RESULTS/tc4_cov.log         |  134 ++
+ RESULTS/tc4_idcode.log      |  132 +
+ RESULTS/tc5_bypass.log      |  147 ++
+ RESULTS/tc5_cov.log         |  149 ++
+ RESULTS/tc6_cov.log         |  337 +++
+ RESULTS/tc6_random.log      |  355 +++
+ RESULTS/tc7_corner.log      |  164 ++
+ RESULTS/tc7_cov.log         |  166 ++
+ RESULTS/tc8_regression.log  |  565 +++++
+ 18 files changed, 8926 insertions(+)
+
+commit 5bc5bb72ca77e83bd718ea9c6a59ddcdb51f5a98
+Author: Aadityasingh Chouhan <aadityac@pdx.edu>
+Date:   2026-11-20 20:50
+
+    Add QuestaSim Makefile and waveform script
+
+ SIM/Makefile | 118 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ SIM/run.do   |  25 +++++++++++++
+ 2 files changed, 143 insertions(+)
+
+commit 9e2078ed62a415e34f5c84740dc4c02ccec23265
+Author: Aadityasingh Chouhan <aadityac@pdx.edu>
+Date:   2026-11-20 20:50
+
+    Add UVM test cases TC1-TC8 and sequences
+
+ TEST/jtag_base_test.sv           |  50 +++++++++++++++++
+ TEST/jtag_bypass_seqs_tc5.sv     |  48 +++++++++++++++++
+ TEST/jtag_bypass_tc5.sv          |  24 +++++++++
+ TEST/jtag_corner_seqs_tc7.sv     | 114 +++++++++++++++++++++++++++++++++++++++
+ TEST/jtag_corner_tc7.sv          |  24 +++++++++
+ TEST/jtag_fsm_seqs_tc2.sv        |  56 +++++++++++++++++++
+ TEST/jtag_fsm_tc2.sv             |  24 +++++++++
+ TEST/jtag_idcode_seqs_tc4.sv     |  41 ++++++++++++++
+ TEST/jtag_idcode_tc4.sv          |  24 +++++++++
+ TEST/jtag_ir_seqs_tc3.sv         |  36 +++++++++++++
+ TEST/jtag_ir_tc3.sv              |  24 +++++++++
+ TEST/jtag_pkg.sv                 |  43 +++++++++++++++
+ TEST/jtag_random_seqs_tc6.sv     |  43 +++++++++++++++
+ TEST/jtag_random_tc6.sv          |  24 +++++++++
+ TEST/jtag_regression_seqs_tc8.sv |  43 +++++++++++++++
+ TEST/jtag_regression_tc8.sv      |  24 +++++++++
+ TEST/jtag_reset_seqs_tc1.sv      |  63 ++++++++++++++++++++++
+ TEST/jtag_reset_tc1.sv           |  24 +++++++++
+ 18 files changed, 729 insertions(+)
+
+commit c66d933247a27deb9da5e82cd3f941ff1f19d83c
+Author: Aadityasingh Chouhan <aadityac@pdx.edu>
+Date:   2026-11-20 20:50
+
+    Add testbench top and SVA assertions
+
+ TOP/jtag_sva.sv | 71 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ TOP/jtag_top.sv | 64 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 135 insertions(+)
+
+commit 4574e0f8256e0c31b7d2be0ad438b2bd96f1ecd7
+Author: Aadityasingh Chouhan <aadityac@pdx.edu>
+Date:   2026-11-20 20:50
+
+    Add UVM environment: agent, scoreboard with reference model, functional coverage
+
+ ENV/jtag_agent.sv     |  54 +++++++++++
+ ENV/jtag_base_seqs.sv | 157 +++++++++++++++++++++++++++++++
+ ENV/jtag_config.sv    |  19 ++++
+ ENV/jtag_cov.sv       | 111 ++++++++++++++++++++++
+ ENV/jtag_defines.sv   |  65 +++++++++++++
+ ENV/jtag_drv.sv       |  40 ++++++++
+ ENV/jtag_env.sv       |  34 +++++++
+ ENV/jtag_if.sv        |  33 +++++++
+ ENV/jtag_mon.sv       |  53 +++++++++++
+ ENV/jtag_sb.sv        | 254 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ ENV/jtag_seqr.sv      |  16 ++++
+ ENV/jtag_trans.sv     |  43 +++++++++
+ 12 files changed, 879 insertions(+)
+
+commit 106c03c294a43f63b46d8d1df08d7cdf72686249
+Author: Aadityasingh Chouhan <aadityac@pdx.edu>
+Date:   2026-11-20 20:49
+
+    Add JTAG TAP controller RTL: 16-state FSM, IR, BYPASS, IDCODE
+
+ RTL/jtag_tap.sv | 162 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 162 insertions(+)
+
+commit be8edb1c021d6edbe8ca59500d19531b04b8d5c4
+Author: Aadityasingh Chouhan <aadityac@pdx.edu>
+Date:   2026-11-20 20:47
+
+    Add project README and .gitignore
+
+ .gitignore |  9 +++++++
+ README.md  | 87 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+ 2 files changed, 94 insertions(+), 2 deletions(-)
+
+commit 799d9578aa1771197dbd7e8ed7cbe8a51ca134b3
+Author: aadityasinghchouhan <aadityac@pdx.edu>
+Date:   2026-10-19 13:16
+
+    Initial commit
+
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
