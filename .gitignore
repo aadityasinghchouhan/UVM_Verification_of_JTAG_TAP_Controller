@@ -1,0 +1,9 @@
+SIM/work/
+SIM/*.log
+SIM/*.ucdb
+SIM/*.wlf
+SIM/wlft*
+SIM/transcript
+SIM/covhtmlreport/
+SIM/coverage_report.txt
+SIM/modelsim.ini
