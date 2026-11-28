@@ -1,6 +1,46 @@
 GIT REPORT - UVM Verification of JTAG TAP Controller
 Repository: https://github.com/aadityasinghchouhan/UVM_Verification_of_JTAG_TAP_Controller
-Generated : 11/27/2026 23:37:43
+Generated : 11/28/2026 00:45:35
+
+commit 9900d2a9ea3a218ad3762ccf3fcbc1d72977cb5f
+Author: Aadityasingh Chouhan <aadityac@pdx.edu>
+Date:   2026-11-28 00:37
+
+    Replace HOW_TO_RUN.md with HOW_TO_RUN.pdf
+
+ HOW_TO_RUN.md  | 156 ---------------------------------------------------------
+ HOW_TO_RUN.pdf | Bin 0 -> 38927 bytes
+ README.md      |   4 +-
+ 3 files changed, 2 insertions(+), 158 deletions(-)
+
+commit 0dd15a79ded5b95cfda514477544f4c2e27521f3
+Author: aadityasinghchouhan <aadityac@pdx.edu>
+Date:   2026-11-27 23:55
+
+    Refactor HOW_TO_RUN.md for clarity and formatting
+    
+    Removed unnecessary section breaks and cleaned up formatting in the HOW_TO_RUN.md file.
+
+ HOW_TO_RUN.md | 16 ++++++----------
+ 1 file changed, 6 insertions(+), 10 deletions(-)
+
+commit d4b743ae2335a6db448cff584962c89e7f86adfc
+Author: Aadityasingh Chouhan <aadityac@pdx.edu>
+Date:   2026-11-27 23:54
+
+    HOW_TO_RUN.md: keep sections 1-6 only
+
+ HOW_TO_RUN.md | 183 +++++++++++++++++++++++++---------------------------------
+ 1 file changed, 80 insertions(+), 103 deletions(-)
+
+commit 3b5b5347b40e25a628b89630f2f5f22c3a769e3f
+Author: Aadityasingh Chouhan <aadityac@pdx.edu>
+Date:   2026-11-27 23:38
+
+    Update git report for final status update
+
+ git_report.txt | 646 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 646 insertions(+)
 
 commit ca972394ccc77ff91047f4aad99be0cacd832313
 Author: Aadityasingh Chouhan <aadityac@pdx.edu>
