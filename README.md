@@ -1,4 +1,4 @@
-# JTAG TAP Controller – Design and UVM Verification
+﻿# JTAG TAP Controller – Design and UVM Verification
 
 IEEE 1149.1 TAP controller in SystemVerilog, verified with a UVM testbench,
 SystemVerilog assertions, functional and code coverage, and a bug-injection
@@ -89,7 +89,7 @@ The real design in `RTL/` is never modified.
 
 ## How to run
 
-**Full step-by-step instructions: [HOW_TO_RUN.md](HOW_TO_RUN.md)**
+**Full step-by-step instructions: [HOW_TO_RUN.pdf](HOW_TO_RUN.pdf)**
 
 All scripts run from the `SIM` folder:
 
