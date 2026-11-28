@@ -3,7 +3,7 @@
 This guide explains how to compile and run the project in QuestaSim and how to check the results.
 The main check is **one command** (Section 3) and takes about 1–2 minutes.
 
-\---
+
 
 ## 1\. Requirements
 
@@ -16,7 +16,7 @@ The main check is **one command** (Section 3) and takes about 1–2 minutes.
 
 > Do \*\*not\*\* compile your own copy of UVM or pass `+incdir+<uvm path>`. The project uses QuestaSim's built-in UVM, the same way as the course lab projects.
 
-\---
+
 
 ## 2\. Get the project
 
@@ -47,7 +47,7 @@ UVM\_Verification\_of\_JTAG\_TAP\_Controller/
 
 > \*\*Important:\*\* every command below must be run from inside the \*\*`SIM`\*\* folder, because the scripts use relative paths such as `../RTL/jtag\_tap.sv`.
 
-\---
+ 
 
 ## 3\. Quick run – all tests with ONE command (recommended)
 
@@ -87,7 +87,7 @@ vsim -c -do run\_all.do
 coverage on their own because each one targets one feature.
 * Logs: `RESULTS/regression/<test name>.log`. Summary: `RESULTS/regression/regression\_summary.txt`.
 
-\---
+ 
 
 ## 4\. Other scripts (optional)
 
@@ -105,7 +105,7 @@ terminal, or `do <script>` in the GUI Transcript).
 testbench proves it catches the bug. `run\_bugs.do` deletes the `work` library at the end
 (it held a buggy design), so run `run\_all.do` again before running single tests.
 
-\---
+ 
 
 ## 5\. Run one test at a time
 
@@ -135,7 +135,7 @@ vsim -vopt jtag\_top -c -do "run -all; exit" +UVM\_TESTNAME=jtag\_reset\_tc1 -l 
 |7|`jtag\_corner\_tc7`|Pause/resume, long pause, Exit2→Update, back-to-back scans, 8-bit IR scan, reset during shift|
 |8|`jtag\_regression\_tc8`|TC1–TC7 in one simulation → **100 % functional coverage**|
 
-\---
+ 
 
 ## 6\. How to read a log file
 
@@ -153,8 +153,4 @@ Each log contains:
 5. **UVM report summary** – must show `UVM\_ERROR : 0` and `UVM\_FATAL : 0`.
 
 If an assertion fails, QuestaSim prints `\*\* Error: A\_<NAME> : ...` – in a normal run there should be **none**.
-
-\---
-
-## 
 
