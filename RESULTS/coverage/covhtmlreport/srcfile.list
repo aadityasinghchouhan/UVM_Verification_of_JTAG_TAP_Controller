@@ -1,0 +1,5 @@
+../ENV/jtag_cov.sv
+../RTL/jtag_tap.sv
+../TEST/jtag_pkg.sv
+../TOP/jtag_sva.sv
+../TOP/jtag_top.sv

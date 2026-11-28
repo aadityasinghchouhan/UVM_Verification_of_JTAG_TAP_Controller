@@ -1,0 +1,1556 @@
+# End time: 23:14:37 on Nov 27,2026, Elapsed time: 0:00:05
+# Errors: 36, Warnings: 0
+# QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+# Start time: 23:14:37 on Nov 27,2026
+# vlog -sv ../BUGS/jtag_tap_bug7.sv 
+# -- Compiling module jtag_tap
+# 
+# Top level modules:
+# 	jtag_tap
+# End time: 23:14:37 on Nov 27,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+# Start time: 23:14:37 on Nov 27,2026
+# vlog -sv ../TEST/jtag_pkg.sv ../TOP/jtag_sva.sv ../TOP/jtag_top.sv "+incdir+../ENV" "+incdir+../TEST" "+incdir+../TOP" 
+# -- Compiling interface jtag_if
+# -- Compiling package jtag_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) ../TEST/jtag_pkg.sv(6): Using implicit +incdir+C:/questasim64_10.7c/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling module jtag_sva
+# -- Importing package jtag_pkg
+# -- Compiling package jtag_top_sv_unit
+# -- Importing package jtag_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Compiling module jtag_top
+# 
+# Top level modules:
+# 	jtag_top
+# End time: 23:14:38 on Nov 27,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -vopt -onfinish stop jtag_top "+UVM_TESTNAME=jtag_regression_tc8" "+UVM_MAX_QUIT_COUNT=200,NO" 
+# Start time: 23:14:38 on Nov 27,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.jtag_if(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.jtag_pkg(fast)
+# Loading work.jtag_top_sv_unit(fast)
+# Loading work.jtag_top(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading C:/questasim64_10.7c/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(216) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test jtag_regression_tc8...
+# UVM_INFO @ 0: reporter [MAXQUITSET] '+UVM_MAX_QUIT_COUNT=200,NO' provided on the command line is being applied.
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# ------------------------------------------------------------------
+# Name                       Type                        Size  Value
+# ------------------------------------------------------------------
+# uvm_test_top               jtag_regression_tc8         -     @472 
+#   env_h                    jtag_env                    -     @485 
+#     agent_h                jtag_agent                  -     @492 
+#       drv_h                jtag_drv                    -     @586 
+#         rsp_port           uvm_analysis_port           -     @601 
+#         seq_item_port      uvm_seq_item_pull_port      -     @593 
+#       mon_h                jtag_mon                    -     @571 
+#         analysis_port      uvm_analysis_port           -     @578 
+#       seqr_h               jtag_seqr                   -     @609 
+#         rsp_export         uvm_analysis_export         -     @616 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @710 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     cov_h                  jtag_cov                    -     @553 
+#       analysis_imp         uvm_analysis_imp            -     @560 
+#     sb_h                   jtag_sb                     -     @499 
+#       mon_analysis_fifo    uvm_tlm_analysis_fifo #(T)  -     @506 
+#         analysis_export    uvm_analysis_imp            -     @545 
+#         get_ap             uvm_analysis_port           -     @537 
+#         get_peek_export    uvm_get_peek_imp            -     @521 
+#         put_ap             uvm_analysis_port           -     @529 
+#         put_export         uvm_put_imp                 -     @513 
+# ------------------------------------------------------------------
+# 
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 395: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #1 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 495: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #1 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 895: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #2 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 995: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #2 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 1425: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #3 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1480: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state TEST_LOGIC_RESET
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1540: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1670: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1810: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state CAPTURE_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1960: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state SHIFT_DR
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 1985: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #4 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2110: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state EXIT1_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2270: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state PAUSE_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2440: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state EXIT2_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2600: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state UPDATE_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2740: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state SELECT_IR_SCAN
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2890: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state CAPTURE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3050: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state SHIFT_IR
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 3075: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #3 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3210: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state EXIT1_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3380: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state PAUSE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3560: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state EXIT2_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3730: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state UPDATE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 3840: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state TEST_LOGIC_RESET
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 3870: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 3970: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4080: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state CAPTURE_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4200: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state SHIFT_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4320: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state EXIT1_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4450: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state PAUSE_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4590: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state EXIT2_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4720: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state UPDATE_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4830: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state SELECT_IR_SCAN
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4950: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state CAPTURE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5080: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state SHIFT_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5210: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state EXIT1_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5350: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state PAUSE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5500: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state EXIT2_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5640: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state UPDATE_IR
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 6105: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #5 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6150: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6160: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> CAPTURE_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6170: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> SHIFT_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6180: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> EXIT1_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6190: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> PAUSE_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6200: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> EXIT2_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6210: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> UPDATE_DR
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 6215: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #6 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6220: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6230: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> SELECT_IR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6240: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> CAPTURE_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6250: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> SHIFT_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6260: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> EXIT1_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6270: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> PAUSE_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6280: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> EXIT2_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6290: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> UPDATE_IR
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 6295: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #4 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6300: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6310: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> SELECT_IR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6320: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> TEST_LOGIC_RESET
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6330: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6390: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : TEST_LOGIC_RESET --TMS=0--> RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6450: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : TEST_LOGIC_RESET --TMS=1--> TEST_LOGIC_RESET
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6520: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : RUN_TEST_IDLE --TMS=0--> RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6530: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : RUN_TEST_IDLE --TMS=1--> SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6540: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SELECT_DR_SCAN --TMS=0--> CAPTURE_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6620: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SELECT_DR_SCAN --TMS=1--> SELECT_IR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6710: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : CAPTURE_DR --TMS=0--> SHIFT_DR
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 6735: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #7 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6800: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : CAPTURE_DR --TMS=1--> EXIT1_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6900: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SHIFT_DR --TMS=0--> SHIFT_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6910: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SHIFT_DR --TMS=1--> EXIT1_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6920: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT1_DR --TMS=0--> PAUSE_DR
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 6945: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #8 : register = IDCODE | length = 2 | TDI in = 0x0 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7020: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT1_DR --TMS=1--> UPDATE_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7130: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : PAUSE_DR --TMS=0--> PAUSE_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7140: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : PAUSE_DR --TMS=1--> EXIT2_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7150: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT2_DR --TMS=0--> SHIFT_DR
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 7175: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #9 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7270: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT2_DR --TMS=1--> UPDATE_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7280: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : UPDATE_DR --TMS=0--> RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7390: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : UPDATE_DR --TMS=1--> SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7480: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SELECT_IR_SCAN --TMS=0--> CAPTURE_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7570: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SELECT_IR_SCAN --TMS=1--> TEST_LOGIC_RESET
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7670: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : CAPTURE_IR --TMS=0--> SHIFT_IR
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 7695: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #5 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7770: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : CAPTURE_IR --TMS=1--> EXIT1_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7880: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SHIFT_IR --TMS=0--> SHIFT_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7890: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SHIFT_IR --TMS=1--> EXIT1_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7900: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT1_IR --TMS=0--> PAUSE_IR
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 7925: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #6 : length = 2 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8010: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT1_IR --TMS=1--> UPDATE_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8130: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : PAUSE_IR --TMS=0--> PAUSE_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8140: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : PAUSE_IR --TMS=1--> EXIT2_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8150: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT2_IR --TMS=0--> SHIFT_IR
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 8175: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #7 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8280: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT2_IR --TMS=1--> UPDATE_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8290: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : UPDATE_IR --TMS=0--> RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8410: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : UPDATE_IR --TMS=1--> SELECT_DR_SCAN
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 8785: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #10 : register = IDCODE | length = 6 | TDI in = 0x0 | TDO out = 0x17 | expected = 0x17 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 9085: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #8 : length = 6 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 9280: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0000
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 9375: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #9 : length = 4 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9425: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 943 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9425 ns Started: 9415 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9435 ns Started: 9425 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9445 ns Started: 9435 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9455: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 946 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9455 ns Started: 9445 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9465 ns Started: 9455 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9475 ns Started: 9465 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9485: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 949 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9485 ns Started: 9475 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9495 ns Started: 9485 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9505: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 951 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9505 ns Started: 9495 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9515 ns Started: 9505 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9525 ns Started: 9515 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9535 ns Started: 9525 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9545 ns Started: 9535 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9555 ns Started: 9545 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9565 ns Started: 9555 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9575 ns Started: 9565 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9585 ns Started: 9575 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9595 ns Started: 9585 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9605 ns Started: 9595 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9615: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 962 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9615 ns Started: 9605 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9625 ns Started: 9615 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9635: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 964 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9635 ns Started: 9625 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9645 ns Started: 9635 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9655 ns Started: 9645 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9665: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 967 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9665 ns Started: 9655 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9675: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 968 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9675 ns Started: 9665 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9685: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 969 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9685 ns Started: 9675 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9695 ns Started: 9685 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9705: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 971 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9705 ns Started: 9695 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9715 ns Started: 9705 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9725: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 973 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9725 ns Started: 9715 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9735 ns Started: 9725 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9745 ns Started: 9735 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9755 ns Started: 9745 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9765: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 977 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9765 ns Started: 9755 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9775: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 978 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9775 ns Started: 9765 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 9785: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #11 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0xf1cafe157 | expected = 0x34b87e01e --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 9785: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #11 data does not match the specification
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 9785 ns Started: 9775 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 9790: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0001
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 9885: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #10 : length = 4 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0001 (IDCODE) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 10295: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #12 : register = IDCODE | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0xf1cafe157 | expected = 0xf1cafe157 --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 10300: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0010
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 10395: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #11 : length = 4 | TDI in = 0x2 | TDO out = 0x1 | expected = 0x1 | new instruction = 0010 (UNUSED -> BYPASS) --> MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10445: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1045 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10445 ns Started: 10435 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10455 ns Started: 10445 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10465 ns Started: 10455 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10475: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1048 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10475 ns Started: 10465 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10485 ns Started: 10475 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10495 ns Started: 10485 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10505: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1051 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10505 ns Started: 10495 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10515 ns Started: 10505 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10525: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1053 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10525 ns Started: 10515 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10535 ns Started: 10525 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10545 ns Started: 10535 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10555 ns Started: 10545 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10565 ns Started: 10555 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10575 ns Started: 10565 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10585 ns Started: 10575 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10595 ns Started: 10585 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10605 ns Started: 10595 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10615 ns Started: 10605 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10625 ns Started: 10615 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10635: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1064 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10635 ns Started: 10625 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10645 ns Started: 10635 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10655: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1066 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10655 ns Started: 10645 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10665 ns Started: 10655 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10675 ns Started: 10665 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10685: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1069 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10685 ns Started: 10675 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10695: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1070 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10695 ns Started: 10685 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10705: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1071 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10705 ns Started: 10695 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10715 ns Started: 10705 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10725: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1073 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10725 ns Started: 10715 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10735 ns Started: 10725 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10745: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1075 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10745 ns Started: 10735 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10755 ns Started: 10745 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10765 ns Started: 10755 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10775 ns Started: 10765 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10785: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1079 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10785 ns Started: 10775 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10795: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1080 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10795 ns Started: 10785 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 10805: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #13 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0xf1cafe157 | expected = 0x34b87e01e --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 10805: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #13 data does not match the specification
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10805 ns Started: 10795 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 10810: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0011
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 10905: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #12 : length = 4 | TDI in = 0x3 | TDO out = 0x1 | expected = 0x1 | new instruction = 0011 (UNUSED -> BYPASS) --> MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10955: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1096 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10955 ns Started: 10945 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10965 ns Started: 10955 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10975 ns Started: 10965 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10985: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1099 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10985 ns Started: 10975 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 10995 ns Started: 10985 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11005 ns Started: 10995 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11015: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1102 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11015 ns Started: 11005 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11025 ns Started: 11015 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11035: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1104 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11035 ns Started: 11025 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11045 ns Started: 11035 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11055 ns Started: 11045 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11065 ns Started: 11055 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11075 ns Started: 11065 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11085 ns Started: 11075 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11095 ns Started: 11085 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11105 ns Started: 11095 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11115 ns Started: 11105 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11125 ns Started: 11115 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11135 ns Started: 11125 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11145: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1115 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11145 ns Started: 11135 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11155 ns Started: 11145 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11165: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1117 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11165 ns Started: 11155 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11175 ns Started: 11165 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11185 ns Started: 11175 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11195: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1120 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11195 ns Started: 11185 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11205: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1121 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11205 ns Started: 11195 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11215: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1122 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11215 ns Started: 11205 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11225 ns Started: 11215 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11235: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1124 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11235 ns Started: 11225 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11245 ns Started: 11235 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11255: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1126 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11255 ns Started: 11245 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11265 ns Started: 11255 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11275 ns Started: 11265 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11285 ns Started: 11275 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11295: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1130 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11295 ns Started: 11285 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11305: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1131 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11305 ns Started: 11295 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 11315: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #14 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0xf1cafe157 | expected = 0x34b87e01e --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 11315: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #14 data does not match the specification
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11315 ns Started: 11305 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 11320: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0100
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 11415: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #13 : length = 4 | TDI in = 0x4 | TDO out = 0x1 | expected = 0x1 | new instruction = 0100 (UNUSED -> BYPASS) --> MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11465: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1147 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11465 ns Started: 11455 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11475 ns Started: 11465 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11485 ns Started: 11475 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11495: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1150 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11495 ns Started: 11485 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11505 ns Started: 11495 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11515 ns Started: 11505 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11525: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1153 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11525 ns Started: 11515 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11535 ns Started: 11525 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11545: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1155 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11545 ns Started: 11535 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11555 ns Started: 11545 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11565 ns Started: 11555 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11575 ns Started: 11565 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11585 ns Started: 11575 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11595 ns Started: 11585 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11605 ns Started: 11595 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11615 ns Started: 11605 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11625 ns Started: 11615 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11635 ns Started: 11625 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11645 ns Started: 11635 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11655: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1166 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11655 ns Started: 11645 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11665 ns Started: 11655 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11675: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1168 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11675 ns Started: 11665 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11685 ns Started: 11675 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11695 ns Started: 11685 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11705: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1171 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11705 ns Started: 11695 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11715: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1172 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11715 ns Started: 11705 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11725: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1173 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11725 ns Started: 11715 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11735 ns Started: 11725 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11745: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1175 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11745 ns Started: 11735 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11755 ns Started: 11745 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11765: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1177 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11765 ns Started: 11755 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11775 ns Started: 11765 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11785 ns Started: 11775 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11795 ns Started: 11785 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11805: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1181 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11805 ns Started: 11795 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11815: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1182 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11815 ns Started: 11805 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 11825: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #15 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0xf1cafe157 | expected = 0x34b87e01e --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 11825: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #15 data does not match the specification
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11825 ns Started: 11815 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 11830: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0101
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 11925: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #14 : length = 4 | TDI in = 0x5 | TDO out = 0x1 | expected = 0x1 | new instruction = 0101 (UNUSED -> BYPASS) --> MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11975: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1198 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11975 ns Started: 11965 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11985 ns Started: 11975 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 11995 ns Started: 11985 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12005: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1201 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12005 ns Started: 11995 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12015 ns Started: 12005 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12025 ns Started: 12015 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12035: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1204 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12035 ns Started: 12025 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12045 ns Started: 12035 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12055: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1206 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12055 ns Started: 12045 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12065 ns Started: 12055 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12075 ns Started: 12065 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12085 ns Started: 12075 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12095 ns Started: 12085 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12105 ns Started: 12095 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12115 ns Started: 12105 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12125 ns Started: 12115 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12135 ns Started: 12125 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12145 ns Started: 12135 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12155 ns Started: 12145 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12165: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1217 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12165 ns Started: 12155 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12175 ns Started: 12165 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12185: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1219 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12185 ns Started: 12175 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12195 ns Started: 12185 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12205 ns Started: 12195 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12215: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1222 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12215 ns Started: 12205 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12225: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1223 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12225 ns Started: 12215 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12235: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1224 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12235 ns Started: 12225 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12245 ns Started: 12235 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12255: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1226 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12255 ns Started: 12245 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12265 ns Started: 12255 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12275: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1228 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12275 ns Started: 12265 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12285 ns Started: 12275 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12295 ns Started: 12285 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12305 ns Started: 12295 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12315: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1232 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12315 ns Started: 12305 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12325: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1233 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12325 ns Started: 12315 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 12335: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #16 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0xf1cafe157 | expected = 0x34b87e01e --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 12335: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #16 data does not match the specification
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12335 ns Started: 12325 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 12340: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0110
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 12435: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #15 : length = 4 | TDI in = 0x6 | TDO out = 0x1 | expected = 0x1 | new instruction = 0110 (UNUSED -> BYPASS) --> MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12485: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1249 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12485 ns Started: 12475 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12495 ns Started: 12485 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12505 ns Started: 12495 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12515: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1252 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12515 ns Started: 12505 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12525 ns Started: 12515 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12535 ns Started: 12525 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12545: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1255 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12545 ns Started: 12535 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12555 ns Started: 12545 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12565: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1257 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12565 ns Started: 12555 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12575 ns Started: 12565 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12585 ns Started: 12575 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12595 ns Started: 12585 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12605 ns Started: 12595 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12615 ns Started: 12605 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12625 ns Started: 12615 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12635 ns Started: 12625 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12645 ns Started: 12635 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12655 ns Started: 12645 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12665 ns Started: 12655 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12675: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1268 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12675 ns Started: 12665 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12685 ns Started: 12675 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12695: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1270 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12695 ns Started: 12685 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12705 ns Started: 12695 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12715 ns Started: 12705 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12725: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1273 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12725 ns Started: 12715 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12735: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1274 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12735 ns Started: 12725 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12745: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1275 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12745 ns Started: 12735 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12755 ns Started: 12745 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12765: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1277 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12765 ns Started: 12755 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12775 ns Started: 12765 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12785: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1279 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12785 ns Started: 12775 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12795 ns Started: 12785 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12805 ns Started: 12795 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12815 ns Started: 12805 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12825: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1283 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12825 ns Started: 12815 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12835: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1284 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12835 ns Started: 12825 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 12845: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #17 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0xf1cafe157 | expected = 0x34b87e01e --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 12845: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #17 data does not match the specification
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12845 ns Started: 12835 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 12850: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0111
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 12945: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #16 : length = 4 | TDI in = 0x7 | TDO out = 0x1 | expected = 0x1 | new instruction = 0111 (UNUSED -> BYPASS) --> MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 12995: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1300 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 12995 ns Started: 12985 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13005 ns Started: 12995 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13015 ns Started: 13005 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13025: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1303 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13025 ns Started: 13015 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13035 ns Started: 13025 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13045 ns Started: 13035 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13055: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1306 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13055 ns Started: 13045 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13065 ns Started: 13055 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13075: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1308 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13075 ns Started: 13065 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13085 ns Started: 13075 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13095 ns Started: 13085 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13105 ns Started: 13095 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13115 ns Started: 13105 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13125 ns Started: 13115 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13135 ns Started: 13125 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13145 ns Started: 13135 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13155 ns Started: 13145 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13165 ns Started: 13155 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13175 ns Started: 13165 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13185: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1319 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13185 ns Started: 13175 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13195 ns Started: 13185 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13205: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1321 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13205 ns Started: 13195 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13215 ns Started: 13205 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13225 ns Started: 13215 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13235: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1324 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13235 ns Started: 13225 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13245: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1325 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13245 ns Started: 13235 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13255: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1326 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13255 ns Started: 13245 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13265 ns Started: 13255 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13275: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1328 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13275 ns Started: 13265 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13285 ns Started: 13275 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13295: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1330 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13295 ns Started: 13285 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13305 ns Started: 13295 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13315 ns Started: 13305 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13325 ns Started: 13315 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13335: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1334 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13335 ns Started: 13325 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13345: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1335 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13345 ns Started: 13335 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 13355: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #18 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0xf1cafe157 | expected = 0x34b87e01e --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 13355: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #18 data does not match the specification
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13355 ns Started: 13345 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 13360: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 1000
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 13455: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #17 : length = 4 | TDI in = 0x8 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13505: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1351 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13505 ns Started: 13495 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13515 ns Started: 13505 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13525 ns Started: 13515 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13535: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1354 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13535 ns Started: 13525 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13545 ns Started: 13535 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13555 ns Started: 13545 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13565: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1357 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13565 ns Started: 13555 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13575 ns Started: 13565 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13585: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1359 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13585 ns Started: 13575 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13595 ns Started: 13585 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13605 ns Started: 13595 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13615 ns Started: 13605 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13625 ns Started: 13615 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13635 ns Started: 13625 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13645 ns Started: 13635 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13655 ns Started: 13645 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13665 ns Started: 13655 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13675 ns Started: 13665 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13685 ns Started: 13675 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13695: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1370 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13695 ns Started: 13685 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13705 ns Started: 13695 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13715: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1372 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13715 ns Started: 13705 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13725 ns Started: 13715 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13735 ns Started: 13725 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13745: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1375 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13745 ns Started: 13735 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13755: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1376 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13755 ns Started: 13745 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13765: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1377 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13765 ns Started: 13755 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13775 ns Started: 13765 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13785: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1379 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13785 ns Started: 13775 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13795 ns Started: 13785 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13805: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1381 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13805 ns Started: 13795 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13815 ns Started: 13805 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13825 ns Started: 13815 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13835 ns Started: 13825 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13845: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1385 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13845 ns Started: 13835 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 13855: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1386 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13855 ns Started: 13845 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 13865: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #19 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0xf1cafe157 | expected = 0x34b87e01e --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 13865: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #19 data does not match the specification
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 13865 ns Started: 13855 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 13870: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 1001
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 13965: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #18 : length = 4 | TDI in = 0x9 | TDO out = 0x1 | expected = 0x1 | new instruction = 1001 (UNUSED -> BYPASS) --> MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14015: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1402 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14015 ns Started: 14005 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14025 ns Started: 14015 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14035 ns Started: 14025 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14045: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1405 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14045 ns Started: 14035 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14055 ns Started: 14045 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14065 ns Started: 14055 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14075: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1408 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14075 ns Started: 14065 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14085 ns Started: 14075 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14095: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1410 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14095 ns Started: 14085 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14105 ns Started: 14095 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14115 ns Started: 14105 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14125 ns Started: 14115 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14135 ns Started: 14125 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14145 ns Started: 14135 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14155 ns Started: 14145 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14165 ns Started: 14155 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14175 ns Started: 14165 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14185 ns Started: 14175 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14195 ns Started: 14185 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14205: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1421 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14205 ns Started: 14195 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14215 ns Started: 14205 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14225: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1423 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14225 ns Started: 14215 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14235 ns Started: 14225 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14245 ns Started: 14235 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14255: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1426 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14255 ns Started: 14245 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14265: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1427 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14265 ns Started: 14255 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14275: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1428 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14275 ns Started: 14265 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14285 ns Started: 14275 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14295: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1430 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14295 ns Started: 14285 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14305 ns Started: 14295 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14315: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1432 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14315 ns Started: 14305 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14325 ns Started: 14315 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14335 ns Started: 14325 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14345 ns Started: 14335 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14355: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1436 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14355 ns Started: 14345 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14365: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1437 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14365 ns Started: 14355 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 14375: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #20 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0xf1cafe157 | expected = 0x34b87e01e --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 14375: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #20 data does not match the specification
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14375 ns Started: 14365 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 14380: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 1010
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 14475: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #19 : length = 4 | TDI in = 0xa | TDO out = 0x1 | expected = 0x1 | new instruction = 1010 (UNUSED -> BYPASS) --> MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14525: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1453 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14525 ns Started: 14515 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14535 ns Started: 14525 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14545 ns Started: 14535 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14555: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1456 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14555 ns Started: 14545 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14565 ns Started: 14555 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14575 ns Started: 14565 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14585: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1459 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14585 ns Started: 14575 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14595 ns Started: 14585 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14605: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1461 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14605 ns Started: 14595 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14615 ns Started: 14605 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14625 ns Started: 14615 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14635 ns Started: 14625 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14645 ns Started: 14635 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14655 ns Started: 14645 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14665 ns Started: 14655 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14675 ns Started: 14665 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14685 ns Started: 14675 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14695 ns Started: 14685 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14705 ns Started: 14695 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14715: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1472 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14715 ns Started: 14705 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14725 ns Started: 14715 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14735: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1474 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14735 ns Started: 14725 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14745 ns Started: 14735 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14755 ns Started: 14745 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14765: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1477 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14765 ns Started: 14755 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14775: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1478 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14775 ns Started: 14765 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14785: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1479 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14785 ns Started: 14775 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14795 ns Started: 14785 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14805: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1481 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14805 ns Started: 14795 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14815 ns Started: 14805 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14825: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1483 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14825 ns Started: 14815 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14835 ns Started: 14825 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14845 ns Started: 14835 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14855 ns Started: 14845 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14865: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1487 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14865 ns Started: 14855 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 14875: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1488 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14875 ns Started: 14865 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 14885: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #21 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0xf1cafe157 | expected = 0x34b87e01e --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 14885: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #21 data does not match the specification
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 14885 ns Started: 14875 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 14890: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 1011
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 14985: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #20 : length = 4 | TDI in = 0xb | TDO out = 0x1 | expected = 0x1 | new instruction = 1011 (UNUSED -> BYPASS) --> MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15035: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1504 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15035 ns Started: 15025 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15045 ns Started: 15035 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15055 ns Started: 15045 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15065: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1507 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15065 ns Started: 15055 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15075 ns Started: 15065 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15085 ns Started: 15075 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15095: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1510 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15095 ns Started: 15085 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15105 ns Started: 15095 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15115: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1512 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15115 ns Started: 15105 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15125 ns Started: 15115 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15135 ns Started: 15125 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15145 ns Started: 15135 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15155 ns Started: 15145 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15165 ns Started: 15155 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15175 ns Started: 15165 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15185 ns Started: 15175 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15195 ns Started: 15185 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15205 ns Started: 15195 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15215 ns Started: 15205 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15225: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1523 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15225 ns Started: 15215 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15235 ns Started: 15225 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15245: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1525 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15245 ns Started: 15235 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15255 ns Started: 15245 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15265 ns Started: 15255 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15275: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1528 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15275 ns Started: 15265 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15285: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1529 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15285 ns Started: 15275 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15295: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1530 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15295 ns Started: 15285 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15305 ns Started: 15295 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15315: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1532 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15315 ns Started: 15305 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15325 ns Started: 15315 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15335: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1534 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15335 ns Started: 15325 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15345 ns Started: 15335 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15355 ns Started: 15345 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15365 ns Started: 15355 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15375: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1538 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15375 ns Started: 15365 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15385: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1539 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15385 ns Started: 15375 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 15395: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #22 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0xf1cafe157 | expected = 0x34b87e01e --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 15395: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #22 data does not match the specification
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15395 ns Started: 15385 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 15400: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 1100
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 15495: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #21 : length = 4 | TDI in = 0xc | TDO out = 0x1 | expected = 0x1 | new instruction = 1100 (UNUSED -> BYPASS) --> MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15545: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1555 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15545 ns Started: 15535 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15555 ns Started: 15545 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15565 ns Started: 15555 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15575: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1558 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15575 ns Started: 15565 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15585 ns Started: 15575 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15595 ns Started: 15585 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15605: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1561 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15605 ns Started: 15595 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15615 ns Started: 15605 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15625: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1563 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15625 ns Started: 15615 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15635 ns Started: 15625 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15645 ns Started: 15635 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15655 ns Started: 15645 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15665 ns Started: 15655 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15675 ns Started: 15665 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15685 ns Started: 15675 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15695 ns Started: 15685 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15705 ns Started: 15695 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15715 ns Started: 15705 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15725 ns Started: 15715 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15735: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1574 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15735 ns Started: 15725 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15745 ns Started: 15735 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15755: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1576 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15755 ns Started: 15745 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15765 ns Started: 15755 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15775 ns Started: 15765 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15785: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1579 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15785 ns Started: 15775 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15795: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1580 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15795 ns Started: 15785 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15805: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1581 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15805 ns Started: 15795 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15815 ns Started: 15805 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15825: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1583 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15825 ns Started: 15815 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15835 ns Started: 15825 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15845: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1585 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15845 ns Started: 15835 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15855 ns Started: 15845 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15865 ns Started: 15855 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15875 ns Started: 15865 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15885: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1589 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15885 ns Started: 15875 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 15895: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1590 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15895 ns Started: 15885 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 15905: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #23 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0xf1cafe157 | expected = 0x34b87e01e --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 15905: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #23 data does not match the specification
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 15905 ns Started: 15895 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 15910: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 1101
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 16005: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #22 : length = 4 | TDI in = 0xd | TDO out = 0x1 | expected = 0x1 | new instruction = 1101 (UNUSED -> BYPASS) --> MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16055: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1606 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16055 ns Started: 16045 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16065 ns Started: 16055 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16075 ns Started: 16065 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16085: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1609 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16085 ns Started: 16075 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16095 ns Started: 16085 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16105 ns Started: 16095 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16115: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1612 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16115 ns Started: 16105 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16125 ns Started: 16115 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16135: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1614 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16135 ns Started: 16125 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16145 ns Started: 16135 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16155 ns Started: 16145 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16165 ns Started: 16155 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16175 ns Started: 16165 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16185 ns Started: 16175 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16195 ns Started: 16185 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16205 ns Started: 16195 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16215 ns Started: 16205 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16225 ns Started: 16215 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16235 ns Started: 16225 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16245: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1625 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16245 ns Started: 16235 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16255 ns Started: 16245 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16265: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1627 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16265 ns Started: 16255 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16275 ns Started: 16265 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16285 ns Started: 16275 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16295: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1630 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16295 ns Started: 16285 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16305: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1631 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16305 ns Started: 16295 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16315: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1632 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16315 ns Started: 16305 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16325 ns Started: 16315 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16335: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1634 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16335 ns Started: 16325 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16345 ns Started: 16335 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16355: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1636 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16355 ns Started: 16345 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16365 ns Started: 16355 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16375 ns Started: 16365 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16385 ns Started: 16375 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16395: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1640 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16395 ns Started: 16385 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16405: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1641 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16405 ns Started: 16395 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 16415: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #24 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0xf1cafe157 | expected = 0x34b87e01e --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 16415: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #24 data does not match the specification
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16415 ns Started: 16405 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 16420: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 1110
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 16515: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #23 : length = 4 | TDI in = 0xe | TDO out = 0x1 | expected = 0x1 | new instruction = 1110 (UNUSED -> BYPASS) --> MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16565: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1657 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16565 ns Started: 16555 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16575 ns Started: 16565 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16585 ns Started: 16575 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16595: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1660 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16595 ns Started: 16585 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16605 ns Started: 16595 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16615 ns Started: 16605 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16625: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1663 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16625 ns Started: 16615 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16635 ns Started: 16625 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16645: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1665 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16645 ns Started: 16635 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16655 ns Started: 16645 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16665 ns Started: 16655 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16675 ns Started: 16665 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16685 ns Started: 16675 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16695 ns Started: 16685 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16705 ns Started: 16695 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16715 ns Started: 16705 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16725 ns Started: 16715 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16735 ns Started: 16725 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16745 ns Started: 16735 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16755: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1676 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16755 ns Started: 16745 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16765 ns Started: 16755 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16775: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1678 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16775 ns Started: 16765 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16785 ns Started: 16775 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16795 ns Started: 16785 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16805: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1681 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16805 ns Started: 16795 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16815: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1682 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16815 ns Started: 16805 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16825: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1683 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16825 ns Started: 16815 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16835 ns Started: 16825 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16845: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1685 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16845 ns Started: 16835 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16855 ns Started: 16845 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16865: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1687 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16865 ns Started: 16855 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16875 ns Started: 16865 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16885 ns Started: 16875 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16895 ns Started: 16885 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16905: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1691 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16905 ns Started: 16895 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 16915: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1692 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16915 ns Started: 16905 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 16925: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #25 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0xf1cafe157 | expected = 0x34b87e01e --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 16925: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #25 data does not match the specification
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 16925 ns Started: 16915 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 16930: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 1111
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 17025: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #24 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 17435: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #26 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 17535: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #25 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 17665: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #27 : register = BYPASS | length = 8 | TDI in = 0x5a | TDO out = 0xb4 | expected = 0xb4 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 17765: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #26 : length = 4 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0001 (IDCODE) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 18135: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #28 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 18235: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #27 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 18365: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #29 : register = BYPASS | length = 8 | TDI in = 0xc3 | TDO out = 0x86 | expected = 0x86 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 18765: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #30 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 18865: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #28 : length = 4 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0001 (IDCODE) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 19235: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #31 : register = IDCODE | length = 32 | TDI in = 0xffffffff | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 19925: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #32 : register = IDCODE | length = 64 | TDI in = 0xdeadbeef00000000 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 20295: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #33 : register = IDCODE | length = 32 | TDI in = 0xfc0091fc | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 20665: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #34 : register = IDCODE | length = 32 | TDI in = 0xcf7d51ec | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 21035: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #35 : register = IDCODE | length = 32 | TDI in = 0xbb3c4615 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 21405: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #36 : register = IDCODE | length = 32 | TDI in = 0xd7fb45b0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 21615: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #37 : register = IDCODE | length = 16 | TDI in = 0x0 | TDO out = 0xe157 | expected = 0xe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 21745: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #29 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 21805: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #38 : register = BYPASS | length = 1 | TDI in = 0x1 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 21875: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #39 : register = BYPASS | length = 2 | TDI in = 0x3 | TDO out = 0x2 | expected = 0x2 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 22005: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #40 : register = BYPASS | length = 8 | TDI in = 0xa5 | TDO out = 0x4a | expected = 0x4a --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 22375: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #41 : register = BYPASS | length = 32 | TDI in = 0x12345678 | TDO out = 0x2468acf0 | expected = 0x2468acf0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 23065: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #42 : register = BYPASS | length = 64 | TDI in = 0x451042250c6594a7 | TDO out = 0x8a20844a18cb294e | expected = 0x8a20844a18cb294e --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 23455: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #43 : register = BYPASS | length = 34 | TDI in = 0x2b4c23942 | TDO out = 0x169847284 | expected = 0x169847284 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 24015: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #44 : register = BYPASS | length = 51 | TDI in = 0x346517c1cba8d | TDO out = 0x68ca2f839751a | expected = 0x68ca2f839751a --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 24235: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #45 : register = BYPASS | length = 17 | TDI in = 0x1ac56 | TDO out = 0x158ac | expected = 0x158ac --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 24515: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #46 : register = BYPASS | length = 23 | TDI in = 0x3c6182 | TDO out = 0x78c304 | expected = 0x78c304 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 24935: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #47 : register = BYPASS | length = 37 | TDI in = 0x3db2f463f | TDO out = 0x7b65e8c7e | expected = 0x7b65e8c7e --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 25415: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #48 : register = BYPASS | length = 43 | TDI in = 0xad5aedda0d | TDO out = 0x15ab5dbb41a | expected = 0x15ab5dbb41a --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 25725: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #49 : register = BYPASS | length = 26 | TDI in = 0x2cd19a4 | TDO out = 0x19a3348 | expected = 0x19a3348 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 26235: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #50 : register = BYPASS | length = 46 | TDI in = 0x11a06fa02d61 | TDO out = 0x2340df405ac2 | expected = 0x2340df405ac2 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 26925: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #51 : register = BYPASS | length = 64 | TDI in = 0xc93f9dcdbdc3916f | TDO out = 0x927f3b9b7b8722de | expected = 0x927f3b9b7b8722de --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 27505: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #52 : register = BYPASS | length = 53 | TDI in = 0x1417f3ef8ccf7a | TDO out = 0x82fe7df199ef4 | expected = 0x82fe7df199ef4 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 27605: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #30 : length = 4 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 27655: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 2766 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 27655 ns Started: 27655 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_BYPASS_CAPTURE : BYPASS did not capture 0
+#    Time: 27655 ns Started: 27645 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_BYPASS_CAPTURE File: ../TOP/jtag_sva.sv Line: 59
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 27665 ns Started: 27655 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 27675 ns Started: 27665 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 27685: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 2769 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 27685 ns Started: 27675 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 27695 ns Started: 27685 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 27705 ns Started: 27695 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 27715 ns Started: 27705 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 27725: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 2773 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 27725 ns Started: 27715 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 27735 ns Started: 27725 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# ** Error: A_DR_SELECT : IDCODE register changed while not selected
+#    Time: 27745 ns Started: 27735 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_DR_SELECT File: ../TOP/jtag_sva.sv Line: 89
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 27755: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 2776 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# 
+# --- UVM Report Summary ---
+# 
+# Quit count reached!
+# Quit count :   200 of   200
+# ** Report counts by severity
+# UVM_INFO :  186
+# UVM_WARNING :    0
+# UVM_ERROR :  200
+# UVM_FATAL :    0
+# ** Report counts by id
+# [JTAG_SB]   282
+# [MAXQUITSET]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TC1_RESET]    32
+# [TC2_FSM]    51
+# [TC3_IR]    16
+# [UVMTOP]     1
+# ** Note: $finish    : C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 27755 ns  Iteration: 3  Region: /uvm_pkg::uvm_task_phase::execute
+# Break in Function uvm_pkg/uvm_report_object::die at C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292
+# Stopped at C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292

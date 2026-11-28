@@ -1,0 +1,132 @@
+var g_data = {
+f13:{
+scopes:[{link:'z.htm?f=0&s=13',val:'work.jtag_tap'}]
+,FSMs:[{dummy:0}
+,{anchor:'cvg76',items:[{c:'G',p:'100.00',z:'state'}
+,{cr:'c',s:'1',z:'TEST_LOGIC_RESET',h:'389',c:'g'}
+,{cr:'c',z:'TEST_LOGIC_RESET -&gt; RUN_TEST_IDLE',h:'199',c:'g'}
+,{cr:'c',s:'1',z:'RUN_TEST_IDLE',h:'680',c:'g'}
+,{cr:'c',z:'RUN_TEST_IDLE -&gt; SELECT_DR_SCAN',h:'472',c:'g'}
+,{cr:'c',z:'RUN_TEST_IDLE -&gt; TEST_LOGIC_RESET',h:'7',c:'g'}
+,{cr:'c',s:'1',z:'SELECT_DR_SCAN',h:'627',c:'g'}
+,{cr:'c',z:'SELECT_DR_SCAN -&gt; CAPTURE_DR',h:'306',c:'g'}
+,{cr:'c',z:'SELECT_DR_SCAN -&gt; SELECT_IR_SCAN',h:'318',c:'g'}
+,{cr:'c',z:'SELECT_DR_SCAN -&gt; TEST_LOGIC_RESET',h:'3',c:'g'}
+,{cr:'c',s:'1',z:'CAPTURE_DR',h:'306',c:'g'}
+,{cr:'c',z:'CAPTURE_DR -&gt; SHIFT_DR',h:'184',c:'g'}
+,{cr:'c',z:'CAPTURE_DR -&gt; EXIT1_DR',h:'117',c:'g'}
+,{cr:'c',z:'CAPTURE_DR -&gt; TEST_LOGIC_RESET',h:'5',c:'g'}
+,{cr:'c',s:'1',z:'SELECT_IR_SCAN',h:'318',c:'g'}
+,{cr:'c',z:'SELECT_IR_SCAN -&gt; CAPTURE_IR',h:'170',c:'g'}
+,{cr:'c',z:'SELECT_IR_SCAN -&gt; TEST_LOGIC_RESET',h:'148',c:'g'}
+,{cr:'c',s:'1',z:'SHIFT_DR',h:'2085',c:'g'}
+,{cr:'c',z:'SHIFT_DR -&gt; EXIT1_DR',h:'276',c:'g'}
+,{cr:'c',z:'SHIFT_DR -&gt; TEST_LOGIC_RESET',h:'4',c:'g'}
+,{cr:'c',s:'1',z:'EXIT1_DR',h:'393',c:'g'}
+,{cr:'c',z:'EXIT1_DR -&gt; PAUSE_DR',h:'165',c:'g'}
+,{cr:'c',z:'EXIT1_DR -&gt; UPDATE_DR',h:'224',c:'g'}
+,{cr:'c',z:'EXIT1_DR -&gt; TEST_LOGIC_RESET',h:'4',c:'g'}
+,{cr:'c',s:'1',z:'PAUSE_DR',h:'295',c:'g'}
+,{cr:'c',z:'PAUSE_DR -&gt; EXIT2_DR',h:'163',c:'g'}
+,{cr:'c',z:'PAUSE_DR -&gt; TEST_LOGIC_RESET',h:'2',c:'g'}
+,{cr:'c',s:'1',z:'UPDATE_DR',h:'288',c:'g'}
+,{cr:'c',z:'UPDATE_DR -&gt; RUN_TEST_IDLE',h:'185',c:'g'}
+,{cr:'c',z:'UPDATE_DR -&gt; SELECT_DR_SCAN',h:'102',c:'g'}
+,{cr:'c',z:'UPDATE_DR -&gt; TEST_LOGIC_RESET',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'EXIT2_DR',h:'163',c:'g'}
+,{cr:'c',z:'EXIT2_DR -&gt; SHIFT_DR',h:'96',c:'g'}
+,{cr:'c',z:'EXIT2_DR -&gt; UPDATE_DR',h:'64',c:'g'}
+,{cr:'c',z:'EXIT2_DR -&gt; TEST_LOGIC_RESET',h:'3',c:'g'}
+,{cr:'c',s:'1',z:'CAPTURE_IR',h:'170',c:'g'}
+,{cr:'c',z:'CAPTURE_IR -&gt; SHIFT_IR',h:'112',c:'g'}
+,{cr:'c',z:'CAPTURE_IR -&gt; EXIT1_IR',h:'55',c:'g'}
+,{cr:'c',z:'CAPTURE_IR -&gt; TEST_LOGIC_RESET',h:'3',c:'g'}
+,{cr:'c',s:'1',z:'SHIFT_IR',h:'398',c:'g'}
+,{cr:'c',z:'SHIFT_IR -&gt; EXIT1_IR',h:'135',c:'g'}
+,{cr:'c',z:'SHIFT_IR -&gt; TEST_LOGIC_RESET',h:'4',c:'g'}
+,{cr:'c',s:'1',z:'EXIT1_IR',h:'190',c:'g'}
+,{cr:'c',z:'EXIT1_IR -&gt; PAUSE_IR',h:'58',c:'g'}
+,{cr:'c',z:'EXIT1_IR -&gt; UPDATE_IR',h:'131',c:'g'}
+,{cr:'c',z:'EXIT1_IR -&gt; TEST_LOGIC_RESET',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'PAUSE_IR',h:'90',c:'g'}
+,{cr:'c',z:'PAUSE_IR -&gt; EXIT2_IR',h:'56',c:'g'}
+,{cr:'c',z:'PAUSE_IR -&gt; TEST_LOGIC_RESET',h:'2',c:'g'}
+,{cr:'c',s:'1',z:'UPDATE_IR',h:'159',c:'g'}
+,{cr:'c',z:'UPDATE_IR -&gt; RUN_TEST_IDLE',h:'102',c:'g'}
+,{cr:'c',z:'UPDATE_IR -&gt; SELECT_DR_SCAN',h:'53',c:'g'}
+,{cr:'c',z:'UPDATE_IR -&gt; TEST_LOGIC_RESET',h:'4',c:'g'}
+,{cr:'c',s:'1',z:'EXIT2_IR',h:'56',c:'g'}
+,{cr:'c',z:'EXIT2_IR -&gt; SHIFT_IR',h:'27',c:'g'}
+,{cr:'c',z:'EXIT2_IR -&gt; UPDATE_IR',h:'28',c:'g'}
+,{cr:'c',z:'EXIT2_IR -&gt; TEST_LOGIC_RESET',h:'1',c:'g'}
+]}
+
+],
+},
+f18:{
+scopes:[{s:'16',b:'1',val:'jtag_top'},{link:'z.htm?f=0&s=18',val:'JTAG_DUT'}]
+,FSMs:[{dummy:0}
+,{anchor:'cvg76',items:[{c:'G',p:'100.00',z:'state'}
+,{cr:'c',s:'1',z:'TEST_LOGIC_RESET',h:'389',c:'g'}
+,{cr:'c',z:'TEST_LOGIC_RESET -&gt; RUN_TEST_IDLE',h:'199',c:'g'}
+,{cr:'c',s:'1',z:'RUN_TEST_IDLE',h:'680',c:'g'}
+,{cr:'c',z:'RUN_TEST_IDLE -&gt; SELECT_DR_SCAN',h:'472',c:'g'}
+,{cr:'c',z:'RUN_TEST_IDLE -&gt; TEST_LOGIC_RESET',h:'7',c:'g'}
+,{cr:'c',s:'1',z:'SELECT_DR_SCAN',h:'627',c:'g'}
+,{cr:'c',z:'SELECT_DR_SCAN -&gt; CAPTURE_DR',h:'306',c:'g'}
+,{cr:'c',z:'SELECT_DR_SCAN -&gt; SELECT_IR_SCAN',h:'318',c:'g'}
+,{cr:'c',z:'SELECT_DR_SCAN -&gt; TEST_LOGIC_RESET',h:'3',c:'g'}
+,{cr:'c',s:'1',z:'CAPTURE_DR',h:'306',c:'g'}
+,{cr:'c',z:'CAPTURE_DR -&gt; SHIFT_DR',h:'184',c:'g'}
+,{cr:'c',z:'CAPTURE_DR -&gt; EXIT1_DR',h:'117',c:'g'}
+,{cr:'c',z:'CAPTURE_DR -&gt; TEST_LOGIC_RESET',h:'5',c:'g'}
+,{cr:'c',s:'1',z:'SELECT_IR_SCAN',h:'318',c:'g'}
+,{cr:'c',z:'SELECT_IR_SCAN -&gt; CAPTURE_IR',h:'170',c:'g'}
+,{cr:'c',z:'SELECT_IR_SCAN -&gt; TEST_LOGIC_RESET',h:'148',c:'g'}
+,{cr:'c',s:'1',z:'SHIFT_DR',h:'2085',c:'g'}
+,{cr:'c',z:'SHIFT_DR -&gt; EXIT1_DR',h:'276',c:'g'}
+,{cr:'c',z:'SHIFT_DR -&gt; TEST_LOGIC_RESET',h:'4',c:'g'}
+,{cr:'c',s:'1',z:'EXIT1_DR',h:'393',c:'g'}
+,{cr:'c',z:'EXIT1_DR -&gt; PAUSE_DR',h:'165',c:'g'}
+,{cr:'c',z:'EXIT1_DR -&gt; UPDATE_DR',h:'224',c:'g'}
+,{cr:'c',z:'EXIT1_DR -&gt; TEST_LOGIC_RESET',h:'4',c:'g'}
+,{cr:'c',s:'1',z:'PAUSE_DR',h:'295',c:'g'}
+,{cr:'c',z:'PAUSE_DR -&gt; EXIT2_DR',h:'163',c:'g'}
+,{cr:'c',z:'PAUSE_DR -&gt; TEST_LOGIC_RESET',h:'2',c:'g'}
+,{cr:'c',s:'1',z:'UPDATE_DR',h:'288',c:'g'}
+,{cr:'c',z:'UPDATE_DR -&gt; RUN_TEST_IDLE',h:'185',c:'g'}
+,{cr:'c',z:'UPDATE_DR -&gt; SELECT_DR_SCAN',h:'102',c:'g'}
+,{cr:'c',z:'UPDATE_DR -&gt; TEST_LOGIC_RESET',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'EXIT2_DR',h:'163',c:'g'}
+,{cr:'c',z:'EXIT2_DR -&gt; SHIFT_DR',h:'96',c:'g'}
+,{cr:'c',z:'EXIT2_DR -&gt; UPDATE_DR',h:'64',c:'g'}
+,{cr:'c',z:'EXIT2_DR -&gt; TEST_LOGIC_RESET',h:'3',c:'g'}
+,{cr:'c',s:'1',z:'CAPTURE_IR',h:'170',c:'g'}
+,{cr:'c',z:'CAPTURE_IR -&gt; SHIFT_IR',h:'112',c:'g'}
+,{cr:'c',z:'CAPTURE_IR -&gt; EXIT1_IR',h:'55',c:'g'}
+,{cr:'c',z:'CAPTURE_IR -&gt; TEST_LOGIC_RESET',h:'3',c:'g'}
+,{cr:'c',s:'1',z:'SHIFT_IR',h:'398',c:'g'}
+,{cr:'c',z:'SHIFT_IR -&gt; EXIT1_IR',h:'135',c:'g'}
+,{cr:'c',z:'SHIFT_IR -&gt; TEST_LOGIC_RESET',h:'4',c:'g'}
+,{cr:'c',s:'1',z:'EXIT1_IR',h:'190',c:'g'}
+,{cr:'c',z:'EXIT1_IR -&gt; PAUSE_IR',h:'58',c:'g'}
+,{cr:'c',z:'EXIT1_IR -&gt; UPDATE_IR',h:'131',c:'g'}
+,{cr:'c',z:'EXIT1_IR -&gt; TEST_LOGIC_RESET',h:'1',c:'g'}
+,{cr:'c',s:'1',z:'PAUSE_IR',h:'90',c:'g'}
+,{cr:'c',z:'PAUSE_IR -&gt; EXIT2_IR',h:'56',c:'g'}
+,{cr:'c',z:'PAUSE_IR -&gt; TEST_LOGIC_RESET',h:'2',c:'g'}
+,{cr:'c',s:'1',z:'UPDATE_IR',h:'159',c:'g'}
+,{cr:'c',z:'UPDATE_IR -&gt; RUN_TEST_IDLE',h:'102',c:'g'}
+,{cr:'c',z:'UPDATE_IR -&gt; SELECT_DR_SCAN',h:'53',c:'g'}
+,{cr:'c',z:'UPDATE_IR -&gt; TEST_LOGIC_RESET',h:'4',c:'g'}
+,{cr:'c',s:'1',z:'EXIT2_IR',h:'56',c:'g'}
+,{cr:'c',z:'EXIT2_IR -&gt; SHIFT_IR',h:'27',c:'g'}
+,{cr:'c',z:'EXIT2_IR -&gt; UPDATE_IR',h:'28',c:'g'}
+,{cr:'c',z:'EXIT2_IR -&gt; TEST_LOGIC_RESET',h:'1',c:'g'}
+]}
+
+],
+},
+dummyEnd:0
+};
+processFsmData(g_data);

@@ -1,0 +1,1050 @@
+# QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+# Start time: 23:14:02 on Nov 27,2026
+# vlog -sv ../BUGS/jtag_tap_bug1.sv 
+# -- Compiling module jtag_tap
+# 
+# Top level modules:
+# 	jtag_tap
+# End time: 23:14:02 on Nov 27,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+# Start time: 23:14:02 on Nov 27,2026
+# vlog -sv ../TEST/jtag_pkg.sv ../TOP/jtag_sva.sv ../TOP/jtag_top.sv "+incdir+../ENV" "+incdir+../TEST" "+incdir+../TOP" 
+# -- Compiling interface jtag_if
+# -- Compiling package jtag_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) ../TEST/jtag_pkg.sv(6): Using implicit +incdir+C:/questasim64_10.7c/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling module jtag_sva
+# -- Importing package jtag_pkg
+# -- Compiling package jtag_top_sv_unit
+# -- Importing package jtag_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Compiling module jtag_top
+# 
+# Top level modules:
+# 	jtag_top
+# End time: 23:14:03 on Nov 27,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -vopt -onfinish stop jtag_top "+UVM_TESTNAME=jtag_regression_tc8" "+UVM_MAX_QUIT_COUNT=200,NO" 
+# Start time: 23:14:03 on Nov 27,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Sim-64
+# //  Version 10.7c win64 Aug 18 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.jtag_if(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.jtag_pkg(fast)
+# Loading work.jtag_top_sv_unit(fast)
+# Loading work.jtag_top(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading C:/questasim64_10.7c/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(216) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test jtag_regression_tc8...
+# UVM_INFO @ 0: reporter [MAXQUITSET] '+UVM_MAX_QUIT_COUNT=200,NO' provided on the command line is being applied.
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# ------------------------------------------------------------------
+# Name                       Type                        Size  Value
+# ------------------------------------------------------------------
+# uvm_test_top               jtag_regression_tc8         -     @472 
+#   env_h                    jtag_env                    -     @485 
+#     agent_h                jtag_agent                  -     @492 
+#       drv_h                jtag_drv                    -     @586 
+#         rsp_port           uvm_analysis_port           -     @601 
+#         seq_item_port      uvm_seq_item_pull_port      -     @593 
+#       mon_h                jtag_mon                    -     @571 
+#         analysis_port      uvm_analysis_port           -     @578 
+#       seqr_h               jtag_seqr                   -     @609 
+#         rsp_export         uvm_analysis_export         -     @616 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @710 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     cov_h                  jtag_cov                    -     @553 
+#       analysis_imp         uvm_analysis_imp            -     @560 
+#     sb_h                   jtag_sb                     -     @499 
+#       mon_analysis_fifo    uvm_tlm_analysis_fifo #(T)  -     @506 
+#         analysis_export    uvm_analysis_imp            -     @545 
+#         get_ap             uvm_analysis_port           -     @537 
+#         get_peek_export    uvm_get_peek_imp            -     @521 
+#         put_ap             uvm_analysis_port           -     @529 
+#         put_export         uvm_put_imp                 -     @513 
+# ------------------------------------------------------------------
+# 
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 75 ns Started: 65 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 155: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 16 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 395: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #1 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 395: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #1 data does not match the specification
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 495: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #1 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 575 ns Started: 565 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 655: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 66 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 895: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #2 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 895: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #2 data does not match the specification
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 995: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #2 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 1105 ns Started: 1095 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1185: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 119 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 1425: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #3 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 1425: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #3 data does not match the specification
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1480: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state TEST_LOGIC_RESET
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1540: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1670: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1810: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state CAPTURE_DR
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 1835 ns Started: 1825 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1960: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state SHIFT_DR
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 1975 ns Started: 1965 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 1985: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #4 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2110: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state EXIT1_DR
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 2125 ns Started: 2115 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2270: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state PAUSE_DR
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 2275 ns Started: 2265 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 2435 ns Started: 2425 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2440: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state EXIT2_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2600: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state UPDATE_DR
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 2605 ns Started: 2595 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2740: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state SELECT_IR_SCAN
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2890: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state CAPTURE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3050: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state SHIFT_IR
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 3075: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #3 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3210: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state EXIT1_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3380: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state PAUSE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3560: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state EXIT2_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3730: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state UPDATE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 3840: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state TEST_LOGIC_RESET
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 3870: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 3970: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4080: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state CAPTURE_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4200: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state SHIFT_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4320: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state EXIT1_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4450: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state PAUSE_DR
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 4455 ns Started: 4445 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 4585 ns Started: 4575 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4590: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state EXIT2_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4720: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state UPDATE_DR
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 4725 ns Started: 4715 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4830: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state SELECT_IR_SCAN
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4950: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state CAPTURE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5080: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state SHIFT_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5210: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state EXIT1_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5350: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state PAUSE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5500: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state EXIT2_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5640: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state UPDATE_IR
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 5785 ns Started: 5775 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 5865: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 587 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 6105: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #5 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 6105: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #5 data does not match the specification
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6150: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6160: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> CAPTURE_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6170: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> SHIFT_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6180: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> EXIT1_DR
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 6185 ns Started: 6175 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6190: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> PAUSE_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6200: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> EXIT2_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6210: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> UPDATE_DR
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 6215: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #6 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6220: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6230: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> SELECT_IR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6240: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> CAPTURE_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6250: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> SHIFT_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6260: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> EXIT1_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6270: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> PAUSE_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6280: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> EXIT2_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6290: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> UPDATE_IR
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 6295: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #4 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6300: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6310: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> SELECT_IR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6320: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> TEST_LOGIC_RESET
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6330: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6390: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : TEST_LOGIC_RESET --TMS=0--> RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6450: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : TEST_LOGIC_RESET --TMS=1--> TEST_LOGIC_RESET
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6520: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : RUN_TEST_IDLE --TMS=0--> RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6530: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : RUN_TEST_IDLE --TMS=1--> SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6540: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SELECT_DR_SCAN --TMS=0--> CAPTURE_DR
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 6565 ns Started: 6555 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6620: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SELECT_DR_SCAN --TMS=1--> SELECT_IR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6710: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : CAPTURE_DR --TMS=0--> SHIFT_DR
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 6725 ns Started: 6715 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 6735: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #7 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6800: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : CAPTURE_DR --TMS=1--> EXIT1_DR
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 6815 ns Started: 6805 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6900: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SHIFT_DR --TMS=0--> SHIFT_DR
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 6905 ns Started: 6895 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6910: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SHIFT_DR --TMS=1--> EXIT1_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6920: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT1_DR --TMS=0--> PAUSE_DR
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 6945: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #8 : register = IDCODE | length = 2 | TDI in = 0x0 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7020: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT1_DR --TMS=1--> UPDATE_DR
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 7025 ns Started: 7015 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 7125 ns Started: 7115 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7130: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : PAUSE_DR --TMS=0--> PAUSE_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7140: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : PAUSE_DR --TMS=1--> EXIT2_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7150: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT2_DR --TMS=0--> SHIFT_DR
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 7175: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #9 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 7255 ns Started: 7245 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7270: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT2_DR --TMS=1--> UPDATE_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7280: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : UPDATE_DR --TMS=0--> RUN_TEST_IDLE
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 7385 ns Started: 7375 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7390: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : UPDATE_DR --TMS=1--> SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7480: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SELECT_IR_SCAN --TMS=0--> CAPTURE_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7570: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SELECT_IR_SCAN --TMS=1--> TEST_LOGIC_RESET
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7670: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : CAPTURE_IR --TMS=0--> SHIFT_IR
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 7695: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #5 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7770: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : CAPTURE_IR --TMS=1--> EXIT1_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7880: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SHIFT_IR --TMS=0--> SHIFT_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7890: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SHIFT_IR --TMS=1--> EXIT1_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7900: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT1_IR --TMS=0--> PAUSE_IR
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 7925: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #6 : length = 2 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8010: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT1_IR --TMS=1--> UPDATE_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8130: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : PAUSE_IR --TMS=0--> PAUSE_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8140: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : PAUSE_IR --TMS=1--> EXIT2_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8150: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT2_IR --TMS=0--> SHIFT_IR
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 8175: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #7 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8280: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT2_IR --TMS=1--> UPDATE_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8290: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : UPDATE_IR --TMS=0--> RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8410: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : UPDATE_IR --TMS=1--> SELECT_DR_SCAN
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 8725 ns Started: 8715 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 8785: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #10 : register = IDCODE | length = 6 | TDI in = 0x0 | TDO out = 0x17 | expected = 0x17 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 8865 ns Started: 8855 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 9085: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #8 : length = 6 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 9280: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0000
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 9375: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #9 : length = 4 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 9785: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #11 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 9790: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0001
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 9885: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #10 : length = 4 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0001 (IDCODE) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 9935 ns Started: 9925 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10015: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1002 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 10295: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #12 : register = IDCODE | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0xf1cafe057 | expected = 0xf1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 10295: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #12 data does not match the specification
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 10300: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0010
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 10395: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #11 : length = 4 | TDI in = 0x2 | TDO out = 0x1 | expected = 0x1 | new instruction = 0010 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 10805: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #13 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 10810: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0011
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 10905: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #12 : length = 4 | TDI in = 0x3 | TDO out = 0x1 | expected = 0x1 | new instruction = 0011 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 11315: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #14 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 11320: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0100
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 11415: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #13 : length = 4 | TDI in = 0x4 | TDO out = 0x1 | expected = 0x1 | new instruction = 0100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 11825: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #15 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 11830: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0101
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 11925: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #14 : length = 4 | TDI in = 0x5 | TDO out = 0x1 | expected = 0x1 | new instruction = 0101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 12335: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #16 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 12340: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0110
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 12435: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #15 : length = 4 | TDI in = 0x6 | TDO out = 0x1 | expected = 0x1 | new instruction = 0110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 12845: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #17 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 12850: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0111
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 12945: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #16 : length = 4 | TDI in = 0x7 | TDO out = 0x1 | expected = 0x1 | new instruction = 0111 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 13355: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #18 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 13360: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 1000
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 13455: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #17 : length = 4 | TDI in = 0x8 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 13865: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #19 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 13870: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 1001
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 13965: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #18 : length = 4 | TDI in = 0x9 | TDO out = 0x1 | expected = 0x1 | new instruction = 1001 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 14375: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #20 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 14380: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 1010
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 14475: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #19 : length = 4 | TDI in = 0xa | TDO out = 0x1 | expected = 0x1 | new instruction = 1010 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 14885: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #21 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 14890: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 1011
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 14985: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #20 : length = 4 | TDI in = 0xb | TDO out = 0x1 | expected = 0x1 | new instruction = 1011 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 15395: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #22 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 15400: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 1100
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 15495: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #21 : length = 4 | TDI in = 0xc | TDO out = 0x1 | expected = 0x1 | new instruction = 1100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 15905: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #23 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 15910: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 1101
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 16005: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #22 : length = 4 | TDI in = 0xd | TDO out = 0x1 | expected = 0x1 | new instruction = 1101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 16415: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #24 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 16420: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 1110
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 16515: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #23 : length = 4 | TDI in = 0xe | TDO out = 0x1 | expected = 0x1 | new instruction = 1110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 16925: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #25 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 16930: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 1111
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 17025: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #24 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 17435: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #26 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 17535: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #25 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 17665: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #27 : register = BYPASS | length = 8 | TDI in = 0x5a | TDO out = 0xb4 | expected = 0xb4 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 17765: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #26 : length = 4 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0001 (IDCODE) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 17815 ns Started: 17805 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 17895: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1790 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 18135: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #28 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 18135: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #28 data does not match the specification
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 18235: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #27 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 18365: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #29 : register = BYPASS | length = 8 | TDI in = 0xc3 | TDO out = 0x86 | expected = 0x86 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 18445 ns Started: 18435 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 18525: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1853 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 18765: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #30 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 18765: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #30 data does not match the specification
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 18865: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #28 : length = 4 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0001 (IDCODE) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 18915 ns Started: 18905 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 18995: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1900 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 19235: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #31 : register = IDCODE | length = 32 | TDI in = 0xffffffff | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 19235: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #31 data does not match the specification
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 19285 ns Started: 19275 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 19365: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1937 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 19925: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #32 : register = IDCODE | length = 64 | TDI in = 0xdeadbeef00000000 | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 19925: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #32 data does not match the specification
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 19975 ns Started: 19965 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 20055: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 2006 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 20295: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #33 : register = IDCODE | length = 32 | TDI in = 0xfc0091fc | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 20295: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #33 data does not match the specification
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 20345 ns Started: 20335 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 20425: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 2043 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 20665: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #34 : register = IDCODE | length = 32 | TDI in = 0xcf7d51ec | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 20665: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #34 data does not match the specification
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 20715 ns Started: 20705 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 20795: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 2080 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 21035: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #35 : register = IDCODE | length = 32 | TDI in = 0xbb3c4615 | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 21035: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #35 data does not match the specification
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 21085 ns Started: 21075 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 21165: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 2117 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 21405: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #36 : register = IDCODE | length = 32 | TDI in = 0xd7fb45b0 | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 21405: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #36 data does not match the specification
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 21455 ns Started: 21445 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 21535: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 2154 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 21615: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #37 : register = IDCODE | length = 16 | TDI in = 0x0 | TDO out = 0xe057 | expected = 0xe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 21615: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #37 data does not match the specification
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 21745: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #29 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 21805: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #38 : register = BYPASS | length = 1 | TDI in = 0x1 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 21875: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #39 : register = BYPASS | length = 2 | TDI in = 0x3 | TDO out = 0x2 | expected = 0x2 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 22005: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #40 : register = BYPASS | length = 8 | TDI in = 0xa5 | TDO out = 0x4a | expected = 0x4a --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 22375: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #41 : register = BYPASS | length = 32 | TDI in = 0x12345678 | TDO out = 0x2468acf0 | expected = 0x2468acf0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 23065: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #42 : register = BYPASS | length = 64 | TDI in = 0x451042250c6594a7 | TDO out = 0x8a20844a18cb294e | expected = 0x8a20844a18cb294e --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 23455: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #43 : register = BYPASS | length = 34 | TDI in = 0x2b4c23942 | TDO out = 0x169847284 | expected = 0x169847284 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 24015: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #44 : register = BYPASS | length = 51 | TDI in = 0x346517c1cba8d | TDO out = 0x68ca2f839751a | expected = 0x68ca2f839751a --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 24235: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #45 : register = BYPASS | length = 17 | TDI in = 0x1ac56 | TDO out = 0x158ac | expected = 0x158ac --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 24515: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #46 : register = BYPASS | length = 23 | TDI in = 0x3c6182 | TDO out = 0x78c304 | expected = 0x78c304 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 24935: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #47 : register = BYPASS | length = 37 | TDI in = 0x3db2f463f | TDO out = 0x7b65e8c7e | expected = 0x7b65e8c7e --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 25415: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #48 : register = BYPASS | length = 43 | TDI in = 0xad5aedda0d | TDO out = 0x15ab5dbb41a | expected = 0x15ab5dbb41a --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 25725: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #49 : register = BYPASS | length = 26 | TDI in = 0x2cd19a4 | TDO out = 0x19a3348 | expected = 0x19a3348 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 26235: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #50 : register = BYPASS | length = 46 | TDI in = 0x11a06fa02d61 | TDO out = 0x2340df405ac2 | expected = 0x2340df405ac2 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 26925: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #51 : register = BYPASS | length = 64 | TDI in = 0xc93f9dcdbdc3916f | TDO out = 0x927f3b9b7b8722de | expected = 0x927f3b9b7b8722de --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 27505: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #52 : register = BYPASS | length = 53 | TDI in = 0x1417f3ef8ccf7a | TDO out = 0x82fe7df199ef4 | expected = 0x82fe7df199ef4 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 27605: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #30 : length = 4 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 27815: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #53 : register = BYPASS | length = 16 | TDI in = 0xbeef | TDO out = 0x7dde | expected = 0x7dde --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 27915: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #31 : length = 4 | TDI in = 0x2 | TDO out = 0x1 | expected = 0x1 | new instruction = 0010 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 28125: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #54 : register = BYPASS | length = 16 | TDI in = 0xbeef | TDO out = 0x7dde | expected = 0x7dde --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 28225: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #32 : length = 4 | TDI in = 0x7 | TDO out = 0x1 | expected = 0x1 | new instruction = 0111 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 28435: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #55 : register = BYPASS | length = 16 | TDI in = 0xbeef | TDO out = 0x7dde | expected = 0x7dde --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 28535: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #33 : length = 4 | TDI in = 0xe | TDO out = 0x1 | expected = 0x1 | new instruction = 1110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 28745: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #56 : register = BYPASS | length = 16 | TDI in = 0xbeef | TDO out = 0x7dde | expected = 0x7dde --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 28875: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #34 : length = 4 | TDI in = 0x6 | TDO out = 0x1 | expected = 0x1 | new instruction = 0110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 29095: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #57 : register = BYPASS | length = 11 | TDI in = 0x5f4 | TDO out = 0x3e8 | expected = 0x3e8 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 29195: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #35 : length = 4 | TDI in = 0xb | TDO out = 0x1 | expected = 0x1 | new instruction = 1011 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 29835: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #58 : register = BYPASS | length = 59 | TDI in = 0x1554e7dbe22e0ca | TDO out = 0x2aa9cfb7c45c194 | expected = 0x2aa9cfb7c45c194 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 29935: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #36 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 30615: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #59 : register = BYPASS | length = 57 | TDI in = 0x1965bc72da0bbb5 | TDO out = 0x12cb78e5b41776a | expected = 0x12cb78e5b41776a --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 30715: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #37 : length = 4 | TDI in = 0x2 | TDO out = 0x1 | expected = 0x1 | new instruction = 0010 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 31005: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #60 : register = BYPASS | length = 18 | TDI in = 0x1fcb4 | TDO out = 0x3f968 | expected = 0x3f968 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 31105: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #38 : length = 4 | TDI in = 0x9 | TDO out = 0x1 | expected = 0x1 | new instruction = 1001 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 31345: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #61 : register = BYPASS | length = 19 | TDI in = 0x5737a | TDO out = 0x2e6f4 | expected = 0x2e6f4 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 31445: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #39 : length = 4 | TDI in = 0xe | TDO out = 0x1 | expected = 0x1 | new instruction = 1110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 31875: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #62 : register = BYPASS | length = 38 | TDI in = 0x3894f1a180 | TDO out = 0x3129e34300 | expected = 0x3129e34300 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 31975: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #40 : length = 4 | TDI in = 0x5 | TDO out = 0x1 | expected = 0x1 | new instruction = 0101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 32315: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #63 : register = BYPASS | length = 23 | TDI in = 0x2fa1 | TDO out = 0x5f42 | expected = 0x5f42 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 32415: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #41 : length = 4 | TDI in = 0x9 | TDO out = 0x1 | expected = 0x1 | new instruction = 1001 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 32755: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #64 : register = BYPASS | length = 29 | TDI in = 0x50ac4a2 | TDO out = 0xa158944 | expected = 0xa158944 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 32855: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #42 : length = 4 | TDI in = 0xa | TDO out = 0x1 | expected = 0x1 | new instruction = 1010 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 32915: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #65 : register = BYPASS | length = 1 | TDI in = 0x1 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 33015: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #43 : length = 4 | TDI in = 0x2 | TDO out = 0x1 | expected = 0x1 | new instruction = 0010 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 33215: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #66 : register = BYPASS | length = 9 | TDI in = 0xcc | TDO out = 0x198 | expected = 0x198 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 33315: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #44 : length = 4 | TDI in = 0x5 | TDO out = 0x1 | expected = 0x1 | new instruction = 0101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 33895: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #67 : register = BYPASS | length = 47 | TDI in = 0x1087b53377a7 | TDO out = 0x210f6a66ef4e | expected = 0x210f6a66ef4e --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 33995: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #45 : length = 4 | TDI in = 0x5 | TDO out = 0x1 | expected = 0x1 | new instruction = 0101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 34145: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #68 : register = BYPASS | length = 10 | TDI in = 0x182 | TDO out = 0x304 | expected = 0x304 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 34245: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #46 : length = 4 | TDI in = 0xd | TDO out = 0x1 | expected = 0x1 | new instruction = 1101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 34455: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #69 : register = BYPASS | length = 10 | TDI in = 0x47 | TDO out = 0x8e | expected = 0x8e --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 34555: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #47 : length = 4 | TDI in = 0x3 | TDO out = 0x1 | expected = 0x1 | new instruction = 0011 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 34705: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #70 : register = BYPASS | length = 10 | TDI in = 0x252 | TDO out = 0xa4 | expected = 0xa4 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 34805: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #48 : length = 4 | TDI in = 0xe | TDO out = 0x1 | expected = 0x1 | new instruction = 1110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 35475: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #71 : register = BYPASS | length = 56 | TDI in = 0x9ac1f95680366 | TDO out = 0x13583f2ad006cc | expected = 0x13583f2ad006cc --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 35575: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #49 : length = 4 | TDI in = 0x9 | TDO out = 0x1 | expected = 0x1 | new instruction = 1001 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 36165: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #72 : register = BYPASS | length = 54 | TDI in = 0x37a82d4f54f1b6 | TDO out = 0x2f505a9ea9e36c | expected = 0x2f505a9ea9e36c --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 36265: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #50 : length = 4 | TDI in = 0xd | TDO out = 0x1 | expected = 0x1 | new instruction = 1101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 36515: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #73 : register = BYPASS | length = 20 | TDI in = 0x46d16 | TDO out = 0x8da2c | expected = 0x8da2c --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 36615: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #51 : length = 4 | TDI in = 0x4 | TDO out = 0x1 | expected = 0x1 | new instruction = 0100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 37215: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #74 : register = BYPASS | length = 49 | TDI in = 0x18fbc6693c262 | TDO out = 0x11f78cd2784c4 | expected = 0x11f78cd2784c4 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 37315: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #52 : length = 4 | TDI in = 0x3 | TDO out = 0x1 | expected = 0x1 | new instruction = 0011 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 37755: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #75 : register = BYPASS | length = 39 | TDI in = 0x159ec0ff19 | TDO out = 0x2b3d81fe32 | expected = 0x2b3d81fe32 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 37855: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #53 : length = 4 | TDI in = 0xa | TDO out = 0x1 | expected = 0x1 | new instruction = 1010 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 38125: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #76 : register = BYPASS | length = 16 | TDI in = 0xb91c | TDO out = 0x7238 | expected = 0x7238 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 38225: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #54 : length = 4 | TDI in = 0xe | TDO out = 0x1 | expected = 0x1 | new instruction = 1110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 38515: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #77 : register = BYPASS | length = 18 | TDI in = 0x2c954 | TDO out = 0x192a8 | expected = 0x192a8 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 38615: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #55 : length = 4 | TDI in = 0x4 | TDO out = 0x1 | expected = 0x1 | new instruction = 0100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 38795: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #78 : register = BYPASS | length = 7 | TDI in = 0x18 | TDO out = 0x30 | expected = 0x30 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 38895: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #56 : length = 4 | TDI in = 0x3 | TDO out = 0x1 | expected = 0x1 | new instruction = 0011 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 38995: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #79 : register = BYPASS | length = 5 | TDI in = 0x1b | TDO out = 0x16 | expected = 0x16 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 39095: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #57 : length = 4 | TDI in = 0xb | TDO out = 0x1 | expected = 0x1 | new instruction = 1011 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 39685: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #80 : register = BYPASS | length = 54 | TDI in = 0x2b0c21c05016f6 | TDO out = 0x16184380a02dec | expected = 0x16184380a02dec --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 39785: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #58 : length = 4 | TDI in = 0x6 | TDO out = 0x1 | expected = 0x1 | new instruction = 0110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 39915: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #81 : register = BYPASS | length = 8 | TDI in = 0x5c | TDO out = 0xb8 | expected = 0xb8 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 40015: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #59 : length = 4 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 40545: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #82 : register = BYPASS | length = 42 | TDI in = 0x25cf568ea6d | TDO out = 0xb9ead1d4da | expected = 0xb9ead1d4da --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 40645: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #60 : length = 4 | TDI in = 0xa | TDO out = 0x1 | expected = 0x1 | new instruction = 1010 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 40895: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #83 : register = BYPASS | length = 14 | TDI in = 0x242d | TDO out = 0x85a | expected = 0x85a --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 40995: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #61 : length = 4 | TDI in = 0x6 | TDO out = 0x1 | expected = 0x1 | new instruction = 0110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 41455: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #84 : register = BYPASS | length = 41 | TDI in = 0x1eb403f227e | TDO out = 0x1d6807e44fc | expected = 0x1d6807e44fc --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 41555: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #62 : length = 4 | TDI in = 0x6 | TDO out = 0x1 | expected = 0x1 | new instruction = 0110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 42195: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #85 : register = BYPASS | length = 53 | TDI in = 0x1f9967999152db | TDO out = 0x1f32cf3322a5b6 | expected = 0x1f32cf3322a5b6 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 42295: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #63 : length = 4 | TDI in = 0xd | TDO out = 0x1 | expected = 0x1 | new instruction = 1101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 42655: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #86 : register = BYPASS | length = 31 | TDI in = 0x597c69b7 | TDO out = 0x32f8d36e | expected = 0x32f8d36e --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 42715: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #87 : register = BYPASS | length = 1 | TDI in = 0x1 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 42985: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #64 : length = 4 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 43145: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #88 : register = BYPASS | length = 3 | TDI in = 0x2 | TDO out = 0x4 | expected = 0x4 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 43315: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #89 : register = BYPASS | length = 6 | TDI in = 0x3f | TDO out = 0x3e | expected = 0x3e --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 43525: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #90 : register = BYPASS | length = 5 | TDI in = 0x1c | TDO out = 0x18 | expected = 0x18 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 43605 ns Started: 43595 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 43615: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #91 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 43665 ns Started: 43655 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 43805: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #65 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 44095: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #66 : length = 2 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0100 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 44205 ns Started: 44195 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 44305: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #92 : register = IDCODE | length = 4 | TDI in = 0x7 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 44535: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #67 : length = 2 | TDI in = 0x3 | TDO out = 0x1 | expected = 0x1 | new instruction = 1100 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 44895 ns Started: 44885 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 44965: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #93 : register = IDCODE | length = 4 | TDI in = 0x7 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 45025 ns Started: 45015 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 45075: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #94 : register = IDCODE | length = 3 | TDI in = 0x0 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 45115 ns Started: 45105 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 45175 ns Started: 45165 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 45185: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #95 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 45225 ns Started: 45215 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 45265: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #96 : register = IDCODE | length = 2 | TDI in = 0x2 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 45395 ns Started: 45385 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 45475 ns Started: 45465 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 45515 ns Started: 45505 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 45555 ns Started: 45545 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 45575: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #97 : register = IDCODE | length = 2 | TDI in = 0x3 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 45635: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #68 : length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 46085 ns Started: 46075 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 46245 ns Started: 46235 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 46285 ns Started: 46275 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 46525 ns Started: 46515 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 46565 ns Started: 46555 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 46635: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #98 : register = IDCODE | length = 4 | TDI in = 0xa | TDO out = 0x7 | expected = 0x7 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 46675 ns Started: 46665 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 46735: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #99 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 46865: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #69 : length = 3 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 47055 ns Started: 47045 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 47135 ns Started: 47125 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 47315: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #100 : register = IDCODE | length = 7 | TDI in = 0x4d | TDO out = 0x57 | expected = 0x57 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 47375 ns Started: 47365 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 47585 ns Started: 47575 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 47835 ns Started: 47825 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 47845: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #101 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 47885 ns Started: 47875 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 47905: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #102 : register = IDCODE | length = 2 | TDI in = 0x0 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 47945 ns Started: 47935 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 47975: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #103 : register = IDCODE | length = 3 | TDI in = 0x4 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 48015 ns Started: 48005 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 48085: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #104 : register = IDCODE | length = 2 | TDI in = 0x3 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 48155: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #70 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 48315: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #71 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 48615 ns Started: 48605 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 48835: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #105 : register = IDCODE | length = 7 | TDI in = 0x4b | TDO out = 0x57 | expected = 0x57 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 48915: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #72 : length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 49035: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #73 : length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 49195 ns Started: 49185 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 49205: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #106 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 49265 ns Started: 49255 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 49315: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #107 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 49355 ns Started: 49345 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 49415: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #108 : register = IDCODE | length = 2 | TDI in = 0x1 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 49475 ns Started: 49465 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 49515 ns Started: 49505 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 49565: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #109 : register = IDCODE | length = 5 | TDI in = 0xb | TDO out = 0x17 | expected = 0x17 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 49635 ns Started: 49625 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 49765 ns Started: 49755 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 49945 ns Started: 49935 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 50015 ns Started: 50005 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 50025: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #110 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 50065 ns Started: 50055 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 50125: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #111 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 50165 ns Started: 50155 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 50205 ns Started: 50195 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 50435 ns Started: 50425 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 50445: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #112 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 50485 ns Started: 50475 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 50525 ns Started: 50515 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 50555: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #113 : register = IDCODE | length = 3 | TDI in = 0x1 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 50725: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #74 : length = 5 | TDI in = 0x4 | TDO out = 0x1 | expected = 0x1 | new instruction = 0010 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 50855: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #75 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 50915: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #76 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 51105: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #77 : length = 3 | TDI in = 0x6 | TDO out = 0x1 | expected = 0x1 | new instruction = 1100 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 51205 ns Started: 51195 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 51285: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #114 : register = IDCODE | length = 2 | TDI in = 0x2 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 51335 ns Started: 51325 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 51545: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #115 : register = IDCODE | length = 4 | TDI in = 0x4 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 51605 ns Started: 51595 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 51635: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #116 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 51675 ns Started: 51665 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 51905 ns Started: 51895 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 52045 ns Started: 52035 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 52055: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #117 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 52145: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #78 : length = 3 | TDI in = 0x2 | TDO out = 0x1 | expected = 0x1 | new instruction = 0100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 52285: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #118 : register = BYPASS | length = 3 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 52395: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #119 : register = BYPASS | length = 4 | TDI in = 0xb | TDO out = 0x6 | expected = 0x6 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 52635 ns Started: 52625 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 52765: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #79 : length = 3 | TDI in = 0x7 | TDO out = 0x1 | expected = 0x1 | new instruction = 1110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 52915: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #120 : register = BYPASS | length = 1 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 53005: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #121 : register = BYPASS | length = 1 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 53215 ns Started: 53205 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 53255 ns Started: 53245 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 53325: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #122 : register = IDCODE | length = 2 | TDI in = 0x3 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 53445 ns Started: 53435 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 53585: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #80 : length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 53655: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #123 : register = BYPASS | length = 1 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 53735 ns Started: 53725 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 53815 ns Started: 53805 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 53855 ns Started: 53845 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 53995: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 5400 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 54005: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #124 : register = IDCODE | length = 9 | TDI in = 0x29 | TDO out = 0x57 | expected = 0x157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 54005: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #124 data does not match the specification
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 54045 ns Started: 54035 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 54055: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #125 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 54115 ns Started: 54105 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 54185 ns Started: 54175 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 54245 ns Started: 54235 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 54305 ns Started: 54295 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 54325: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #126 : register = IDCODE | length = 2 | TDI in = 0x0 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 54605: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #81 : length = 3 | TDI in = 0x2 | TDO out = 0x1 | expected = 0x1 | new instruction = 0100 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 54695 ns Started: 54685 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 54925: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #127 : register = IDCODE | length = 7 | TDI in = 0x4b | TDO out = 0x57 | expected = 0x57 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 54965 ns Started: 54955 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 55015: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #128 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 55135: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #82 : length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 55305: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #129 : register = BYPASS | length = 1 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 55435 ns Started: 55425 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 55605 ns Started: 55595 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 55665: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #130 : register = IDCODE | length = 3 | TDI in = 0x3 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 55705 ns Started: 55695 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 55805 ns Started: 55795 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 55875 ns Started: 55865 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 55885: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #131 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 55925 ns Started: 55915 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 56005: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #132 : register = IDCODE | length = 2 | TDI in = 0x0 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 56075: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #83 : length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 56205: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #133 : register = BYPASS | length = 2 | TDI in = 0x1 | TDO out = 0x2 | expected = 0x2 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 56395 ns Started: 56385 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 56665: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #84 : length = 4 | TDI in = 0x3 | TDO out = 0x1 | expected = 0x1 | new instruction = 0011 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 56815 ns Started: 56805 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 56835: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #134 : register = IDCODE | length = 2 | TDI in = 0x1 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 56925 ns Started: 56915 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 56985 ns Started: 56975 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 57065: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #85 : length = 2 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 57315: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #86 : length = 5 | TDI in = 0x19 | TDO out = 0x11 | expected = 0x11 | new instruction = 1100 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 57425 ns Started: 57415 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 57485 ns Started: 57475 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 57645 ns Started: 57635 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 57655: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #135 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 57745 ns Started: 57735 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 57775: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #136 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 57915 ns Started: 57905 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 57985 ns Started: 57975 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 58035 ns Started: 58025 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 58125: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #137 : register = IDCODE | length = 4 | TDI in = 0xd | TDO out = 0x7 | expected = 0x7 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 58165 ns Started: 58155 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 58175: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #138 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 58225 ns Started: 58215 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 58285: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #139 : register = IDCODE | length = 4 | TDI in = 0x8 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 58345: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #87 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 58505 ns Started: 58495 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 58635: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #140 : register = IDCODE | length = 2 | TDI in = 0x2 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 58685 ns Started: 58675 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 58735: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #141 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 58785 ns Started: 58775 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 58935: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #88 : length = 5 | TDI in = 0x8 | TDO out = 0x1 | expected = 0x1 | new instruction = 0100 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 59315 ns Started: 59305 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 59395: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #142 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 59435 ns Started: 59425 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 59495 ns Started: 59485 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 59525: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #143 : register = IDCODE | length = 3 | TDI in = 0x7 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 59585 ns Started: 59575 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 59725 ns Started: 59715 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 59765 ns Started: 59755 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 59795: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #144 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 59895 ns Started: 59885 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 59955: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #145 : register = IDCODE | length = 2 | TDI in = 0x3 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 59995 ns Started: 59985 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 60035: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #146 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 60085 ns Started: 60075 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 60135: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #147 : register = IDCODE | length = 3 | TDI in = 0x6 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 60205 ns Started: 60195 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 60285 ns Started: 60275 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 60375: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #148 : register = IDCODE | length = 3 | TDI in = 0x4 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 60575: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #89 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 60665: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #149 : register = BYPASS | length = 2 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 60745: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #90 : length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 60825 ns Started: 60815 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 60835: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #150 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 60875 ns Started: 60865 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 60885: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #151 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 60965: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #91 : length = 2 | TDI in = 0x3 | TDO out = 0x1 | expected = 0x1 | new instruction = 1100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 61205: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #92 : length = 11 | TDI in = 0x2f8 | TDO out = 0x781 | expected = 0x781 | new instruction = 0101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 61335: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #152 : register = BYPASS | length = 4 | TDI in = 0x2 | TDO out = 0x4 | expected = 0x4 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 61505 ns Started: 61495 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 61545: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #153 : register = IDCODE | length = 4 | TDI in = 0x6 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 61605: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #93 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 61825 ns Started: 61815 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 62295 ns Started: 62285 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 62335 ns Started: 62325 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 62405: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #154 : register = IDCODE | length = 7 | TDI in = 0x7c | TDO out = 0x57 | expected = 0x57 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 62455 ns Started: 62445 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 62635: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #94 : length = 3 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 62785: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #155 : register = BYPASS | length = 2 | TDI in = 0x3 | TDO out = 0x2 | expected = 0x2 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 63015 ns Started: 63005 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 63105: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #156 : register = IDCODE | length = 6 | TDI in = 0x5 | TDO out = 0x17 | expected = 0x17 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 63315: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #95 : length = 8 | TDI in = 0x2c | TDO out = 0xc1 | expected = 0xc1 | new instruction = 0010 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 63415 ns Started: 63405 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 63535 ns Started: 63525 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 63645: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #157 : register = IDCODE | length = 5 | TDI in = 0x1 | TDO out = 0x17 | expected = 0x17 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 63725 ns Started: 63715 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 63775 ns Started: 63765 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 63865: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #158 : register = IDCODE | length = 4 | TDI in = 0xe | TDO out = 0x7 | expected = 0x7 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 63905 ns Started: 63895 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 64055 ns Started: 64045 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 64125: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #159 : register = IDCODE | length = 4 | TDI in = 0x1 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 64195: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #96 : length = 2 | TDI in = 0x3 | TDO out = 0x1 | expected = 0x1 | new instruction = 1100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 64335: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #160 : register = BYPASS | length = 2 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 64425: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #97 : length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 64615 ns Started: 64605 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 64735 ns Started: 64725 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 64775 ns Started: 64765 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 64815: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #161 : register = IDCODE | length = 2 | TDI in = 0x1 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 64875 ns Started: 64865 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 65075: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #98 : length = 7 | TDI in = 0xf | TDO out = 0x71 | expected = 0x71 | new instruction = 0001 (IDCODE) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 65115 ns Started: 65105 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 65165: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #162 : register = IDCODE | length = 2 | TDI in = 0x1 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 65215 ns Started: 65205 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 65435: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #163 : register = IDCODE | length = 5 | TDI in = 0x0 | TDO out = 0x17 | expected = 0x17 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 65485 ns Started: 65475 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 65505: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #164 : register = IDCODE | length = 2 | TDI in = 0x3 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 65765: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #99 : length = 2 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 65985 ns Started: 65975 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 66045 ns Started: 66035 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 66195: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #100 : length = 2 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0100 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 66305 ns Started: 66295 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 66445: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #101 : length = 2 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 66495: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #165 : register = BYPASS | length = 1 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 66595 ns Started: 66585 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 66805 ns Started: 66795 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 66955: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #166 : register = IDCODE | length = 5 | TDI in = 0xf | TDO out = 0x17 | expected = 0x17 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 67105: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #102 : length = 3 | TDI in = 0x4 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 67235: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #103 : length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 67325: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #167 : register = BYPASS | length = 1 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 67385: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #168 : register = BYPASS | length = 2 | TDI in = 0x3 | TDO out = 0x2 | expected = 0x2 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 67615 ns Started: 67605 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 67665: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #169 : register = IDCODE | length = 2 | TDI in = 0x3 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 67735 ns Started: 67725 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 67765: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #170 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 67895: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #104 : length = 6 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 68275: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #105 : length = 15 | TDI in = 0x2ad1 | TDO out = 0x2d11 | expected = 0x2d11 | new instruction = 0101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 68465: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #106 : length = 5 | TDI in = 0x1a | TDO out = 0x1 | expected = 0x1 | new instruction = 1101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 68675: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #107 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 68905: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #108 : length = 2 | TDI in = 0x3 | TDO out = 0x1 | expected = 0x1 | new instruction = 1100 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 68995 ns Started: 68985 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 69005: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #171 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 69045 ns Started: 69035 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 69145 ns Started: 69135 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 69205 ns Started: 69195 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 69325: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #172 : register = IDCODE | length = 6 | TDI in = 0x35 | TDO out = 0x17 | expected = 0x17 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 69395 ns Started: 69385 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 69425: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #173 : register = IDCODE | length = 3 | TDI in = 0x3 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 69485 ns Started: 69475 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 69545 ns Started: 69535 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 69635 ns Started: 69625 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 69645: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #174 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 69765 ns Started: 69755 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 69825: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #109 : length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 69875: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #175 : register = BYPASS | length = 1 | TDI in = 0x1 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 70085 ns Started: 70075 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 70145: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #176 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 70245 ns Started: 70235 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 70295: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #177 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 70355 ns Started: 70345 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 70445 ns Started: 70435 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 70475: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #178 : register = IDCODE | length = 3 | TDI in = 0x2 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 70575 ns Started: 70565 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 70655: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #179 : register = IDCODE | length = 3 | TDI in = 0x7 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 70695 ns Started: 70685 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 70735 ns Started: 70725 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 70785: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #180 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 70845 ns Started: 70835 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 70895: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #181 : register = IDCODE | length = 2 | TDI in = 0x3 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 70935 ns Started: 70925 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 71005: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #182 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 71075 ns Started: 71065 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 71155 ns Started: 71145 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 71205: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #183 : register = IDCODE | length = 2 | TDI in = 0x0 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 71345 ns Started: 71335 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 71385: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #184 : register = IDCODE | length = 4 | TDI in = 0x8 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 71515: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #110 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 71625: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #185 : register = BYPASS | length = 2 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 71795 ns Started: 71785 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 71985: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 7199 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 72075: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #186 : register = IDCODE | length = 14 | TDI in = 0x12ae | TDO out = 0x2057 | expected = 0x2157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 72075: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #186 data does not match the specification
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 72275 ns Started: 72265 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 72375: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #111 : length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 72575: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #112 : length = 3 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 72735 ns Started: 72725 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 72815: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 7282 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 73055: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #187 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 73055: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #187 data does not match the specification
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(19) @ 73090: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc7 [TC7_CORNER] 1. IR scan with long pause
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 73315: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #113 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 73445: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #188 : register = BYPASS | length = 8 | TDI in = 0x3c | TDO out = 0x78 | expected = 0x78 --> MATCH
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(24) @ 73450: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc7 [TC7_CORNER] 2. IDCODE read with pause
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 73545: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #114 : length = 4 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0001 (IDCODE) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 73595 ns Started: 73585 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 73735: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 7374 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 73975: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #189 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 73975: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #189 data does not match the specification
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 74025 ns Started: 74015 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 74105: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 7411 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 74405: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #190 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 74405: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #190 data does not match the specification
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(30) @ 74410: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc7 [TC7_CORNER] 3. BYPASS / unused opcode with pause
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 74505: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #115 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 74775: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #191 : register = BYPASS | length = 16 | TDI in = 0x5aa5 | TDO out = 0xb54a | expected = 0xb54a --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 74875: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #116 : length = 4 | TDI in = 0x6 | TDO out = 0x1 | expected = 0x1 | new instruction = 0110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 75145: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #192 : register = BYPASS | length = 16 | TDI in = 0xc3c3 | TDO out = 0x8786 | expected = 0x8786 --> MATCH
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(37) @ 75150: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc7 [TC7_CORNER] 4. 1-bit IDCODE read
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 75245: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #117 : length = 4 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0001 (IDCODE) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 75295 ns Started: 75285 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 75305: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #193 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(42) @ 75310: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc7 [TC7_CORNER] 5. 8-bit IR scan (last 4 bits = BYPASS)
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 75445: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #118 : length = 8 | TDI in = 0xf1 | TDO out = 0x11 | expected = 0x11 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 75535: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #194 : register = BYPASS | length = 4 | TDI in = 0xa | TDO out = 0x4 | expected = 0x4 --> MATCH
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(47) @ 75540: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc7 [TC7_CORNER] 6. Capture -> Exit1 -> Update with no shift
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 75695 ns Started: 75685 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 75775: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 7578 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 76015: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #195 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 76015: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #195 data does not match the specification
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(53) @ 76020: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc7 [TC7_CORNER] 7. Pause -> Exit2 -> Update
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 76065 ns Started: 76055 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 76125: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #196 : register = IDCODE | length = 3 | TDI in = 0x5 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(62) @ 76130: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc7 [TC7_CORNER] 8. Back-to-back DR scans
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 76175 ns Started: 76165 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 76255: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 7626 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 76495: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #197 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 76495: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #197 data does not match the specification
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 76535 ns Started: 76525 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 76615: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 7662 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 76855: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #198 : register = IDCODE | length = 32 | TDI in = 0xffffffff | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 76855: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #198 data does not match the specification
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(71) @ 76860: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc7 [TC7_CORNER] 9. Back-to-back IR scans
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 76955: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #119 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 77045: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #120 : length = 4 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0001 (IDCODE) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 77095 ns Started: 77085 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 77175: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 7718 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 77415: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #199 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 77415: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #199 data does not match the specification
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(81) @ 77420: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc7 [TC7_CORNER] 10. TRST_N during Shift-DR
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 77515: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #121 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 77665 ns Started: 77655 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 77745: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 7775 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 77985: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #200 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 77985: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #200 data does not match the specification
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(90) @ 77990: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc7 [TC7_CORNER] 11. TRST_N during Shift-IR
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 78115 ns Started: 78105 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 78195: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 7820 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 78435: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #201 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 78435: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #201 data does not match the specification
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(98) @ 78440: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc7 [TC7_CORNER] 12. TMS reset during Shift-DR
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 78535: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #122 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 78625: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #202 : register = BYPASS | length = 4 | TDI in = 0x7 | TDO out = 0xe | expected = 0xe --> MATCH
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 78705 ns Started: 78695 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 78785: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 7879 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 79025: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #203 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 79025: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #203 data does not match the specification
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(106) @ 79030: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc7 [TC7_CORNER] 13. Long Test-Logic-Reset / Run-Test-Idle
+# ** Error: A_IDCODE_CAPTURE : wrong IDCODE captured
+#    Time: 79275 ns Started: 79265 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IDCODE_CAPTURE File: ../TOP/jtag_sva.sv Line: 54
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 79355: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 7936 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 79595: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #204 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe057 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 79595: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #204 data does not match the specification
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 79650: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# -----------------------------------------------------------
+#                  JTAG FUNCTIONAL COVERAGE
+# -----------------------------------------------------------
+#  Reset                   : 100.00 %
+#  TAP states              : 100.00 %
+#  State transitions       : 100.00 %
+#  Opcodes loaded          : 100.00 %
+#  Instruction class       : 100.00 %
+#  Instruction x DR state  : 100.00 %
+#  TDI shifted in          : 100.00 %
+#  TDO shifted out         : 100.00 %
+# -----------------------------------------------------------
+#  JTAG - Total Coverage   : 100.00 %
+# -----------------------------------------------------------
+# -----------------------------------------------------------
+#                  ASSERTION COVER SUMMARY
+# -----------------------------------------------------------
+#  C_TRST_RESET        (A_TRST_RESET)          : 55
+#  C_TMS_5_RESET       (A_TMS_5_RESET/TLR)     : 178
+#  C_PAUSE_DR_RESUME   (A_LEGAL_TRANSITION)    : 82
+#  C_PAUSE_IR_RESUME   (A_LEGAL_TRANSITION)    : 35
+#  C_IR_CAPTURE        (A_IR_CAPTURE)          : 176
+#  C_IR_UPDATE         (A_IR_UPDATE/STABLE)    : 164
+#  C_IDCODE_CAPTURE    (A_IDCODE_CAPTURE)      : 196
+#  C_BYPASS_CAPTURE    (A_BYPASS_CAPTURE)      : 107
+#  C_TDO_ENABLE        (A_TDO_ENABLE/EDGE)     : 422
+#  C_IR_SHIFT          (A_IR_SHIFT)            : 444
+#  C_DR_SELECT         (A_DR_SELECT)           : 2074
+#  C_RESET_IN_SHIFT    (TRST_N during a scan)  : 9
+# -----------------------------------------------------------
+# -----------------------------------------------------------
+#                  JTAG SCOREBOARD SUMMARY
+# -----------------------------------------------------------
+#  TCK cycles checked     : 7965
+#  Cycle mismatches       : 27
+#  IR scans checked       : 122
+#  DR scans checked       : 204
+#  Scans matched          : 299
+#  Scans mis-matched      : 27
+#  RESULT                 : TEST FAILED
+# -----------------------------------------------------------
+# 
+# --- UVM Report Summary ---
+# 
+# Quit count :    54 of   200
+# ** Report counts by severity
+# UVM_INFO :  444
+# UVM_WARNING :    0
+# UVM_ERROR :   54
+# UVM_FATAL :    0
+# ** Report counts by id
+# [JTAG_SB]   380
+# [MAXQUITSET]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TC1_RESET]    32
+# [TC2_FSM]    51
+# [TC3_IR]    16
+# [TC7_CORNER]    13
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# ** Note: $finish    : C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 79650 ns  Iteration: 54  Instance: /jtag_top
+# Break in Task uvm_pkg/uvm_root::run_test at C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# Stopped at C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430

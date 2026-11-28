@@ -1,0 +1,346 @@
+# End time: 23:13:49 on Nov 27,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -vopt -onfinish stop -sv_seed 2026 jtag_top "+UVM_TESTNAME=jtag_random_tc6" 
+# Start time: 23:13:49 on Nov 27,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.jtag_if(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.jtag_pkg(fast)
+# Loading work.jtag_top_sv_unit(fast)
+# Loading work.jtag_top(fast)
+# Loading work.jtag_tap(fast)
+# Loading work.jtag_sva(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading C:/questasim64_10.7c/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(216) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test jtag_random_tc6...
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# ------------------------------------------------------------------
+# Name                       Type                        Size  Value
+# ------------------------------------------------------------------
+# uvm_test_top               jtag_random_tc6             -     @472 
+#   env_h                    jtag_env                    -     @485 
+#     agent_h                jtag_agent                  -     @492 
+#       drv_h                jtag_drv                    -     @586 
+#         rsp_port           uvm_analysis_port           -     @601 
+#         seq_item_port      uvm_seq_item_pull_port      -     @593 
+#       mon_h                jtag_mon                    -     @571 
+#         analysis_port      uvm_analysis_port           -     @578 
+#       seqr_h               jtag_seqr                   -     @609 
+#         rsp_export         uvm_analysis_export         -     @616 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @710 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     cov_h                  jtag_cov                    -     @553 
+#       analysis_imp         uvm_analysis_imp            -     @560 
+#     sb_h                   jtag_sb                     -     @499 
+#       mon_analysis_fifo    uvm_tlm_analysis_fifo #(T)  -     @506 
+#         analysis_export    uvm_analysis_imp            -     @545 
+#         get_ap             uvm_analysis_port           -     @537 
+#         get_peek_export    uvm_get_peek_imp            -     @521 
+#         put_ap             uvm_analysis_port           -     @529 
+#         put_export         uvm_put_imp                 -     @513 
+# ------------------------------------------------------------------
+# 
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 125: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #1 : length = 4 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0001 (IDCODE) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 645: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #1 : register = IDCODE | length = 41 | TDI in = 0x18978e91add | TDO out = 0xdd1cafe157 | expected = 0xdd1cafe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 745: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #2 : length = 4 | TDI in = 0x3 | TDO out = 0x1 | expected = 0x1 | new instruction = 0011 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 1005: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #2 : register = BYPASS | length = 15 | TDI in = 0x63f9 | TDO out = 0x47f2 | expected = 0x47f2 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 1105: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #3 : length = 4 | TDI in = 0x5 | TDO out = 0x1 | expected = 0x1 | new instruction = 0101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 1525: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #3 : register = BYPASS | length = 31 | TDI in = 0x51da8e8f | TDO out = 0x23b51d1e | expected = 0x23b51d1e --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 1625: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #4 : length = 4 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0001 (IDCODE) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 1965: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #4 : register = IDCODE | length = 23 | TDI in = 0x3e47a0 | TDO out = 0x2fe157 | expected = 0x2fe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 2065: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #5 : length = 4 | TDI in = 0xa | TDO out = 0x1 | expected = 0x1 | new instruction = 1010 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 2285: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #5 : register = BYPASS | length = 17 | TDI in = 0x1558b | TDO out = 0xab16 | expected = 0xab16 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 2385: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #6 : length = 4 | TDI in = 0xd | TDO out = 0x1 | expected = 0x1 | new instruction = 1101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 2735: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #6 : register = BYPASS | length = 24 | TDI in = 0x567dd8 | TDO out = 0xacfbb0 | expected = 0xacfbb0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 2835: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #7 : length = 4 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0001 (IDCODE) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 3085: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #7 : register = IDCODE | length = 20 | TDI in = 0xa5721 | TDO out = 0xfe157 | expected = 0xfe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 3185: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #8 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 3275: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #8 : register = BYPASS | length = 4 | TDI in = 0x5 | TDO out = 0xa | expected = 0xa --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 3375: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #9 : length = 4 | TDI in = 0xd | TDO out = 0x1 | expected = 0x1 | new instruction = 1101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 3975: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #9 : register = BYPASS | length = 55 | TDI in = 0x3e35df9676e39 | TDO out = 0x7c6bbf2cedc72 | expected = 0x7c6bbf2cedc72 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 4075: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #10 : length = 4 | TDI in = 0x7 | TDO out = 0x1 | expected = 0x1 | new instruction = 0111 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 4565: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #10 : register = BYPASS | length = 44 | TDI in = 0xd6e5dca8563 | TDO out = 0xadcbb950ac6 | expected = 0xadcbb950ac6 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 4665: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #11 : length = 4 | TDI in = 0xe | TDO out = 0x1 | expected = 0x1 | new instruction = 1110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 5075: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #11 : register = BYPASS | length = 36 | TDI in = 0x49b31efbe | TDO out = 0x93663df7c | expected = 0x93663df7c --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 5175: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #12 : length = 4 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 5685: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #12 : register = BYPASS | length = 40 | TDI in = 0x192f6385e4 | TDO out = 0x325ec70bc8 | expected = 0x325ec70bc8 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 5785: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #13 : length = 4 | TDI in = 0x9 | TDO out = 0x1 | expected = 0x1 | new instruction = 1001 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 6205: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #13 : register = BYPASS | length = 31 | TDI in = 0x472cbcf9 | TDO out = 0xe5979f2 | expected = 0xe5979f2 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 6305: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #14 : length = 4 | TDI in = 0x8 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 7035: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #14 : register = BYPASS | length = 62 | TDI in = 0xd6de723645f822e | TDO out = 0x1adbce46c8bf045c | expected = 0x1adbce46c8bf045c --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 7135: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #15 : length = 4 | TDI in = 0x3 | TDO out = 0x1 | expected = 0x1 | new instruction = 0011 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 7725: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #15 : register = BYPASS | length = 54 | TDI in = 0x8c340773808 | TDO out = 0x118680ee7010 | expected = 0x118680ee7010 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 7825: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #16 : length = 4 | TDI in = 0xb | TDO out = 0x1 | expected = 0x1 | new instruction = 1011 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 8335: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #16 : register = BYPASS | length = 40 | TDI in = 0x72ee8e790c | TDO out = 0xe5dd1cf218 | expected = 0xe5dd1cf218 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 8435: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #17 : length = 4 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0001 (IDCODE) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 9035: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #17 : register = IDCODE | length = 49 | TDI in = 0x8914ca2037dc | TDO out = 0x37dc1cafe157 | expected = 0x37dc1cafe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 9135: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #18 : length = 4 | TDI in = 0x4 | TDO out = 0x1 | expected = 0x1 | new instruction = 0100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 9605: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #18 : register = BYPASS | length = 42 | TDI in = 0x2613d5adc99 | TDO out = 0xc27ab5b932 | expected = 0xc27ab5b932 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 9705: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #19 : length = 4 | TDI in = 0x5 | TDO out = 0x1 | expected = 0x1 | new instruction = 0101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 9905: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #19 : register = BYPASS | length = 9 | TDI in = 0x107 | TDO out = 0xe | expected = 0xe --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 10005: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #20 : length = 4 | TDI in = 0x5 | TDO out = 0x1 | expected = 0x1 | new instruction = 0101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 10275: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #20 : register = BYPASS | length = 22 | TDI in = 0x135560 | TDO out = 0x26aac0 | expected = 0x26aac0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 10375: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #21 : length = 4 | TDI in = 0xa | TDO out = 0x1 | expected = 0x1 | new instruction = 1010 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 11025: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #21 : register = BYPASS | length = 60 | TDI in = 0x4884e95b2325c92 | TDO out = 0x9109d2b6464b924 | expected = 0x9109d2b6464b924 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 11125: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #22 : length = 4 | TDI in = 0xa | TDO out = 0x1 | expected = 0x1 | new instruction = 1010 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 11305: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #22 : register = BYPASS | length = 13 | TDI in = 0x61b | TDO out = 0xc36 | expected = 0xc36 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 11405: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #23 : length = 4 | TDI in = 0xc | TDO out = 0x1 | expected = 0x1 | new instruction = 1100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 11645: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #23 : register = BYPASS | length = 19 | TDI in = 0x44666 | TDO out = 0x8ccc | expected = 0x8ccc --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 11745: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #24 : length = 4 | TDI in = 0xc | TDO out = 0x1 | expected = 0x1 | new instruction = 1100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 12285: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #24 : register = BYPASS | length = 49 | TDI in = 0x18b9bd860fc31 | TDO out = 0x11737b0c1f862 | expected = 0x11737b0c1f862 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 12385: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #25 : length = 4 | TDI in = 0xe | TDO out = 0x1 | expected = 0x1 | new instruction = 1110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 13075: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #25 : register = BYPASS | length = 58 | TDI in = 0x235c4f2d4767f40 | TDO out = 0x6b89e5a8ecfe80 | expected = 0x6b89e5a8ecfe80 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 13175: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #26 : length = 4 | TDI in = 0x8 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 13495: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #26 : register = BYPASS | length = 27 | TDI in = 0x6fe6a17 | TDO out = 0x5fcd42e | expected = 0x5fcd42e --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 13595: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #27 : length = 4 | TDI in = 0xa | TDO out = 0x1 | expected = 0x1 | new instruction = 1010 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 14145: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #27 : register = BYPASS | length = 50 | TDI in = 0xe86f0b3420d7 | TDO out = 0x1d0de166841ae | expected = 0x1d0de166841ae --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 14245: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #28 : length = 4 | TDI in = 0xc | TDO out = 0x1 | expected = 0x1 | new instruction = 1100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 14605: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #28 : register = BYPASS | length = 31 | TDI in = 0x27262d7f | TDO out = 0x4e4c5afe | expected = 0x4e4c5afe --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 14705: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #29 : length = 4 | TDI in = 0xb | TDO out = 0x1 | expected = 0x1 | new instruction = 1011 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 14985: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #29 : register = BYPASS | length = 23 | TDI in = 0x1fc454 | TDO out = 0x3f88a8 | expected = 0x3f88a8 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 15085: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #30 : length = 4 | TDI in = 0x8 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 15685: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #30 : register = BYPASS | length = 55 | TDI in = 0x4381b125299cb4 | TDO out = 0x703624a533968 | expected = 0x703624a533968 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 15815: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #31 : register = BYPASS | length = 5 | TDI in = 0xc | TDO out = 0x18 | expected = 0x18 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 16165: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #32 : register = BYPASS | length = 12 | TDI in = 0xbc5 | TDO out = 0x78a | expected = 0x78a --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 16385: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #31 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 16555: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #32 : length = 2 | TDI in = 0x3 | TDO out = 0x1 | expected = 0x1 | new instruction = 1100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 16695: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #33 : register = IDCODE | length = 3 | TDI in = 0x1 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 16855: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #33 : length = 3 | TDI in = 0x6 | TDO out = 0x1 | expected = 0x1 | new instruction = 1100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 16975: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #34 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 17125: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #35 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 17375: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #36 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 17485: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #34 : length = 3 | TDI in = 0x5 | TDO out = 0x1 | expected = 0x1 | new instruction = 1010 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 17715: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #35 : length = 4 | TDI in = 0x8 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 17905: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #36 : length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 17985: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #37 : length = 3 | TDI in = 0x7 | TDO out = 0x1 | expected = 0x1 | new instruction = 1110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 18045: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #37 : register = BYPASS | length = 2 | TDI in = 0x3 | TDO out = 0x2 | expected = 0x2 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 18115: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #38 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 18245: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #39 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 18535: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #40 : length = 2 | TDI in = 0x2 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 18585: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #38 : register = BYPASS | length = 1 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 19075: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #39 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 19265: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #40 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 19315: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #41 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 19415: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #42 : register = IDCODE | length = 3 | TDI in = 0x1 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 19805: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #41 : length = 3 | TDI in = 0x2 | TDO out = 0x1 | expected = 0x1 | new instruction = 0100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 19895: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #43 : register = BYPASS | length = 1 | TDI in = 0x1 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 19945: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #44 : register = BYPASS | length = 1 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 20015: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #45 : register = BYPASS | length = 1 | TDI in = 0x1 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 20145: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #46 : register = BYPASS | length = 2 | TDI in = 0x1 | TDO out = 0x2 | expected = 0x2 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 20305: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #42 : length = 3 | TDI in = 0x4 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 20365: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #47 : register = BYPASS | length = 1 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 20445: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #43 : length = 2 | TDI in = 0x2 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 20865: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #48 : register = IDCODE | length = 8 | TDI in = 0x1c | TDO out = 0x57 | expected = 0x57 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 21035: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #49 : register = IDCODE | length = 2 | TDI in = 0x3 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 21085: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #50 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 21145: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #51 : register = IDCODE | length = 2 | TDI in = 0x1 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 21235: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #52 : register = IDCODE | length = 4 | TDI in = 0x8 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 21645: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #53 : register = IDCODE | length = 3 | TDI in = 0x4 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 21765: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #44 : length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 21885: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #54 : register = BYPASS | length = 1 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 22095: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #55 : register = IDCODE | length = 6 | TDI in = 0x32 | TDO out = 0x17 | expected = 0x17 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 22505: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #45 : length = 3 | TDI in = 0x2 | TDO out = 0x1 | expected = 0x1 | new instruction = 0100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 22825: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #46 : length = 2 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 22875: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #56 : register = BYPASS | length = 1 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 22965: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #57 : register = BYPASS | length = 1 | TDI in = 0x1 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 23045: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #58 : register = BYPASS | length = 2 | TDI in = 0x3 | TDO out = 0x2 | expected = 0x2 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 23255: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #59 : register = BYPASS | length = 2 | TDI in = 0x2 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 23435: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #60 : register = BYPASS | length = 3 | TDI in = 0x4 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 23505: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #61 : register = BYPASS | length = 1 | TDI in = 0x1 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 23585: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #62 : register = BYPASS | length = 1 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 23785: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #47 : length = 4 | TDI in = 0x5 | TDO out = 0x1 | expected = 0x1 | new instruction = 0101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 24065: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #48 : length = 4 | TDI in = 0x5 | TDO out = 0x1 | expected = 0x1 | new instruction = 0101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 24155: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #63 : register = BYPASS | length = 5 | TDI in = 0xc | TDO out = 0x18 | expected = 0x18 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 24375: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #64 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 24495: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #65 : register = IDCODE | length = 2 | TDI in = 0x0 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 24775: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #66 : register = IDCODE | length = 6 | TDI in = 0x30 | TDO out = 0x17 | expected = 0x17 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 24935: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #49 : length = 2 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 25075: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #50 : length = 3 | TDI in = 0x3 | TDO out = 0x1 | expected = 0x1 | new instruction = 0110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 25185: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #67 : register = BYPASS | length = 3 | TDI in = 0x7 | TDO out = 0x6 | expected = 0x6 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 25245: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #68 : register = BYPASS | length = 1 | TDI in = 0x1 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 25635: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #69 : register = IDCODE | length = 2 | TDI in = 0x1 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 25695: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #70 : register = IDCODE | length = 2 | TDI in = 0x0 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 25845: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #71 : register = IDCODE | length = 3 | TDI in = 0x2 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 25935: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #72 : register = IDCODE | length = 3 | TDI in = 0x6 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 26295: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #51 : length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 26815: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #73 : register = IDCODE | length = 6 | TDI in = 0x3b | TDO out = 0x17 | expected = 0x17 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 27045: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #52 : length = 3 | TDI in = 0x4 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 27185: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #74 : register = IDCODE | length = 2 | TDI in = 0x1 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 27305: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #75 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 27505: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #76 : register = IDCODE | length = 2 | TDI in = 0x2 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 27605: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #77 : register = IDCODE | length = 5 | TDI in = 0x3 | TDO out = 0x17 | expected = 0x17 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 27945: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #78 : register = IDCODE | length = 2 | TDI in = 0x2 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 28045: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #79 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 28335: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #80 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 28435: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #53 : length = 3 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0010 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 28515: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #81 : register = BYPASS | length = 2 | TDI in = 0x2 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 28965: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #82 : register = IDCODE | length = 2 | TDI in = 0x2 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 29095: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #83 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 29475: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #84 : register = IDCODE | length = 4 | TDI in = 0x3 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 29655: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #85 : register = IDCODE | length = 2 | TDI in = 0x2 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 29885: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #54 : length = 7 | TDI in = 0x69 | TDO out = 0x11 | expected = 0x11 | new instruction = 1101 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 30275: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #86 : register = IDCODE | length = 8 | TDI in = 0x14 | TDO out = 0x57 | expected = 0x57 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 30425: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #87 : register = IDCODE | length = 5 | TDI in = 0x4 | TDO out = 0x17 | expected = 0x17 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 30785: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #88 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 30935: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #89 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 31065: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #90 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 31135: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #91 : register = IDCODE | length = 2 | TDI in = 0x3 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 31305: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #55 : length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 31595: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #56 : length = 6 | TDI in = 0xc | TDO out = 0x1 | expected = 0x1 | new instruction = 0011 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 31705: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #57 : length = 2 | TDI in = 0x3 | TDO out = 0x1 | expected = 0x1 | new instruction = 1100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 31855: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #92 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 32305: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #58 : length = 2 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 32355: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #93 : register = BYPASS | length = 1 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 32505: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #94 : register = BYPASS | length = 5 | TDI in = 0x1a | TDO out = 0x14 | expected = 0x14 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 33045: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #95 : register = IDCODE | length = 3 | TDI in = 0x0 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 33275: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #59 : length = 2 | TDI in = 0x3 | TDO out = 0x1 | expected = 0x1 | new instruction = 1100 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 33695: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #96 : register = IDCODE | length = 5 | TDI in = 0x1c | TDO out = 0x17 | expected = 0x17 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 34005: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #97 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 34195: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #98 : register = IDCODE | length = 4 | TDI in = 0xb | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 34445: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #99 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 34505: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #100 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 34635: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #101 : register = IDCODE | length = 2 | TDI in = 0x1 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 35145: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #102 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 35225: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #103 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 35295: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #60 : length = 2 | TDI in = 0x2 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 35435: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #61 : length = 3 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0010 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 35915: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #62 : length = 3 | TDI in = 0x3 | TDO out = 0x1 | expected = 0x1 | new instruction = 0110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 36045: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #104 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 36505: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #105 : register = IDCODE | length = 2 | TDI in = 0x0 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 36715: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #106 : register = IDCODE | length = 2 | TDI in = 0x2 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 36795: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #107 : register = IDCODE | length = 2 | TDI in = 0x3 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 37065: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #108 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 37185: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #63 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 37335: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #109 : register = IDCODE | length = 3 | TDI in = 0x0 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 37555: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #110 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 37645: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #64 : length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 37695: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #111 : register = BYPASS | length = 1 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 37905: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #112 : register = BYPASS | length = 3 | TDI in = 0x3 | TDO out = 0x6 | expected = 0x6 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 38365: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #113 : register = IDCODE | length = 2 | TDI in = 0x0 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 38435: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #65 : length = 2 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 38495: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #114 : register = BYPASS | length = 2 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 38585: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #115 : register = BYPASS | length = 4 | TDI in = 0x5 | TDO out = 0xa | expected = 0xa --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 38695: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #116 : register = BYPASS | length = 1 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 38805: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #66 : length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 39015: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #117 : register = BYPASS | length = 1 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 39315: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #118 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 39365: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #119 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 39415: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #120 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 39605: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #67 : length = 2 | TDI in = 0x2 | TDO out = 0x1 | expected = 0x1 | new instruction = 1000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 39755: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #68 : length = 2 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 39845: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #121 : register = BYPASS | length = 1 | TDI in = 0x1 | TDO out = 0x0 | expected = 0x0 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 40035: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #122 : register = IDCODE | length = 4 | TDI in = 0x4 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 40085: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #123 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 40255: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #124 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 40375: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #125 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 40505: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #126 : register = IDCODE | length = 3 | TDI in = 0x0 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 40655: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #127 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 40955: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #128 : register = IDCODE | length = 5 | TDI in = 0x11 | TDO out = 0x17 | expected = 0x17 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 41075: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #129 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 41185: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #130 : register = IDCODE | length = 3 | TDI in = 0x0 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 41495: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #69 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 41755: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #131 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 41985: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #132 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 42305: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #133 : register = IDCODE | length = 3 | TDI in = 0x6 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 42585: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #70 : length = 3 | TDI in = 0x7 | TDO out = 0x1 | expected = 0x1 | new instruction = 1110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 42755: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #71 : length = 4 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 43245: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #72 : length = 4 | TDI in = 0x9 | TDO out = 0x1 | expected = 0x1 | new instruction = 1001 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 43325: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #134 : register = BYPASS | length = 2 | TDI in = 0x3 | TDO out = 0x2 | expected = 0x2 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 43455: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #135 : register = IDCODE | length = 3 | TDI in = 0x2 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 43675: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #136 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 43885: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #137 : register = IDCODE | length = 2 | TDI in = 0x3 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 43965: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #138 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 44075: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #73 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 44305: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #139 : register = IDCODE | length = 4 | TDI in = 0x4 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 44515: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #140 : register = IDCODE | length = 2 | TDI in = 0x3 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 44635: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #141 : register = IDCODE | length = 1 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 44925: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #142 : register = IDCODE | length = 3 | TDI in = 0x0 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 45465: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #143 : register = IDCODE | length = 2 | TDI in = 0x2 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 45615: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #144 : register = IDCODE | length = 4 | TDI in = 0x3 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 46085: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #145 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 46140: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# -----------------------------------------------------------
+#                  JTAG FUNCTIONAL COVERAGE
+# -----------------------------------------------------------
+#  Reset                   : 100.00 %
+#  TAP states              : 100.00 %
+#  State transitions       : 100.00 %
+#  Opcodes loaded          : 100.00 %
+#  Instruction class       : 100.00 %
+#  Instruction x DR state  :  88.89 %
+#  TDI shifted in          : 100.00 %
+#  TDO shifted out         : 100.00 %
+# -----------------------------------------------------------
+#  JTAG - Total Coverage   :  98.89 %
+# -----------------------------------------------------------
+# -----------------------------------------------------------
+#                  ASSERTION COVER SUMMARY
+# -----------------------------------------------------------
+#  C_TRST_RESET        (A_TRST_RESET)          : 34
+#  C_TMS_5_RESET       (A_TMS_5_RESET/TLR)     : 89
+#  C_PAUSE_DR_RESUME   (A_LEGAL_TRANSITION)    : 59
+#  C_PAUSE_IR_RESUME   (A_LEGAL_TRANSITION)    : 25
+#  C_IR_CAPTURE        (A_IR_CAPTURE)          : 116
+#  C_IR_UPDATE         (A_IR_UPDATE/STABLE)    : 112
+#  C_IDCODE_CAPTURE    (A_IDCODE_CAPTURE)      : 143
+#  C_BYPASS_CAPTURE    (A_BYPASS_CAPTURE)      : 68
+#  C_TDO_ENABLE        (A_TDO_ENABLE/EDGE)     : 284
+#  C_IR_SHIFT          (A_IR_SHIFT)            : 233
+#  C_DR_SELECT         (A_DR_SELECT)           : 981
+#  C_RESET_IN_SHIFT    (TRST_N during a scan)  : 6
+# -----------------------------------------------------------
+# -----------------------------------------------------------
+#                  JTAG SCOREBOARD SUMMARY
+# -----------------------------------------------------------
+#  TCK cycles checked     : 4614
+#  Cycle mismatches       : 0
+#  IR scans checked       : 73
+#  DR scans checked       : 145
+#  Scans matched          : 218
+#  Scans mis-matched      : 0
+#  RESULT                 : TEST PASSED
+# -----------------------------------------------------------
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :  223
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [JTAG_SB]   218
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# ** Note: $finish    : C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 46140 ns  Iteration: 54  Instance: /jtag_top
+# Break in Task uvm_pkg/uvm_root::run_test at C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# Stopped at C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430

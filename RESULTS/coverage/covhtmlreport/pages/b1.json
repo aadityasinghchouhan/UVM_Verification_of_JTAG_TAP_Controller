@@ -1,0 +1,246 @@
+var g_data = {
+b13:[{dummy:0},
+{anchor:'cvg19',items:[{z:'        case (state)',f:'../RTL/jtag_tap.sv',l:'74',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'            TEST_LOGIC_RESET : next_state = tms ? TEST_LOGIC_RESET : RUN_...',f:'../RTL/jtag_tap.sv',l:'75',h:'394',c:'g'}
+,{cr:'c',t:'T',z:'            RUN_TEST_IDLE    : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'76',h:'962',c:'g'}
+,{cr:'c',t:'T',z:'            SELECT_DR_SCAN   : next_state = tms ? SELECT_IR_SCAN   : CAPT...',f:'../RTL/jtag_tap.sv',l:'77',h:'933',c:'g'}
+,{cr:'c',t:'T',z:'            CAPTURE_DR       : next_state = tms ? EXIT1_DR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'78',h:'426',c:'g'}
+,{cr:'c',t:'T',z:'            SHIFT_DR         : next_state = tms ? EXIT1_DR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'79',h:'557',c:'g'}
+,{cr:'c',t:'T',z:'            EXIT1_DR         : next_state = tms ? UPDATE_DR        : PAUS...',f:'../RTL/jtag_tap.sv',l:'80',h:'560',c:'g'}
+,{cr:'c',t:'T',z:'            PAUSE_DR         : next_state = tms ? EXIT2_DR         : PAUS...',f:'../RTL/jtag_tap.sv',l:'81',h:'330',c:'g'}
+,{cr:'c',t:'T',z:'            EXIT2_DR         : next_state = tms ? UPDATE_DR        : SHIF...',f:'../RTL/jtag_tap.sv',l:'82',h:'260',c:'g'}
+,{cr:'c',t:'T',z:'            UPDATE_DR        : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'83',h:'473',c:'g'}
+,{cr:'c',t:'T',z:'            SELECT_IR_SCAN   : next_state = tms ? TEST_LOGIC_RESET : CAPT...',f:'../RTL/jtag_tap.sv',l:'84',h:'489',c:'g'}
+,{cr:'c',t:'T',z:'            CAPTURE_IR       : next_state = tms ? EXIT1_IR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'85',h:'227',c:'g'}
+,{cr:'c',t:'T',z:'            SHIFT_IR         : next_state = tms ? EXIT1_IR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'86',h:'276',c:'g'}
+,{cr:'c',t:'T',z:'            EXIT1_IR         : next_state = tms ? UPDATE_IR        : PAUS...',f:'../RTL/jtag_tap.sv',l:'87',h:'248',c:'g'}
+,{cr:'c',t:'T',z:'            PAUSE_IR         : next_state = tms ? EXIT2_IR         : PAUS...',f:'../RTL/jtag_tap.sv',l:'88',h:'116',c:'g'}
+,{cr:'c',t:'T',z:'            EXIT2_IR         : next_state = tms ? UPDATE_IR        : SHIF...',f:'../RTL/jtag_tap.sv',l:'89',h:'83',c:'g'}
+,{cr:'c',t:'T',z:'            UPDATE_IR        : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'90',h:'262',c:'g'}
+,{cr:'c',t:'T',z:'            default          : next_state = TEST_LOGIC_RESET;',f:'../RTL/jtag_tap.sv',l:'91',h:'14',c:'g'}
+]},
+{anchor:'cvg20',items:[{z:'            TEST_LOGIC_RESET : next_state = tms ? TEST_LOGIC_RESET : RUN_...',f:'../RTL/jtag_tap.sv',l:'75',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            TEST_LOGIC_RESET : next_state = tms ? TEST_LOGIC_RESET : RUN_...',f:'../RTL/jtag_tap.sv',l:'75',h:'189',c:'g'}
+,{cr:'c',t:'E',z:'            TEST_LOGIC_RESET : next_state = tms ? TEST_LOGIC_RESET : RUN_...',f:'../RTL/jtag_tap.sv',l:'75',h:'205',c:'g'}
+]},
+{anchor:'cvg21',items:[{z:'            RUN_TEST_IDLE    : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'76',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            RUN_TEST_IDLE    : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'76',h:'476',c:'g'}
+,{cr:'c',t:'E',z:'            RUN_TEST_IDLE    : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'76',h:'486',c:'g'}
+]},
+{anchor:'cvg22',items:[{z:'            SELECT_DR_SCAN   : next_state = tms ? SELECT_IR_SCAN   : CAPT...',f:'../RTL/jtag_tap.sv',l:'77',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            SELECT_DR_SCAN   : next_state = tms ? SELECT_IR_SCAN   : CAPT...',f:'../RTL/jtag_tap.sv',l:'77',h:'627',c:'g'}
+,{cr:'c',t:'E',z:'            SELECT_DR_SCAN   : next_state = tms ? SELECT_IR_SCAN   : CAPT...',f:'../RTL/jtag_tap.sv',l:'77',h:'306',c:'g'}
+]},
+{anchor:'cvg23',items:[{z:'            CAPTURE_DR       : next_state = tms ? EXIT1_DR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'78',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            CAPTURE_DR       : next_state = tms ? EXIT1_DR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'78',h:'120',c:'g'}
+,{cr:'c',t:'E',z:'            CAPTURE_DR       : next_state = tms ? EXIT1_DR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'78',h:'306',c:'g'}
+]},
+{anchor:'cvg24',items:[{z:'            SHIFT_DR         : next_state = tms ? EXIT1_DR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'79',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            SHIFT_DR         : next_state = tms ? EXIT1_DR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'79',h:'277',c:'g'}
+,{cr:'c',t:'E',z:'            SHIFT_DR         : next_state = tms ? EXIT1_DR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'79',h:'280',c:'g'}
+]},
+{anchor:'cvg25',items:[{z:'            EXIT1_DR         : next_state = tms ? UPDATE_DR        : PAUS...',f:'../RTL/jtag_tap.sv',l:'80',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            EXIT1_DR         : next_state = tms ? UPDATE_DR        : PAUS...',f:'../RTL/jtag_tap.sv',l:'80',h:'393',c:'g'}
+,{cr:'c',t:'E',z:'            EXIT1_DR         : next_state = tms ? UPDATE_DR        : PAUS...',f:'../RTL/jtag_tap.sv',l:'80',h:'167',c:'g'}
+]},
+{anchor:'cvg26',items:[{z:'            PAUSE_DR         : next_state = tms ? EXIT2_DR         : PAUS...',f:'../RTL/jtag_tap.sv',l:'81',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            PAUSE_DR         : next_state = tms ? EXIT2_DR         : PAUS...',f:'../RTL/jtag_tap.sv',l:'81',h:'165',c:'g'}
+,{cr:'c',t:'E',z:'            PAUSE_DR         : next_state = tms ? EXIT2_DR         : PAUS...',f:'../RTL/jtag_tap.sv',l:'81',h:'165',c:'g'}
+]},
+{anchor:'cvg27',items:[{z:'            EXIT2_DR         : next_state = tms ? UPDATE_DR        : SHIF...',f:'../RTL/jtag_tap.sv',l:'82',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            EXIT2_DR         : next_state = tms ? UPDATE_DR        : SHIF...',f:'../RTL/jtag_tap.sv',l:'82',h:'163',c:'g'}
+,{cr:'c',t:'E',z:'            EXIT2_DR         : next_state = tms ? UPDATE_DR        : SHIF...',f:'../RTL/jtag_tap.sv',l:'82',h:'97',c:'g'}
+]},
+{anchor:'cvg28',items:[{z:'            UPDATE_DR        : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'83',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            UPDATE_DR        : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'83',h:'288',c:'g'}
+,{cr:'c',t:'E',z:'            UPDATE_DR        : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'83',h:'185',c:'g'}
+]},
+{anchor:'cvg29',items:[{z:'            SELECT_IR_SCAN   : next_state = tms ? TEST_LOGIC_RESET : CAPT...',f:'../RTL/jtag_tap.sv',l:'84',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            SELECT_IR_SCAN   : next_state = tms ? TEST_LOGIC_RESET : CAPT...',f:'../RTL/jtag_tap.sv',l:'84',h:'318',c:'g'}
+,{cr:'c',t:'E',z:'            SELECT_IR_SCAN   : next_state = tms ? TEST_LOGIC_RESET : CAPT...',f:'../RTL/jtag_tap.sv',l:'84',h:'171',c:'g'}
+]},
+{anchor:'cvg30',items:[{z:'            CAPTURE_IR       : next_state = tms ? EXIT1_IR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'85',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            CAPTURE_IR       : next_state = tms ? EXIT1_IR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'85',h:'57',c:'g'}
+,{cr:'c',t:'E',z:'            CAPTURE_IR       : next_state = tms ? EXIT1_IR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'85',h:'170',c:'g'}
+]},
+{anchor:'cvg31',items:[{z:'            SHIFT_IR         : next_state = tms ? EXIT1_IR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'86',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            SHIFT_IR         : next_state = tms ? EXIT1_IR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'86',h:'137',c:'g'}
+,{cr:'c',t:'E',z:'            SHIFT_IR         : next_state = tms ? EXIT1_IR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'86',h:'139',c:'g'}
+]},
+{anchor:'cvg32',items:[{z:'            EXIT1_IR         : next_state = tms ? UPDATE_IR        : PAUS...',f:'../RTL/jtag_tap.sv',l:'87',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            EXIT1_IR         : next_state = tms ? UPDATE_IR        : PAUS...',f:'../RTL/jtag_tap.sv',l:'87',h:'190',c:'g'}
+,{cr:'c',t:'E',z:'            EXIT1_IR         : next_state = tms ? UPDATE_IR        : PAUS...',f:'../RTL/jtag_tap.sv',l:'87',h:'58',c:'g'}
+]},
+{anchor:'cvg33',items:[{z:'            PAUSE_IR         : next_state = tms ? EXIT2_IR         : PAUS...',f:'../RTL/jtag_tap.sv',l:'88',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            PAUSE_IR         : next_state = tms ? EXIT2_IR         : PAUS...',f:'../RTL/jtag_tap.sv',l:'88',h:'58',c:'g'}
+,{cr:'c',t:'E',z:'            PAUSE_IR         : next_state = tms ? EXIT2_IR         : PAUS...',f:'../RTL/jtag_tap.sv',l:'88',h:'58',c:'g'}
+]},
+{anchor:'cvg34',items:[{z:'            EXIT2_IR         : next_state = tms ? UPDATE_IR        : SHIF...',f:'../RTL/jtag_tap.sv',l:'89',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            EXIT2_IR         : next_state = tms ? UPDATE_IR        : SHIF...',f:'../RTL/jtag_tap.sv',l:'89',h:'56',c:'g'}
+,{cr:'c',t:'E',z:'            EXIT2_IR         : next_state = tms ? UPDATE_IR        : SHIF...',f:'../RTL/jtag_tap.sv',l:'89',h:'27',c:'g'}
+]},
+{anchor:'cvg35',items:[{z:'            UPDATE_IR        : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'90',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            UPDATE_IR        : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'90',h:'159',c:'g'}
+,{cr:'c',t:'E',z:'            UPDATE_IR        : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'90',h:'103',c:'g'}
+]},
+{anchor:'cvg36',items:[{z:'        if (!trst_n) begin',f:'../RTL/jtag_tap.sv',l:'99',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (!trst_n) begin',f:'../RTL/jtag_tap.sv',l:'99',h:'117',c:'g'}
+,{cr:'c',t:'E',z:'        else begin',f:'../RTL/jtag_tap.sv',l:'105',h:'6490',c:'g'}
+]},
+{anchor:'cvg37',items:[{z:'            case (state)',f:'../RTL/jtag_tap.sv',l:'107',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'                CAPTURE_IR : ir_shift_reg &lt;= 4\'b0001;                    ...',f:'../RTL/jtag_tap.sv',l:'108',h:'167',c:'g'}
+,{cr:'c',t:'T',z:'                SHIFT_IR   : ir_shift_reg &lt;= {tdi, ir_shift_reg[3:1]};   ...',f:'../RTL/jtag_tap.sv',l:'109',h:'394',c:'g'}
+,{cr:'c',t:'T',z:'                CAPTURE_DR : begin',f:'../RTL/jtag_tap.sv',l:'110',h:'301',c:'g'}
+,{cr:'c',t:'T',z:'                SHIFT_DR   : begin',f:'../RTL/jtag_tap.sv',l:'114',h:'2081',c:'g'}
+,{cr:'c',t:'T',z:'                default    : ;',f:'../RTL/jtag_tap.sv',l:'118',h:'3547',c:'g'}
+]},
+{anchor:'cvg38',items:[{z:'                    if (ir_reg == IDCODE) idcode_reg &lt;= IDCODE_VALUE;',f:'../RTL/jtag_tap.sv',l:'111',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                    if (ir_reg == IDCODE) idcode_reg &lt;= IDCODE_VALUE;',f:'../RTL/jtag_tap.sv',l:'111',h:'175',c:'g'}
+,{cr:'c',t:'E',z:'                    else                  bypass_reg &lt;= 1\'b0;            ...',f:'../RTL/jtag_tap.sv',l:'112',h:'126',c:'g'}
+]},
+{anchor:'cvg39',items:[{z:'                    if (ir_reg == IDCODE) idcode_reg &lt;= {tdi, idcode_reg[...',f:'../RTL/jtag_tap.sv',l:'115',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                    if (ir_reg == IDCODE) idcode_reg &lt;= {tdi, idcode_reg[...',f:'../RTL/jtag_tap.sv',l:'115',h:'1010',c:'g'}
+,{cr:'c',t:'E',z:'                    else                  bypass_reg &lt;= tdi;',f:'../RTL/jtag_tap.sv',l:'116',h:'1071',c:'g'}
+]},
+{anchor:'cvg40',items:[{z:'        if (!trst_n) begin',f:'../RTL/jtag_tap.sv',l:'127',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (!trst_n) begin',f:'../RTL/jtag_tap.sv',l:'127',h:'116',c:'g'}
+,{cr:'c',t:'E',z:'        else begin',f:'../RTL/jtag_tap.sv',l:'132',h:'5514',c:'g'}
+]},
+{anchor:'cvg41',items:[{z:'            if (state == TEST_LOGIC_RESET) ir_reg &lt;= IDCODE;',f:'../RTL/jtag_tap.sv',l:'134',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (state == TEST_LOGIC_RESET) ir_reg &lt;= IDCODE;',f:'../RTL/jtag_tap.sv',l:'134',h:'168',c:'g'}
+,{cr:'c',t:'T',z:'            else if (state == UPDATE_IR)   ir_reg &lt;= ir_shift_reg;',f:'../RTL/jtag_tap.sv',l:'135',h:'159',c:'g'}
+,{cr:'c',t:'A',z:'            if (state == TEST_LOGIC_RESET) ir_reg &lt;= IDCODE;',f:'../RTL/jtag_tap.sv',l:'134',h:'5187',c:'g'}
+]},
+{anchor:'cvg42',items:[{z:'            if (state == SHIFT_IR)',f:'../RTL/jtag_tap.sv',l:'140',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (state == SHIFT_IR)',f:'../RTL/jtag_tap.sv',l:'140',h:'381',c:'g'}
+,{cr:'c',t:'T',z:'            else if (state == SHIFT_DR)',f:'../RTL/jtag_tap.sv',l:'142',h:'1579',c:'g'}
+,{cr:'c',t:'E',z:'            else',f:'../RTL/jtag_tap.sv',l:'144',h:'3554',c:'g'}
+]},
+{anchor:'cvg43',items:[{z:'                tdo &lt;= (ir_reg == IDCODE) ? idcode_reg[0] : bypass_reg;',f:'../RTL/jtag_tap.sv',l:'143',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                tdo &lt;= (ir_reg == IDCODE) ? idcode_reg[0] : bypass_reg;',f:'../RTL/jtag_tap.sv',l:'143',h:'546',c:'g'}
+,{cr:'c',t:'E',z:'                tdo &lt;= (ir_reg == IDCODE) ? idcode_reg[0] : bypass_reg;',f:'../RTL/jtag_tap.sv',l:'143',h:'1033',c:'g'}
+]}],
+b18:[{dummy:0},
+{anchor:'cvg19',items:[{z:'        case (state)',f:'../RTL/jtag_tap.sv',l:'74',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'            TEST_LOGIC_RESET : next_state = tms ? TEST_LOGIC_RESET : RUN_...',f:'../RTL/jtag_tap.sv',l:'75',h:'394',c:'g'}
+,{cr:'c',t:'T',z:'            RUN_TEST_IDLE    : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'76',h:'962',c:'g'}
+,{cr:'c',t:'T',z:'            SELECT_DR_SCAN   : next_state = tms ? SELECT_IR_SCAN   : CAPT...',f:'../RTL/jtag_tap.sv',l:'77',h:'933',c:'g'}
+,{cr:'c',t:'T',z:'            CAPTURE_DR       : next_state = tms ? EXIT1_DR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'78',h:'426',c:'g'}
+,{cr:'c',t:'T',z:'            SHIFT_DR         : next_state = tms ? EXIT1_DR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'79',h:'557',c:'g'}
+,{cr:'c',t:'T',z:'            EXIT1_DR         : next_state = tms ? UPDATE_DR        : PAUS...',f:'../RTL/jtag_tap.sv',l:'80',h:'560',c:'g'}
+,{cr:'c',t:'T',z:'            PAUSE_DR         : next_state = tms ? EXIT2_DR         : PAUS...',f:'../RTL/jtag_tap.sv',l:'81',h:'330',c:'g'}
+,{cr:'c',t:'T',z:'            EXIT2_DR         : next_state = tms ? UPDATE_DR        : SHIF...',f:'../RTL/jtag_tap.sv',l:'82',h:'260',c:'g'}
+,{cr:'c',t:'T',z:'            UPDATE_DR        : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'83',h:'473',c:'g'}
+,{cr:'c',t:'T',z:'            SELECT_IR_SCAN   : next_state = tms ? TEST_LOGIC_RESET : CAPT...',f:'../RTL/jtag_tap.sv',l:'84',h:'489',c:'g'}
+,{cr:'c',t:'T',z:'            CAPTURE_IR       : next_state = tms ? EXIT1_IR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'85',h:'227',c:'g'}
+,{cr:'c',t:'T',z:'            SHIFT_IR         : next_state = tms ? EXIT1_IR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'86',h:'276',c:'g'}
+,{cr:'c',t:'T',z:'            EXIT1_IR         : next_state = tms ? UPDATE_IR        : PAUS...',f:'../RTL/jtag_tap.sv',l:'87',h:'248',c:'g'}
+,{cr:'c',t:'T',z:'            PAUSE_IR         : next_state = tms ? EXIT2_IR         : PAUS...',f:'../RTL/jtag_tap.sv',l:'88',h:'116',c:'g'}
+,{cr:'c',t:'T',z:'            EXIT2_IR         : next_state = tms ? UPDATE_IR        : SHIF...',f:'../RTL/jtag_tap.sv',l:'89',h:'83',c:'g'}
+,{cr:'c',t:'T',z:'            UPDATE_IR        : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'90',h:'262',c:'g'}
+,{cr:'c',t:'T',z:'            default          : next_state = TEST_LOGIC_RESET;',f:'../RTL/jtag_tap.sv',l:'91',h:'14',c:'g'}
+]},
+{anchor:'cvg20',items:[{z:'            TEST_LOGIC_RESET : next_state = tms ? TEST_LOGIC_RESET : RUN_...',f:'../RTL/jtag_tap.sv',l:'75',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            TEST_LOGIC_RESET : next_state = tms ? TEST_LOGIC_RESET : RUN_...',f:'../RTL/jtag_tap.sv',l:'75',h:'189',c:'g'}
+,{cr:'c',t:'E',z:'            TEST_LOGIC_RESET : next_state = tms ? TEST_LOGIC_RESET : RUN_...',f:'../RTL/jtag_tap.sv',l:'75',h:'205',c:'g'}
+]},
+{anchor:'cvg21',items:[{z:'            RUN_TEST_IDLE    : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'76',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            RUN_TEST_IDLE    : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'76',h:'476',c:'g'}
+,{cr:'c',t:'E',z:'            RUN_TEST_IDLE    : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'76',h:'486',c:'g'}
+]},
+{anchor:'cvg22',items:[{z:'            SELECT_DR_SCAN   : next_state = tms ? SELECT_IR_SCAN   : CAPT...',f:'../RTL/jtag_tap.sv',l:'77',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            SELECT_DR_SCAN   : next_state = tms ? SELECT_IR_SCAN   : CAPT...',f:'../RTL/jtag_tap.sv',l:'77',h:'627',c:'g'}
+,{cr:'c',t:'E',z:'            SELECT_DR_SCAN   : next_state = tms ? SELECT_IR_SCAN   : CAPT...',f:'../RTL/jtag_tap.sv',l:'77',h:'306',c:'g'}
+]},
+{anchor:'cvg23',items:[{z:'            CAPTURE_DR       : next_state = tms ? EXIT1_DR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'78',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            CAPTURE_DR       : next_state = tms ? EXIT1_DR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'78',h:'120',c:'g'}
+,{cr:'c',t:'E',z:'            CAPTURE_DR       : next_state = tms ? EXIT1_DR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'78',h:'306',c:'g'}
+]},
+{anchor:'cvg24',items:[{z:'            SHIFT_DR         : next_state = tms ? EXIT1_DR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'79',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            SHIFT_DR         : next_state = tms ? EXIT1_DR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'79',h:'277',c:'g'}
+,{cr:'c',t:'E',z:'            SHIFT_DR         : next_state = tms ? EXIT1_DR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'79',h:'280',c:'g'}
+]},
+{anchor:'cvg25',items:[{z:'            EXIT1_DR         : next_state = tms ? UPDATE_DR        : PAUS...',f:'../RTL/jtag_tap.sv',l:'80',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            EXIT1_DR         : next_state = tms ? UPDATE_DR        : PAUS...',f:'../RTL/jtag_tap.sv',l:'80',h:'393',c:'g'}
+,{cr:'c',t:'E',z:'            EXIT1_DR         : next_state = tms ? UPDATE_DR        : PAUS...',f:'../RTL/jtag_tap.sv',l:'80',h:'167',c:'g'}
+]},
+{anchor:'cvg26',items:[{z:'            PAUSE_DR         : next_state = tms ? EXIT2_DR         : PAUS...',f:'../RTL/jtag_tap.sv',l:'81',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            PAUSE_DR         : next_state = tms ? EXIT2_DR         : PAUS...',f:'../RTL/jtag_tap.sv',l:'81',h:'165',c:'g'}
+,{cr:'c',t:'E',z:'            PAUSE_DR         : next_state = tms ? EXIT2_DR         : PAUS...',f:'../RTL/jtag_tap.sv',l:'81',h:'165',c:'g'}
+]},
+{anchor:'cvg27',items:[{z:'            EXIT2_DR         : next_state = tms ? UPDATE_DR        : SHIF...',f:'../RTL/jtag_tap.sv',l:'82',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            EXIT2_DR         : next_state = tms ? UPDATE_DR        : SHIF...',f:'../RTL/jtag_tap.sv',l:'82',h:'163',c:'g'}
+,{cr:'c',t:'E',z:'            EXIT2_DR         : next_state = tms ? UPDATE_DR        : SHIF...',f:'../RTL/jtag_tap.sv',l:'82',h:'97',c:'g'}
+]},
+{anchor:'cvg28',items:[{z:'            UPDATE_DR        : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'83',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            UPDATE_DR        : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'83',h:'288',c:'g'}
+,{cr:'c',t:'E',z:'            UPDATE_DR        : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'83',h:'185',c:'g'}
+]},
+{anchor:'cvg29',items:[{z:'            SELECT_IR_SCAN   : next_state = tms ? TEST_LOGIC_RESET : CAPT...',f:'../RTL/jtag_tap.sv',l:'84',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            SELECT_IR_SCAN   : next_state = tms ? TEST_LOGIC_RESET : CAPT...',f:'../RTL/jtag_tap.sv',l:'84',h:'318',c:'g'}
+,{cr:'c',t:'E',z:'            SELECT_IR_SCAN   : next_state = tms ? TEST_LOGIC_RESET : CAPT...',f:'../RTL/jtag_tap.sv',l:'84',h:'171',c:'g'}
+]},
+{anchor:'cvg30',items:[{z:'            CAPTURE_IR       : next_state = tms ? EXIT1_IR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'85',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            CAPTURE_IR       : next_state = tms ? EXIT1_IR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'85',h:'57',c:'g'}
+,{cr:'c',t:'E',z:'            CAPTURE_IR       : next_state = tms ? EXIT1_IR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'85',h:'170',c:'g'}
+]},
+{anchor:'cvg31',items:[{z:'            SHIFT_IR         : next_state = tms ? EXIT1_IR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'86',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            SHIFT_IR         : next_state = tms ? EXIT1_IR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'86',h:'137',c:'g'}
+,{cr:'c',t:'E',z:'            SHIFT_IR         : next_state = tms ? EXIT1_IR         : SHIF...',f:'../RTL/jtag_tap.sv',l:'86',h:'139',c:'g'}
+]},
+{anchor:'cvg32',items:[{z:'            EXIT1_IR         : next_state = tms ? UPDATE_IR        : PAUS...',f:'../RTL/jtag_tap.sv',l:'87',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            EXIT1_IR         : next_state = tms ? UPDATE_IR        : PAUS...',f:'../RTL/jtag_tap.sv',l:'87',h:'190',c:'g'}
+,{cr:'c',t:'E',z:'            EXIT1_IR         : next_state = tms ? UPDATE_IR        : PAUS...',f:'../RTL/jtag_tap.sv',l:'87',h:'58',c:'g'}
+]},
+{anchor:'cvg33',items:[{z:'            PAUSE_IR         : next_state = tms ? EXIT2_IR         : PAUS...',f:'../RTL/jtag_tap.sv',l:'88',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            PAUSE_IR         : next_state = tms ? EXIT2_IR         : PAUS...',f:'../RTL/jtag_tap.sv',l:'88',h:'58',c:'g'}
+,{cr:'c',t:'E',z:'            PAUSE_IR         : next_state = tms ? EXIT2_IR         : PAUS...',f:'../RTL/jtag_tap.sv',l:'88',h:'58',c:'g'}
+]},
+{anchor:'cvg34',items:[{z:'            EXIT2_IR         : next_state = tms ? UPDATE_IR        : SHIF...',f:'../RTL/jtag_tap.sv',l:'89',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            EXIT2_IR         : next_state = tms ? UPDATE_IR        : SHIF...',f:'../RTL/jtag_tap.sv',l:'89',h:'56',c:'g'}
+,{cr:'c',t:'E',z:'            EXIT2_IR         : next_state = tms ? UPDATE_IR        : SHIF...',f:'../RTL/jtag_tap.sv',l:'89',h:'27',c:'g'}
+]},
+{anchor:'cvg35',items:[{z:'            UPDATE_IR        : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'90',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            UPDATE_IR        : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'90',h:'159',c:'g'}
+,{cr:'c',t:'E',z:'            UPDATE_IR        : next_state = tms ? SELECT_DR_SCAN   : RUN_...',f:'../RTL/jtag_tap.sv',l:'90',h:'103',c:'g'}
+]},
+{anchor:'cvg36',items:[{z:'        if (!trst_n) begin',f:'../RTL/jtag_tap.sv',l:'99',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (!trst_n) begin',f:'../RTL/jtag_tap.sv',l:'99',h:'117',c:'g'}
+,{cr:'c',t:'E',z:'        else begin',f:'../RTL/jtag_tap.sv',l:'105',h:'6490',c:'g'}
+]},
+{anchor:'cvg37',items:[{z:'            case (state)',f:'../RTL/jtag_tap.sv',l:'107',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'                CAPTURE_IR : ir_shift_reg &lt;= 4\'b0001;                    ...',f:'../RTL/jtag_tap.sv',l:'108',h:'167',c:'g'}
+,{cr:'c',t:'T',z:'                SHIFT_IR   : ir_shift_reg &lt;= {tdi, ir_shift_reg[3:1]};   ...',f:'../RTL/jtag_tap.sv',l:'109',h:'394',c:'g'}
+,{cr:'c',t:'T',z:'                CAPTURE_DR : begin',f:'../RTL/jtag_tap.sv',l:'110',h:'301',c:'g'}
+,{cr:'c',t:'T',z:'                SHIFT_DR   : begin',f:'../RTL/jtag_tap.sv',l:'114',h:'2081',c:'g'}
+,{cr:'c',t:'T',z:'                default    : ;',f:'../RTL/jtag_tap.sv',l:'118',h:'3547',c:'g'}
+]},
+{anchor:'cvg38',items:[{z:'                    if (ir_reg == IDCODE) idcode_reg &lt;= IDCODE_VALUE;',f:'../RTL/jtag_tap.sv',l:'111',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                    if (ir_reg == IDCODE) idcode_reg &lt;= IDCODE_VALUE;',f:'../RTL/jtag_tap.sv',l:'111',h:'175',c:'g'}
+,{cr:'c',t:'E',z:'                    else                  bypass_reg &lt;= 1\'b0;            ...',f:'../RTL/jtag_tap.sv',l:'112',h:'126',c:'g'}
+]},
+{anchor:'cvg39',items:[{z:'                    if (ir_reg == IDCODE) idcode_reg &lt;= {tdi, idcode_reg[...',f:'../RTL/jtag_tap.sv',l:'115',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                    if (ir_reg == IDCODE) idcode_reg &lt;= {tdi, idcode_reg[...',f:'../RTL/jtag_tap.sv',l:'115',h:'1010',c:'g'}
+,{cr:'c',t:'E',z:'                    else                  bypass_reg &lt;= tdi;',f:'../RTL/jtag_tap.sv',l:'116',h:'1071',c:'g'}
+]},
+{anchor:'cvg40',items:[{z:'        if (!trst_n) begin',f:'../RTL/jtag_tap.sv',l:'127',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (!trst_n) begin',f:'../RTL/jtag_tap.sv',l:'127',h:'116',c:'g'}
+,{cr:'c',t:'E',z:'        else begin',f:'../RTL/jtag_tap.sv',l:'132',h:'5514',c:'g'}
+]},
+{anchor:'cvg41',items:[{z:'            if (state == TEST_LOGIC_RESET) ir_reg &lt;= IDCODE;',f:'../RTL/jtag_tap.sv',l:'134',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (state == TEST_LOGIC_RESET) ir_reg &lt;= IDCODE;',f:'../RTL/jtag_tap.sv',l:'134',h:'168',c:'g'}
+,{cr:'c',t:'T',z:'            else if (state == UPDATE_IR)   ir_reg &lt;= ir_shift_reg;',f:'../RTL/jtag_tap.sv',l:'135',h:'159',c:'g'}
+,{cr:'c',t:'A',z:'            if (state == TEST_LOGIC_RESET) ir_reg &lt;= IDCODE;',f:'../RTL/jtag_tap.sv',l:'134',h:'5187',c:'g'}
+]},
+{anchor:'cvg42',items:[{z:'            if (state == SHIFT_IR)',f:'../RTL/jtag_tap.sv',l:'140',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (state == SHIFT_IR)',f:'../RTL/jtag_tap.sv',l:'140',h:'381',c:'g'}
+,{cr:'c',t:'T',z:'            else if (state == SHIFT_DR)',f:'../RTL/jtag_tap.sv',l:'142',h:'1579',c:'g'}
+,{cr:'c',t:'E',z:'            else',f:'../RTL/jtag_tap.sv',l:'144',h:'3554',c:'g'}
+]},
+{anchor:'cvg43',items:[{z:'                tdo &lt;= (ir_reg == IDCODE) ? idcode_reg[0] : bypass_reg;',f:'../RTL/jtag_tap.sv',l:'143',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                tdo &lt;= (ir_reg == IDCODE) ? idcode_reg[0] : bypass_reg;',f:'../RTL/jtag_tap.sv',l:'143',h:'546',c:'g'}
+,{cr:'c',t:'E',z:'                tdo &lt;= (ir_reg == IDCODE) ? idcode_reg[0] : bypass_reg;',f:'../RTL/jtag_tap.sv',l:'143',h:'1033',c:'g'}
+]}],
+dummyEnd:0
+};
+processBranchesData(g_data);

@@ -1,0 +1,6 @@
+var g_data = {'dummy':null,
+'4':'../ENV/jtag_cov.sv',
+'3':'../RTL/jtag_tap.sv',
+'5':'../TEST/jtag_pkg.sv',
+'1':'../TOP/jtag_sva.sv',
+'2':'../TOP/jtag_top.sv'};

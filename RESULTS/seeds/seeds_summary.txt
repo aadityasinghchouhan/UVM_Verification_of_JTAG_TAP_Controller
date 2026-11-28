@@ -1,0 +1,15 @@
+=============== RANDOM TEST (TC6) - MULTI-SEED SUMMARY ===============
+  SEED      RESULT        UVM_ERROR   CYCLES      FUNCTIONAL COVERAGE
+  1         TEST PASSED   0           4397        99.38 %
+  7         TEST PASSED   0           4530        99.38 %
+  42        TEST PASSED   0           4588        99.38 %
+  99        TEST PASSED   0           4554        99.38 %
+  123       TEST PASSED   0           4461        99.38 %
+  555       TEST PASSED   0           4633        100.00 %
+  2026      TEST PASSED   0           4614        98.89 %
+  3141      TEST PASSED   0           4741        99.38 %
+  8080      TEST PASSED   0           4520        100.00 %
+  9999      TEST PASSED   0           4516        98.26 %
+======================================================================
+  OVERALL : ALL 10 SEEDS PASSED
+======================================================================

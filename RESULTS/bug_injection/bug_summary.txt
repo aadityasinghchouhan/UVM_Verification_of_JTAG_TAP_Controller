@@ -1,0 +1,22 @@
+================================== BUG INJECTION SUMMARY ==================================
+  BUG  DESCRIPTION                                          SB ERRORS   RESULT    
+       ASSERTIONS THAT FIRED
+-------------------------------------------------------------------------------------------
+  1    IDCODE capture value wrong (bit 8 flipped)           54          DETECTED  
+       A_IDCODE_CAPTURE
+  2    Pause-DR + TMS=1 goes to Update-DR, not Exit2-DR     200         DETECTED  
+       A_LEGAL_TRANSITION
+  3    TDO enable decoded from next state (early)           200         DETECTED  
+       A_TDO_ENABLE
+  4    TMS reset does not restore IDCODE instruction        200         DETECTED  
+       A_TLR_IDCODE
+  5    BYPASS register captures 1 instead of 0              186         DETECTED  
+       A_BYPASS_CAPTURE
+  6    IR shifts in the wrong direction                     200         DETECTED  
+       A_IR_SHIFT
+  7    Unused opcodes select IDCODE instead of BYPASS       200         DETECTED  
+       A_DR_SELECT, A_BYPASS_CAPTURE
+===========================================================================================
+  DETECTED : 7 of 7 bugs
+  (SB ERRORS = UVM_ERROR count, limited to 200 per run)
+===========================================================================================

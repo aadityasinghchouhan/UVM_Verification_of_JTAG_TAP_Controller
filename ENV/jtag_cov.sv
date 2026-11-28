@@ -104,6 +104,24 @@ class jtag_cov extends uvm_subscriber #(jtag_trans);
         $display("-----------------------------------------------------------");
         $display(" JTAG - Total Coverage   : %6.2f %%", jtag_cg.get_coverage());
         $display("-----------------------------------------------------------");
+
+        //cover-property hits from TOP/jtag_sva.sv
+        $display("-----------------------------------------------------------");
+        $display("                 ASSERTION COVER SUMMARY");
+        $display("-----------------------------------------------------------");
+        $display(" C_TRST_RESET        (A_TRST_RESET)          : %0d", c_trst_reset);
+        $display(" C_TMS_5_RESET       (A_TMS_5_RESET/TLR)     : %0d", c_tms_5_reset);
+        $display(" C_PAUSE_DR_RESUME   (A_LEGAL_TRANSITION)    : %0d", c_pause_dr_resume);
+        $display(" C_PAUSE_IR_RESUME   (A_LEGAL_TRANSITION)    : %0d", c_pause_ir_resume);
+        $display(" C_IR_CAPTURE        (A_IR_CAPTURE)          : %0d", c_ir_capture);
+        $display(" C_IR_UPDATE         (A_IR_UPDATE/STABLE)    : %0d", c_ir_update);
+        $display(" C_IDCODE_CAPTURE    (A_IDCODE_CAPTURE)      : %0d", c_idcode_capture);
+        $display(" C_BYPASS_CAPTURE    (A_BYPASS_CAPTURE)      : %0d", c_bypass_capture);
+        $display(" C_TDO_ENABLE        (A_TDO_ENABLE/EDGE)     : %0d", c_tdo_enable);
+        $display(" C_IR_SHIFT          (A_IR_SHIFT)            : %0d", c_ir_shift);
+        $display(" C_DR_SELECT         (A_DR_SELECT)           : %0d", c_dr_select);
+        $display(" C_RESET_IN_SHIFT    (TRST_N during a scan)  : %0d", c_reset_in_shift);
+        $display("-----------------------------------------------------------");
     endfunction
 
 endclass : jtag_cov

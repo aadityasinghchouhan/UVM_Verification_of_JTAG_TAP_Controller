@@ -1,0 +1,17 @@
+var g_data = {
+g913:[{dummy:0},
+{name:'jtag_cg',f:1,type:1,id:914,tb:'99',h:'99',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','auto(true)']],parent:'913'}],
+c914:{name:'jtag_cg',type:1,pHash:'913',pPath:'/jtag_pkg/jtag_cov',totals:[49,49,'100.00%','G',50,50,'100.00%','G'],cvp:[{dummy:0},
+{name:'RESET',f:1,type:4,id:915,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'914'},
+{name:'TAP_STATE',f:1,type:4,id:916,tb:'16',h:'16',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'914'},
+{name:'TMS',f:1,type:4,id:917,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'914'},
+{name:'OPCODE',f:1,type:4,id:918,tb:'16',h:'16',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'914'},
+{name:'INSTRUCTION',f:1,type:4,id:919,tb:'3',h:'3',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'914'},
+{name:'DR_STATE',f:1,type:4,id:920,tb:'6',h:'6',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'914'},
+{name:'TDI_SHIFT',f:1,type:4,id:921,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'914'},
+{name:'TDO_SHIFT',f:1,type:4,id:922,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'914'}],crx:[{dummy:0},
+{name:'TRANSITION',f:1,type:5,id:923,tb:'32',h:'32',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'914',cross:['TAP_STATE','TMS']},
+{name:'INSTR_X_DR',f:1,type:5,id:924,tb:'18',h:'18',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'914',cross:['INSTRUCTION','DR_STATE']}]},
+dummyEnd:0
+};
+processCovergroupsData(g_data);

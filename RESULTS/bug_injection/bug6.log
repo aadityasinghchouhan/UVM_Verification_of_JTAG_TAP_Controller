@@ -1,0 +1,504 @@
+# End time: 23:14:31 on Nov 27,2026, Elapsed time: 0:00:05
+# Errors: 106, Warnings: 0
+# QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+# Start time: 23:14:31 on Nov 27,2026
+# vlog -sv ../BUGS/jtag_tap_bug6.sv 
+# -- Compiling module jtag_tap
+# 
+# Top level modules:
+# 	jtag_tap
+# End time: 23:14:31 on Nov 27,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+# Start time: 23:14:31 on Nov 27,2026
+# vlog -sv ../TEST/jtag_pkg.sv ../TOP/jtag_sva.sv ../TOP/jtag_top.sv "+incdir+../ENV" "+incdir+../TEST" "+incdir+../TOP" 
+# -- Compiling interface jtag_if
+# -- Compiling package jtag_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) ../TEST/jtag_pkg.sv(6): Using implicit +incdir+C:/questasim64_10.7c/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling module jtag_sva
+# -- Importing package jtag_pkg
+# -- Compiling package jtag_top_sv_unit
+# -- Importing package jtag_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Compiling module jtag_top
+# 
+# Top level modules:
+# 	jtag_top
+# End time: 23:14:32 on Nov 27,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -vopt -onfinish stop jtag_top "+UVM_TESTNAME=jtag_regression_tc8" "+UVM_MAX_QUIT_COUNT=200,NO" 
+# Start time: 23:14:32 on Nov 27,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.jtag_if(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.jtag_pkg(fast)
+# Loading work.jtag_top_sv_unit(fast)
+# Loading work.jtag_top(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading C:/questasim64_10.7c/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(216) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test jtag_regression_tc8...
+# UVM_INFO @ 0: reporter [MAXQUITSET] '+UVM_MAX_QUIT_COUNT=200,NO' provided on the command line is being applied.
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# ------------------------------------------------------------------
+# Name                       Type                        Size  Value
+# ------------------------------------------------------------------
+# uvm_test_top               jtag_regression_tc8         -     @472 
+#   env_h                    jtag_env                    -     @485 
+#     agent_h                jtag_agent                  -     @492 
+#       drv_h                jtag_drv                    -     @586 
+#         rsp_port           uvm_analysis_port           -     @601 
+#         seq_item_port      uvm_seq_item_pull_port      -     @593 
+#       mon_h                jtag_mon                    -     @571 
+#         analysis_port      uvm_analysis_port           -     @578 
+#       seqr_h               jtag_seqr                   -     @609 
+#         rsp_export         uvm_analysis_export         -     @616 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @710 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     cov_h                  jtag_cov                    -     @553 
+#       analysis_imp         uvm_analysis_imp            -     @560 
+#     sb_h                   jtag_sb                     -     @499 
+#       mon_analysis_fifo    uvm_tlm_analysis_fifo #(T)  -     @506 
+#         analysis_export    uvm_analysis_imp            -     @545 
+#         get_ap             uvm_analysis_port           -     @537 
+#         get_peek_export    uvm_get_peek_imp            -     @521 
+#         put_ap             uvm_analysis_port           -     @529 
+#         put_export         uvm_put_imp                 -     @513 
+# ------------------------------------------------------------------
+# 
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 395: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #1 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 465: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 47 [SHIFT_IR] TDO (IR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 465 ns Started: 455 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 475: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 48 [SHIFT_IR] TDO (IR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 475 ns Started: 465 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 485: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 49 [SHIFT_IR] TDO (IR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 485 ns Started: 475 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 495: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #1 : length = 4 | TDI in = 0xf | TDO out = 0xf | expected = 0x1 | new instruction = 1111 (BYPASS) --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 495: uvm_test_top.env_h.sb_h [JTAG_SB] IR scan #1 data does not match the specification
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 895: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #2 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 965: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 97 [SHIFT_IR] TDO (IR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 965 ns Started: 955 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 975: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 98 [SHIFT_IR] TDO (IR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 975 ns Started: 965 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 985: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 99 [SHIFT_IR] TDO (IR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 985 ns Started: 975 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 995: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #2 : length = 4 | TDI in = 0xf | TDO out = 0xf | expected = 0x1 | new instruction = 1111 (BYPASS) --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 995: uvm_test_top.env_h.sb_h [JTAG_SB] IR scan #2 data does not match the specification
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 1425: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #3 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1480: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state TEST_LOGIC_RESET
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1540: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1670: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1810: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state CAPTURE_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1960: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state SHIFT_DR
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 1985: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #4 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2110: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state EXIT1_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2270: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state PAUSE_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2440: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state EXIT2_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2600: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state UPDATE_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2740: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state SELECT_IR_SCAN
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2890: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state CAPTURE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3050: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state SHIFT_IR
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 3075: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #3 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 3075 ns Started: 3065 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 3085: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 309 [UPDATE_IR] INSTRUCTION MISMATCH : DUT = 0x2, Expected = 0x0
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 3095: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 310 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0x2, Expected = 0x0
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 3105: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 311 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0x2, Expected = 0x0
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3210: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state EXIT1_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3380: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state PAUSE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3560: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state EXIT2_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3730: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state UPDATE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 3840: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state TEST_LOGIC_RESET
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 3870: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 3970: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4080: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state CAPTURE_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4200: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state SHIFT_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4320: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state EXIT1_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4450: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state PAUSE_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4590: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state EXIT2_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4720: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state UPDATE_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4830: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state SELECT_IR_SCAN
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4950: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state CAPTURE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5080: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state SHIFT_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5210: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state EXIT1_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5350: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state PAUSE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5500: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state EXIT2_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5640: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TRST_N reset from state UPDATE_IR
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 6105: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #5 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6150: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6160: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> CAPTURE_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6170: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> SHIFT_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6180: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> EXIT1_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6190: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> PAUSE_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6200: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> EXIT2_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6210: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> UPDATE_DR
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 6215: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #6 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6220: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6230: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> SELECT_IR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6240: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> CAPTURE_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6250: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> SHIFT_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6260: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> EXIT1_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6270: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> PAUSE_IR
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 6275 ns Started: 6265 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6280: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> EXIT2_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6290: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> UPDATE_IR
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 6295: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #4 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6300: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> SELECT_DR_SCAN
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 6305: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 631 [UPDATE_IR] INSTRUCTION MISMATCH : DUT = 0x2, Expected = 0x0
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6310: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> SELECT_IR_SCAN
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 6315: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 632 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0x2, Expected = 0x0
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6320: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=1 -> TEST_LOGIC_RESET
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 6325: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 633 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0x2, Expected = 0x0
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(29) @ 6330: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Walk : TMS=0 -> RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6390: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : TEST_LOGIC_RESET --TMS=0--> RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6450: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : TEST_LOGIC_RESET --TMS=1--> TEST_LOGIC_RESET
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6520: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : RUN_TEST_IDLE --TMS=0--> RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6530: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : RUN_TEST_IDLE --TMS=1--> SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6540: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SELECT_DR_SCAN --TMS=0--> CAPTURE_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6620: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SELECT_DR_SCAN --TMS=1--> SELECT_IR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6710: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : CAPTURE_DR --TMS=0--> SHIFT_DR
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 6735: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #7 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6800: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : CAPTURE_DR --TMS=1--> EXIT1_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6900: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SHIFT_DR --TMS=0--> SHIFT_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6910: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SHIFT_DR --TMS=1--> EXIT1_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 6920: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT1_DR --TMS=0--> PAUSE_DR
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 6945: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #8 : register = IDCODE | length = 2 | TDI in = 0x0 | TDO out = 0x3 | expected = 0x3 --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7020: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT1_DR --TMS=1--> UPDATE_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7130: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : PAUSE_DR --TMS=0--> PAUSE_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7140: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : PAUSE_DR --TMS=1--> EXIT2_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7150: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT2_DR --TMS=0--> SHIFT_DR
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 7175: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #9 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7270: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT2_DR --TMS=1--> UPDATE_DR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7280: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : UPDATE_DR --TMS=0--> RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7390: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : UPDATE_DR --TMS=1--> SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7480: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SELECT_IR_SCAN --TMS=0--> CAPTURE_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7570: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SELECT_IR_SCAN --TMS=1--> TEST_LOGIC_RESET
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7670: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : CAPTURE_IR --TMS=0--> SHIFT_IR
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 7695: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #5 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 7695 ns Started: 7685 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 7705: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 771 [UPDATE_IR] INSTRUCTION MISMATCH : DUT = 0x2, Expected = 0x0
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 7715: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 772 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0x2, Expected = 0x0
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 7725: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 773 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0x2, Expected = 0x0
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7770: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : CAPTURE_IR --TMS=1--> EXIT1_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7880: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SHIFT_IR --TMS=0--> SHIFT_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7890: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : SHIFT_IR --TMS=1--> EXIT1_IR
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 7895 ns Started: 7885 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 7900: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT1_IR --TMS=0--> PAUSE_IR
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 7905 ns Started: 7895 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 7925: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #6 : length = 2 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 7935: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 794 [UPDATE_IR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x0
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 7945: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 795 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x0
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 7955: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 796 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x0
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8010: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT1_IR --TMS=1--> UPDATE_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8130: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : PAUSE_IR --TMS=0--> PAUSE_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8140: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : PAUSE_IR --TMS=1--> EXIT2_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8150: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT2_IR --TMS=0--> SHIFT_IR
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 8175: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #7 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 8175 ns Started: 8165 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 8185: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 819 [UPDATE_IR] INSTRUCTION MISMATCH : DUT = 0x2, Expected = 0x0
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 8195: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 820 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0x2, Expected = 0x0
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 8205: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 821 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0x2, Expected = 0x0
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8280: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : EXIT2_IR --TMS=1--> UPDATE_IR
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8290: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : UPDATE_IR --TMS=0--> RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_fsm_seqs_tc2.sv(40) @ 8410: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc2 [TC2_FSM] Transition : UPDATE_IR --TMS=1--> SELECT_DR_SCAN
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 8785: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #10 : register = IDCODE | length = 6 | TDI in = 0x0 | TDO out = 0x17 | expected = 0x17 --> MATCH
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 9035 ns Started: 9025 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 9045 ns Started: 9035 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 9055 ns Started: 9045 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 9065 ns Started: 9055 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 9085: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #8 : length = 6 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 9280: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0000
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 9345 ns Started: 9335 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 9355 ns Started: 9345 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 9365 ns Started: 9355 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 9375: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #9 : length = 4 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 9375 ns Started: 9365 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 9785: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #11 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 9790: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0001
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9855: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 986 [SHIFT_IR] TDO (IR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 9855 ns Started: 9845 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 9865 ns Started: 9855 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 9875 ns Started: 9865 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 9885: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #10 : length = 4 | TDI in = 0x1 | TDO out = 0x3 | expected = 0x1 | new instruction = 0001 (IDCODE) --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 9885: uvm_test_top.env_h.sb_h [JTAG_SB] IR scan #10 data does not match the specification
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 9885 ns Started: 9875 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9895: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 990 [UPDATE_IR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9905: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 991 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9915: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 992 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9925: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 993 [CAPTURE_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9935: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 994 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9935: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 994 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9945: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 995 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9955: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 996 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9965: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 997 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9965: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 997 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9975: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 998 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9985: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 999 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9995: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1000 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 9995: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1000 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10005: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1001 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10015: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1002 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10015: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1002 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10025: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1003 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10035: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1004 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10045: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1005 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10055: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1006 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10065: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1007 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10075: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1008 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10085: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1009 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10095: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1010 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10105: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1011 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10115: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1012 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10125: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1013 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10125: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1013 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10135: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1014 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10145: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1015 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10145: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1015 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10155: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1016 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10165: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1017 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10175: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1018 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10175: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1018 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10185: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1019 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10185: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1019 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10195: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1020 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10195: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1020 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10205: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1021 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10215: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1022 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10215: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1022 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10225: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1023 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10235: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1024 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10235: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1024 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x1, Expected = 0x0
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10245: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1025 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10255: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1026 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10265: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1027 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10275: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1028 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10275: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1028 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10285: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1029 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10285: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1029 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10295: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1030 [EXIT1_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 10295: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #12 : register = IDCODE | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0xf1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 10295: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #12 data does not match the specification
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 10300: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0010
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10305: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1031 [UPDATE_DR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10315: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1032 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10325: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1033 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10335: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1034 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10345: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1035 [CAPTURE_IR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10355: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1036 [SHIFT_IR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10365: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1037 [SHIFT_IR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 10365 ns Started: 10355 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10375: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1038 [SHIFT_IR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10375: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1038 [SHIFT_IR] TDO (IR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 10375 ns Started: 10365 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10385: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1039 [SHIFT_IR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 10385 ns Started: 10375 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10395: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1040 [EXIT1_IR] INSTRUCTION MISMATCH : DUT = 0x8, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 10395: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #11 : length = 4 | TDI in = 0x2 | TDO out = 0x5 | expected = 0x1 | new instruction = 0010 (UNUSED -> BYPASS) --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 10395: uvm_test_top.env_h.sb_h [JTAG_SB] IR scan #11 data does not match the specification
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 10395 ns Started: 10385 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10405: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1041 [UPDATE_IR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10415: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1042 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10425: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1043 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10435: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1044 [CAPTURE_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10445: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1045 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10455: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1046 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10465: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1047 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10475: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1048 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10485: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1049 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10495: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1050 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10505: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1051 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10515: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1052 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10525: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1053 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10535: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1054 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10545: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1055 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10555: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1056 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10565: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1057 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10575: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1058 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10585: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1059 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10595: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1060 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10605: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1061 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10615: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1062 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10625: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1063 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10635: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1064 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10645: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1065 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10655: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1066 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10665: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1067 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10675: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1068 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10685: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1069 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10695: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1070 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10705: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1071 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10715: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1072 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10725: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1073 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10735: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1074 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10745: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1075 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10755: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1076 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10765: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1077 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10775: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1078 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10785: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1079 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10795: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1080 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10805: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1081 [EXIT1_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 10805: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #13 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 10810: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0011
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10815: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1082 [UPDATE_DR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10825: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1083 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10835: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1084 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10845: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1085 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10855: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1086 [CAPTURE_IR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10865: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1087 [SHIFT_IR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10875: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1088 [SHIFT_IR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10875: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1088 [SHIFT_IR] TDO (IR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 10875 ns Started: 10865 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10885: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1089 [SHIFT_IR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10885: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1089 [SHIFT_IR] TDO (IR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 10885 ns Started: 10875 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10895: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1090 [SHIFT_IR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 10895 ns Started: 10885 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10905: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1091 [EXIT1_IR] INSTRUCTION MISMATCH : DUT = 0x4, Expected = 0x2
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 10905: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #12 : length = 4 | TDI in = 0x3 | TDO out = 0x7 | expected = 0x1 | new instruction = 0011 (UNUSED -> BYPASS) --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 10905: uvm_test_top.env_h.sb_h [JTAG_SB] IR scan #12 data does not match the specification
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 10905 ns Started: 10895 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10915: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1092 [UPDATE_IR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10925: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1093 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10935: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1094 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10945: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1095 [CAPTURE_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10955: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1096 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10965: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1097 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10975: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1098 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10985: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1099 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 10995: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1100 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11005: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1101 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11015: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1102 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11025: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1103 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11035: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1104 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11045: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1105 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11055: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1106 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11065: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1107 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11075: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1108 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11085: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1109 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11095: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1110 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11105: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1111 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11115: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1112 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11125: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1113 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11135: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1114 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11145: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1115 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11155: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1116 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11165: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1117 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11175: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1118 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11185: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1119 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11195: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1120 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11205: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1121 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11215: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1122 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11225: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1123 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11235: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1124 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11245: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1125 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11255: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1126 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11265: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1127 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11275: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1128 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11285: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1129 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11295: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1130 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11305: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1131 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11315: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1132 [EXIT1_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 11315: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #14 : register = BYPASS | length = 36 | TDI in = 0x9a5c3f00f | TDO out = 0x34b87e01e | expected = 0x34b87e01e --> MATCH
+# UVM_INFO ../TEST/jtag_ir_seqs_tc3.sv(23) @ 11320: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc3 [TC3_IR] Loading instruction 0100
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11325: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1133 [UPDATE_DR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11335: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1134 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11345: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1135 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11355: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1136 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11365: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1137 [CAPTURE_IR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11375: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1138 [SHIFT_IR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11385: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1139 [SHIFT_IR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 11385 ns Started: 11375 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11395: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1140 [SHIFT_IR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 11395 ns Started: 11385 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11405: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1141 [SHIFT_IR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11405: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1141 [SHIFT_IR] TDO (IR) MISMATCH : DUT = 0x1, Expected = 0x0
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 11405 ns Started: 11395 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11415: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1142 [EXIT1_IR] INSTRUCTION MISMATCH : DUT = 0xc, Expected = 0x3
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 11415: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #13 : length = 4 | TDI in = 0x4 | TDO out = 0x9 | expected = 0x1 | new instruction = 0100 (UNUSED -> BYPASS) --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 11415: uvm_test_top.env_h.sb_h [JTAG_SB] IR scan #13 data does not match the specification
+# ** Error: A_IR_SHIFT : IR did not shift correctly
+#    Time: 11415 ns Started: 11405 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_IR_SHIFT File: ../TOP/jtag_sva.sv Line: 82
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 11425: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 1143 [UPDATE_IR] INSTRUCTION MISMATCH : DUT = 0x2, Expected = 0x4
+# 
+# --- UVM Report Summary ---
+# 
+# Quit count reached!
+# Quit count :   200 of   200
+# ** Report counts by severity
+# UVM_INFO :  120
+# UVM_WARNING :    0
+# UVM_ERROR :  200
+# UVM_FATAL :    0
+# ** Report counts by id
+# [JTAG_SB]   227
+# [MAXQUITSET]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TC1_RESET]    32
+# [TC2_FSM]    51
+# [TC3_IR]     5
+# [UVMTOP]     1
+# ** Note: $finish    : C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 11425 ns  Iteration: 4  Region: /uvm_pkg::uvm_task_phase::execute
+# Break in Function uvm_pkg/uvm_report_object::die at C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292
+# Stopped at C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292

@@ -1,0 +1,9 @@
+QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+Start time: 23:15:23 on Nov 27,2026
+vlog -sv "+cover=bcesft" ../RTL/jtag_tap.sv -l ../RESULTS/coverage/compile_rtl.log 
+-- Compiling module jtag_tap
+
+Top level modules:
+	jtag_tap
+End time: 23:15:23 on Nov 27,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

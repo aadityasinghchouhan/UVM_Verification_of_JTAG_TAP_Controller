@@ -1,0 +1,14 @@
+======================== JTAG TAP REGRESSION SUMMARY ========================
+  TEST                    RESULT        UVM_ERROR       FUNCTIONAL COVERAGE
+  jtag_base_test          TEST PASSED   0               71.53 %
+  jtag_reset_tc1          TEST PASSED   0               83.96 %
+  jtag_fsm_tc2            TEST PASSED   0               76.25 %
+  jtag_ir_tc3             TEST PASSED   0               85.83 %
+  jtag_idcode_tc4         TEST PASSED   0               65.35 %
+  jtag_bypass_tc5         TEST PASSED   0               77.36 %
+  jtag_random_tc6         TEST PASSED   0               100.00 %
+  jtag_corner_tc7         TEST PASSED   0               91.56 %
+  jtag_regression_tc8     TEST PASSED   0               100.00 %
+=============================================================================
+  OVERALL : ALL 9 TESTS PASSED
+=============================================================================

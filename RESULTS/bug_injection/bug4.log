@@ -1,0 +1,445 @@
+# End time: 23:14:19 on Nov 27,2026, Elapsed time: 0:00:05
+# Errors: 199, Warnings: 0
+# QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+# Start time: 23:14:19 on Nov 27,2026
+# vlog -sv ../BUGS/jtag_tap_bug4.sv 
+# -- Compiling module jtag_tap
+# 
+# Top level modules:
+# 	jtag_tap
+# End time: 23:14:19 on Nov 27,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+# Start time: 23:14:20 on Nov 27,2026
+# vlog -sv ../TEST/jtag_pkg.sv ../TOP/jtag_sva.sv ../TOP/jtag_top.sv "+incdir+../ENV" "+incdir+../TEST" "+incdir+../TOP" 
+# -- Compiling interface jtag_if
+# -- Compiling package jtag_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) ../TEST/jtag_pkg.sv(6): Using implicit +incdir+C:/questasim64_10.7c/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling module jtag_sva
+# -- Importing package jtag_pkg
+# -- Compiling package jtag_top_sv_unit
+# -- Importing package jtag_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Compiling module jtag_top
+# 
+# Top level modules:
+# 	jtag_top
+# End time: 23:14:20 on Nov 27,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -vopt -onfinish stop jtag_top "+UVM_TESTNAME=jtag_regression_tc8" "+UVM_MAX_QUIT_COUNT=200,NO" 
+# Start time: 23:14:20 on Nov 27,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.jtag_if(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.jtag_pkg(fast)
+# Loading work.jtag_top_sv_unit(fast)
+# Loading work.jtag_top(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading C:/questasim64_10.7c/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(216) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test jtag_regression_tc8...
+# UVM_INFO @ 0: reporter [MAXQUITSET] '+UVM_MAX_QUIT_COUNT=200,NO' provided on the command line is being applied.
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# ------------------------------------------------------------------
+# Name                       Type                        Size  Value
+# ------------------------------------------------------------------
+# uvm_test_top               jtag_regression_tc8         -     @472 
+#   env_h                    jtag_env                    -     @485 
+#     agent_h                jtag_agent                  -     @492 
+#       drv_h                jtag_drv                    -     @586 
+#         rsp_port           uvm_analysis_port           -     @601 
+#         seq_item_port      uvm_seq_item_pull_port      -     @593 
+#       mon_h                jtag_mon                    -     @571 
+#         analysis_port      uvm_analysis_port           -     @578 
+#       seqr_h               jtag_seqr                   -     @609 
+#         rsp_export         uvm_analysis_export         -     @616 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @710 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     cov_h                  jtag_cov                    -     @553 
+#       analysis_imp         uvm_analysis_imp            -     @560 
+#     sb_h                   jtag_sb                     -     @499 
+#       mon_analysis_fifo    uvm_tlm_analysis_fifo #(T)  -     @506 
+#         analysis_export    uvm_analysis_imp            -     @545 
+#         get_ap             uvm_analysis_port           -     @537 
+#         get_peek_export    uvm_get_peek_imp            -     @521 
+#         put_ap             uvm_analysis_port           -     @529 
+#         put_export         uvm_put_imp                 -     @513 
+# ------------------------------------------------------------------
+# 
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 395: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #1 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 495: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #1 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 895: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #2 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 995: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #2 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1045: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 105 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1050 ns Started: 1040 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1055: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 106 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1060 ns Started: 1050 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1065: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 107 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1070 ns Started: 1060 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1075: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 108 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1085: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 109 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1095: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 110 [CAPTURE_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1105: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 111 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1105: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 111 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1115: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 112 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1115: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 112 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1125: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 113 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1125: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 113 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1135: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 114 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1145: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 115 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1145: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 115 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1155: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 116 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1165: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 117 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1165: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 117 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1175: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 118 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1185: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 119 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1185: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 119 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1195: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 120 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1205: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 121 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1215: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 122 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1225: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 123 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1235: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 124 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1235: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 124 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1245: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 125 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1245: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 125 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1255: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 126 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1255: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 126 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1265: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 127 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1265: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 127 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1275: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 128 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1275: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 128 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1285: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 129 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1285: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 129 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1295: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 130 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1295: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 130 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1305: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 131 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1315: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 132 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1315: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 132 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1325: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 133 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1335: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 134 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1335: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 134 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1345: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 135 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1355: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 136 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1365: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 137 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1365: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 137 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1375: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 138 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1375: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 138 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1385: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 139 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1385: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 139 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1395: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 140 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1405: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 141 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1415: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 142 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1425: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 143 [EXIT1_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 1425: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #3 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x1cafe157 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 1425: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #3 data does not match the specification
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1435: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 144 [UPDATE_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1445: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 145 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1455: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 146 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1465: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 147 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1475: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 148 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1480: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state TEST_LOGIC_RESET
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1480 ns Started: 1470 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1485: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 149 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1490 ns Started: 1480 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1495: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 150 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1500 ns Started: 1490 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1505: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 151 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1510 ns Started: 1500 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1515: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 152 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1520 ns Started: 1510 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1525: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 153 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1530 ns Started: 1520 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1535: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 154 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1540: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state RUN_TEST_IDLE
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1540 ns Started: 1530 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1545: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 155 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1550 ns Started: 1540 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1555: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 156 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1565: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 157 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1575: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 158 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1585: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 159 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1590 ns Started: 1580 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1595: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 160 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1600 ns Started: 1590 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1605: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 161 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1610 ns Started: 1600 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1615: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 162 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1625: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 163 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1635: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 164 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1645: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 165 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1650 ns Started: 1640 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1655: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 166 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1660 ns Started: 1650 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1665: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 167 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1670: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state SELECT_DR_SCAN
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1670 ns Started: 1660 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1675: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 168 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1685: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 169 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1695: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 170 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1705: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 171 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1710 ns Started: 1700 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1715: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 172 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1720 ns Started: 1710 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1725: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 173 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1730 ns Started: 1720 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1735: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 174 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1740 ns Started: 1730 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1745: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 175 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1755: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 176 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1765: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 177 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1775: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 178 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1780 ns Started: 1770 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1785: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 179 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1790 ns Started: 1780 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1795: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 180 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1800 ns Started: 1790 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1805: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 181 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1810: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state CAPTURE_DR
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1815: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 182 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1825: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 183 [CAPTURE_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1835: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 184 [EXIT1_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1845: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 185 [UPDATE_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1855: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 186 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1865: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 187 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1875: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 188 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1880 ns Started: 1870 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1885: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 189 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1895: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 190 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1905: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 191 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1915: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 192 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1920 ns Started: 1910 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1925: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 193 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1930 ns Started: 1920 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1935: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 194 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 1940 ns Started: 1930 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1945: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 195 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1955: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 196 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1960: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state SHIFT_DR
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1965: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 197 [CAPTURE_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1975: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 198 [SHIFT_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1975: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 198 [SHIFT_DR] TDO (DR) MISMATCH : DUT = 0x0, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1985: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 199 [EXIT1_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 1985: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #4 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x0 | expected = 0x1 --> MIS-MATCH
+# UVM_ERROR ../ENV/jtag_sb.sv(223) @ 1985: uvm_test_top.env_h.sb_h [JTAG_SB] DR scan #4 data does not match the specification
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 1995: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 200 [UPDATE_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2005: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 201 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2015: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 202 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2025: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 203 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2030 ns Started: 2020 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2035: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 204 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2045: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 205 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2055: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 206 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2065: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 207 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2070 ns Started: 2060 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2075: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 208 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2080 ns Started: 2070 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2085: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 209 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2090 ns Started: 2080 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2095: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 210 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2105: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 211 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2110: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state EXIT1_DR
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2115: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 212 [CAPTURE_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2125: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 213 [EXIT1_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2135: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 214 [UPDATE_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2145: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 215 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2155: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 216 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2165: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 217 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2170 ns Started: 2160 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2175: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 218 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2180 ns Started: 2170 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2185: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 219 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2195: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 220 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2205: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 221 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2215: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 222 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2220 ns Started: 2210 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2225: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 223 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2230 ns Started: 2220 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2235: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 224 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2240 ns Started: 2230 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2245: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 225 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2255: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 226 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2265: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 227 [CAPTURE_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2270: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state PAUSE_DR
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2275: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 228 [EXIT1_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2285: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 229 [PAUSE_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2295: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 230 [EXIT2_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2305: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 231 [UPDATE_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2315: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 232 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2325: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 233 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2335: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 234 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2340 ns Started: 2330 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2345: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 235 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2355: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 236 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2365: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 237 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2375: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 238 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2380 ns Started: 2370 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2385: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 239 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2390 ns Started: 2380 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2395: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 240 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2400 ns Started: 2390 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2405: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 241 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2415: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 242 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2425: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 243 [CAPTURE_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2435: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 244 [EXIT1_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2440: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state EXIT2_DR
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2445: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 245 [PAUSE_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2455: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 246 [EXIT2_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2465: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 247 [UPDATE_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2475: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 248 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2485: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 249 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2495: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 250 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2500 ns Started: 2490 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2505: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 251 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2510 ns Started: 2500 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2515: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 252 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2525: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 253 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2535: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 254 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2545: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 255 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2550 ns Started: 2540 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2555: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 256 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2560 ns Started: 2550 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2565: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 257 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2570 ns Started: 2560 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2575: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 258 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2585: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 259 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2595: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 260 [CAPTURE_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2600: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state UPDATE_DR
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2605: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 261 [EXIT1_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2615: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 262 [UPDATE_DR] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2625: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 263 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2635: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 264 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2645: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 265 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2650 ns Started: 2640 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2655: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 266 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2660 ns Started: 2650 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2665: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 267 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2670 ns Started: 2660 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2675: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 268 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2685: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 269 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2695: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 270 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2705: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 271 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2710 ns Started: 2700 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2715: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 272 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2720 ns Started: 2710 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2725: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 273 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2730 ns Started: 2720 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2735: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 274 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2740: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc.seqs_tc1 [TC1_RESET] TMS reset (5 x TMS=1) from state SELECT_IR_SCAN
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2745: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 275 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2755: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 276 [SELECT_IR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2765: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 277 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2770 ns Started: 2760 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2775: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 278 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2780 ns Started: 2770 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2785: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 279 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2790 ns Started: 2780 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2795: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 280 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2800 ns Started: 2790 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2805: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 281 [TEST_LOGIC_RESET] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# ** Error: A_TLR_IDCODE : Test-Logic-Reset did not select IDCODE
+#    Time: 2810 ns Started: 2800 ns  Scope: jtag_top.JTAG_DUT.JTAG_SVA.A_TLR_IDCODE File: ../TOP/jtag_sva.sv Line: 76
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2815: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 282 [RUN_TEST_IDLE] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# UVM_ERROR ../ENV/jtag_sb.sv(155) @ 2825: uvm_test_top.env_h.sb_h [JTAG_SB] Cycle 283 [SELECT_DR_SCAN] INSTRUCTION MISMATCH : DUT = 0xf, Expected = 0x1
+# 
+# --- UVM Report Summary ---
+# 
+# Quit count reached!
+# Quit count :   200 of   200
+# ** Report counts by severity
+# UVM_INFO :   21
+# UVM_WARNING :    0
+# UVM_ERROR :  200
+# UVM_FATAL :    0
+# ** Report counts by id
+# [JTAG_SB]   206
+# [MAXQUITSET]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TC1_RESET]    10
+# [UVMTOP]     1
+# ** Note: $finish    : C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 2825 ns  Iteration: 4  Region: /uvm_pkg::uvm_task_phase::execute
+# Break in Function uvm_pkg/uvm_report_object::die at C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292
+# Stopped at C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292

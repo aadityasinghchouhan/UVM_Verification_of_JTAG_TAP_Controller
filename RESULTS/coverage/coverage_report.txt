@@ -1,0 +1,786 @@
+Coverage Report by file with details
+
+=================================================================================
+=== File: ../RTL/jtag_tap.sv
+=================================================================================
+Statement Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           48        48         0    100.00
+
+================================Statement Details================================
+
+Statement Coverage for file ../RTL/jtag_tap.sv --
+
+    1                                                //-----------------------------------------------------------------------------
+    2                                                // JTAG (IEEE 1149.1) TAP Controller
+    3                                                //
+    4                                                //  - 16-state TAP FSM controlled by TMS, active-low asynchronous TRST_N
+    5                                                //  - 4-bit Instruction Register (IR) with instruction decoder
+    6                                                //  - Data registers : BYPASS (1-bit) and IDCODE (32-bit)
+    7                                                //  - Rising  edge of TCK : FSM state change, Capture and Shift
+    8                                                //  - Falling edge of TCK : Update-IR, TDO and TDO enable change
+    9                                                //
+    10                                               //  Instructions:
+    11                                               //      IDCODE = 4'b0001  -> selects 32-bit IDCODE register (default after reset)
+    12                                               //      BYPASS = 4'b1111  -> selects 1-bit BYPASS register
+    13                                               //      Any other opcode  -> treated as BYPASS
+    14                                               //-----------------------------------------------------------------------------
+    15                                               module jtag_tap #(parameter logic [31:0] IDCODE_VALUE = 32'h1CAFE157) (
+    16                                                   input  logic       tck,
+    17                                                   input  logic       trst_n,
+    18                                                   input  logic       tms,
+    19                                                   input  logic       tdi,
+    20                                                   output logic       tdo,
+    21                                                   output logic       tdo_en,           // 1 only while shifting (Shift-IR / Shift-DR)
+    22                                               
+    23                                                   // observation ports (current FSM state and active instruction)
+    24                                                   output logic [3:0] tap_state,
+    25                                                   output logic [3:0] ir_reg,
+    26                                               
+    27                                                   // control signals decoded from the FSM state
+    28                                                   output logic       test_logic_reset,
+    29                                                   output logic       run_test_idle,
+    30                                                   output logic       capture_dr,
+    31                                                   output logic       shift_dr,
+    32                                                   output logic       update_dr,
+    33                                                   output logic       capture_ir,
+    34                                                   output logic       shift_ir,
+    35                                                   output logic       update_ir
+    36                                               );
+    37                                               
+    38                                                   //---------------------------------------------------------------
+    39                                                   // TAP state encoding
+    40                                                   //---------------------------------------------------------------
+    41                                                   localparam logic [3:0] TEST_LOGIC_RESET = 4'd0,
+    42                                                                          RUN_TEST_IDLE    = 4'd1,
+    43                                                                          SELECT_DR_SCAN   = 4'd2,
+    44                                                                          CAPTURE_DR       = 4'd3,
+    45                                                                          SHIFT_DR         = 4'd4,
+    46                                                                          EXIT1_DR         = 4'd5,
+    47                                                                          PAUSE_DR         = 4'd6,
+    48                                                                          EXIT2_DR         = 4'd7,
+    49                                                                          UPDATE_DR        = 4'd8,
+    50                                                                          SELECT_IR_SCAN   = 4'd9,
+    51                                                                          CAPTURE_IR       = 4'd10,
+    52                                                                          SHIFT_IR         = 4'd11,
+    53                                                                          EXIT1_IR         = 4'd12,
+    54                                                                          PAUSE_IR         = 4'd13,
+    55                                                                          EXIT2_IR         = 4'd14,
+    56                                                                          UPDATE_IR        = 4'd15;
+    57                                               
+    58                                                   // instruction opcodes
+    59                                                   localparam logic [3:0] IDCODE = 4'b0001,
+    60                                                                          BYPASS = 4'b1111;
+    61                                               
+    62                                                   //---------------------------------------------------------------
+    63                                                   // internal registers
+    64                                                   //---------------------------------------------------------------
+    65                                                   logic [3:0]  state, next_state;
+    66                                                   logic [3:0]  ir_shift_reg;     // IR shift stage
+    67                                                   logic [31:0] idcode_reg;       // IDCODE shift register
+    68                                                   logic        bypass_reg;       // BYPASS register
+    69                                               
+    70                                                   //---------------------------------------------------------------
+    71                                                   // Next-state logic (TAP state diagram)
+    72                                                   //---------------------------------------------------------------
+    73              1                       6610         always_comb begin
+    74                                                       case (state)
+    75              1                        394                 TEST_LOGIC_RESET : next_state = tms ? TEST_LOGIC_RESET : RUN_TEST_IDLE;
+    76              1                        962                 RUN_TEST_IDLE    : next_state = tms ? SELECT_DR_SCAN   : RUN_TEST_IDLE;
+    77              1                        933                 SELECT_DR_SCAN   : next_state = tms ? SELECT_IR_SCAN   : CAPTURE_DR;
+    78              1                        426                 CAPTURE_DR       : next_state = tms ? EXIT1_DR         : SHIFT_DR;
+    79              1                        557                 SHIFT_DR         : next_state = tms ? EXIT1_DR         : SHIFT_DR;
+    80              1                        560                 EXIT1_DR         : next_state = tms ? UPDATE_DR        : PAUSE_DR;
+    81              1                        330                 PAUSE_DR         : next_state = tms ? EXIT2_DR         : PAUSE_DR;
+    82              1                        260                 EXIT2_DR         : next_state = tms ? UPDATE_DR        : SHIFT_DR;
+    83              1                        473                 UPDATE_DR        : next_state = tms ? SELECT_DR_SCAN   : RUN_TEST_IDLE;
+    84              1                        489                 SELECT_IR_SCAN   : next_state = tms ? TEST_LOGIC_RESET : CAPTURE_IR;
+    85              1                        227                 CAPTURE_IR       : next_state = tms ? EXIT1_IR         : SHIFT_IR;
+    86              1                        276                 SHIFT_IR         : next_state = tms ? EXIT1_IR         : SHIFT_IR;
+    87              1                        248                 EXIT1_IR         : next_state = tms ? UPDATE_IR        : PAUSE_IR;
+    88              1                        116                 PAUSE_IR         : next_state = tms ? EXIT2_IR         : PAUSE_IR;
+    89              1                         83                 EXIT2_IR         : next_state = tms ? UPDATE_IR        : SHIFT_IR;
+    90              1                        262                 UPDATE_IR        : next_state = tms ? SELECT_DR_SCAN   : RUN_TEST_IDLE;
+    91              1                         14                 default          : next_state = TEST_LOGIC_RESET;
+    92                                                       endcase
+    93                                                   end
+    94                                               
+    95                                                   //---------------------------------------------------------------
+    96                                                   // Rising edge : state register, Capture and Shift operations
+    97                                                   //---------------------------------------------------------------
+    98              1                       6607         always_ff @(posedge tck or negedge trst_n) begin
+    99                                                       if (!trst_n) begin
+    100             1                        117                 state        <= TEST_LOGIC_RESET;
+    101             1                        117                 ir_shift_reg <= 4'b0001;
+    102             1                        117                 idcode_reg   <= 32'd0;
+    103             1                        117                 bypass_reg   <= 1'b0;
+    104                                                      end
+    105                                                      else begin
+    106             1                       6490                 state <= next_state;
+    107                                                          case (state)
+    108             1                        167                     CAPTURE_IR : ir_shift_reg <= 4'b0001;                    // LSBs must be "01"
+    109             1                        394                     SHIFT_IR   : ir_shift_reg <= {tdi, ir_shift_reg[3:1]};   // shift right, LSB first
+    110                                                              CAPTURE_DR : begin
+    111             1                        175                         if (ir_reg == IDCODE) idcode_reg <= IDCODE_VALUE;
+    112             1                        126                         else                  bypass_reg <= 1'b0;            // BYPASS captures 0
+    113                                                              end
+    114                                                              SHIFT_DR   : begin
+    115             1                       1010                         if (ir_reg == IDCODE) idcode_reg <= {tdi, idcode_reg[31:1]};
+    116             1                       1071                         else                  bypass_reg <= tdi;
+    117                                                              end
+    118                                                              default    : ;
+    119                                                          endcase
+    120                                                      end
+    121                                                  end
+    122                                              
+    123                                                  //---------------------------------------------------------------
+    124                                                  // Falling edge : Update-IR, TDO and TDO enable
+    125                                                  //---------------------------------------------------------------
+    126             1                       5630         always_ff @(negedge tck or negedge trst_n) begin
+    127                                                      if (!trst_n) begin
+    128             1                        116                 ir_reg <= IDCODE;              // IDCODE is the default instruction
+    129             1                        116                 tdo    <= 1'b0;
+    130             1                        116                 tdo_en <= 1'b0;
+    131                                                      end
+    132                                                      else begin
+    133                                                          // instruction register
+    134             1                        168                 if (state == TEST_LOGIC_RESET) ir_reg <= IDCODE;
+    135             1                        159                 else if (state == UPDATE_IR)   ir_reg <= ir_shift_reg;
+    136                                              
+    137                                                          // TDO is driven only in the Shift states, and only changes on the falling edge
+    138             1                       5514                 tdo_en <= (state == SHIFT_IR) || (state == SHIFT_DR);
+    139                                              
+    140                                                          if (state == SHIFT_IR)
+    141             1                        381                     tdo <= ir_shift_reg[0];
+    142                                                          else if (state == SHIFT_DR)
+    143             1                       1579                     tdo <= (ir_reg == IDCODE) ? idcode_reg[0] : bypass_reg;
+    144                                                          else
+    145             1                       3554                     tdo <= 1'b0;
+    146                                                      end
+    147                                                  end
+    148                                              
+    149                                                  //---------------------------------------------------------------
+    150                                                  // Outputs
+    151                                                  //---------------------------------------------------------------
+    152                                                  assign tap_state        = state;
+    153             1                       4004         assign test_logic_reset = (state == TEST_LOGIC_RESET);
+    154             1                       4004         assign run_test_idle    = (state == RUN_TEST_IDLE);
+    155             1                       4004         assign capture_dr       = (state == CAPTURE_DR);
+    156             1                       4004         assign shift_dr         = (state == SHIFT_DR);
+    157             1                       4004         assign update_dr        = (state == UPDATE_DR);
+    158             1                       4004         assign capture_ir       = (state == CAPTURE_IR);
+    159             1                       4004         assign shift_ir         = (state == SHIFT_IR);
+    160             1                       4004         assign update_ir        = (state == UPDATE_IR);
+    161                                              
+    162                                              endmodule : jtag_tap
+
+Branch Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Branches                        70        70         0    100.00
+
+================================Branch Details================================
+
+Branch Coverage for file ../RTL/jtag_tap.sv --
+
+------------------------------------CASE Branch------------------------------------
+    74                                      6610     Count coming in to CASE
+    75              1                        394                 TEST_LOGIC_RESET : next_state = tms ? TEST_LOGIC_RESET : RUN_TEST_IDLE;
+    76              1                        962                 RUN_TEST_IDLE    : next_state = tms ? SELECT_DR_SCAN   : RUN_TEST_IDLE;
+    77              1                        933                 SELECT_DR_SCAN   : next_state = tms ? SELECT_IR_SCAN   : CAPTURE_DR;
+    78              1                        426                 CAPTURE_DR       : next_state = tms ? EXIT1_DR         : SHIFT_DR;
+    79              1                        557                 SHIFT_DR         : next_state = tms ? EXIT1_DR         : SHIFT_DR;
+    80              1                        560                 EXIT1_DR         : next_state = tms ? UPDATE_DR        : PAUSE_DR;
+    81              1                        330                 PAUSE_DR         : next_state = tms ? EXIT2_DR         : PAUSE_DR;
+    82              1                        260                 EXIT2_DR         : next_state = tms ? UPDATE_DR        : SHIFT_DR;
+    83              1                        473                 UPDATE_DR        : next_state = tms ? SELECT_DR_SCAN   : RUN_TEST_IDLE;
+    84              1                        489                 SELECT_IR_SCAN   : next_state = tms ? TEST_LOGIC_RESET : CAPTURE_IR;
+    85              1                        227                 CAPTURE_IR       : next_state = tms ? EXIT1_IR         : SHIFT_IR;
+    86              1                        276                 SHIFT_IR         : next_state = tms ? EXIT1_IR         : SHIFT_IR;
+    87              1                        248                 EXIT1_IR         : next_state = tms ? UPDATE_IR        : PAUSE_IR;
+    88              1                        116                 PAUSE_IR         : next_state = tms ? EXIT2_IR         : PAUSE_IR;
+    89              1                         83                 EXIT2_IR         : next_state = tms ? UPDATE_IR        : SHIFT_IR;
+    90              1                        262                 UPDATE_IR        : next_state = tms ? SELECT_DR_SCAN   : RUN_TEST_IDLE;
+    91              1                         14                 default          : next_state = TEST_LOGIC_RESET;
+Branch totals: 17 hits of 17 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    75                                       394     Count coming in to IF
+    75              2                        189                 TEST_LOGIC_RESET : next_state = tms ? TEST_LOGIC_RESET : RUN_TEST_IDLE;
+    75              3                        205                 TEST_LOGIC_RESET : next_state = tms ? TEST_LOGIC_RESET : RUN_TEST_IDLE;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    76                                       962     Count coming in to IF
+    76              2                        476                 RUN_TEST_IDLE    : next_state = tms ? SELECT_DR_SCAN   : RUN_TEST_IDLE;
+    76              3                        486                 RUN_TEST_IDLE    : next_state = tms ? SELECT_DR_SCAN   : RUN_TEST_IDLE;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    77                                       933     Count coming in to IF
+    77              2                        627                 SELECT_DR_SCAN   : next_state = tms ? SELECT_IR_SCAN   : CAPTURE_DR;
+    77              3                        306                 SELECT_DR_SCAN   : next_state = tms ? SELECT_IR_SCAN   : CAPTURE_DR;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    78                                       426     Count coming in to IF
+    78              2                        120                 CAPTURE_DR       : next_state = tms ? EXIT1_DR         : SHIFT_DR;
+    78              3                        306                 CAPTURE_DR       : next_state = tms ? EXIT1_DR         : SHIFT_DR;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    79                                       557     Count coming in to IF
+    79              2                        277                 SHIFT_DR         : next_state = tms ? EXIT1_DR         : SHIFT_DR;
+    79              3                        280                 SHIFT_DR         : next_state = tms ? EXIT1_DR         : SHIFT_DR;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    80                                       560     Count coming in to IF
+    80              2                        393                 EXIT1_DR         : next_state = tms ? UPDATE_DR        : PAUSE_DR;
+    80              3                        167                 EXIT1_DR         : next_state = tms ? UPDATE_DR        : PAUSE_DR;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    81                                       330     Count coming in to IF
+    81              2                        165                 PAUSE_DR         : next_state = tms ? EXIT2_DR         : PAUSE_DR;
+    81              3                        165                 PAUSE_DR         : next_state = tms ? EXIT2_DR         : PAUSE_DR;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    82                                       260     Count coming in to IF
+    82              2                        163                 EXIT2_DR         : next_state = tms ? UPDATE_DR        : SHIFT_DR;
+    82              3                         97                 EXIT2_DR         : next_state = tms ? UPDATE_DR        : SHIFT_DR;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    83                                       473     Count coming in to IF
+    83              2                        288                 UPDATE_DR        : next_state = tms ? SELECT_DR_SCAN   : RUN_TEST_IDLE;
+    83              3                        185                 UPDATE_DR        : next_state = tms ? SELECT_DR_SCAN   : RUN_TEST_IDLE;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    84                                       489     Count coming in to IF
+    84              2                        318                 SELECT_IR_SCAN   : next_state = tms ? TEST_LOGIC_RESET : CAPTURE_IR;
+    84              3                        171                 SELECT_IR_SCAN   : next_state = tms ? TEST_LOGIC_RESET : CAPTURE_IR;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    85                                       227     Count coming in to IF
+    85              2                         57                 CAPTURE_IR       : next_state = tms ? EXIT1_IR         : SHIFT_IR;
+    85              3                        170                 CAPTURE_IR       : next_state = tms ? EXIT1_IR         : SHIFT_IR;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    86                                       276     Count coming in to IF
+    86              2                        137                 SHIFT_IR         : next_state = tms ? EXIT1_IR         : SHIFT_IR;
+    86              3                        139                 SHIFT_IR         : next_state = tms ? EXIT1_IR         : SHIFT_IR;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    87                                       248     Count coming in to IF
+    87              2                        190                 EXIT1_IR         : next_state = tms ? UPDATE_IR        : PAUSE_IR;
+    87              3                         58                 EXIT1_IR         : next_state = tms ? UPDATE_IR        : PAUSE_IR;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    88                                       116     Count coming in to IF
+    88              2                         58                 PAUSE_IR         : next_state = tms ? EXIT2_IR         : PAUSE_IR;
+    88              3                         58                 PAUSE_IR         : next_state = tms ? EXIT2_IR         : PAUSE_IR;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    89                                        83     Count coming in to IF
+    89              2                         56                 EXIT2_IR         : next_state = tms ? UPDATE_IR        : SHIFT_IR;
+    89              3                         27                 EXIT2_IR         : next_state = tms ? UPDATE_IR        : SHIFT_IR;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    90                                       262     Count coming in to IF
+    90              2                        159                 UPDATE_IR        : next_state = tms ? SELECT_DR_SCAN   : RUN_TEST_IDLE;
+    90              3                        103                 UPDATE_IR        : next_state = tms ? SELECT_DR_SCAN   : RUN_TEST_IDLE;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    99                                      6607     Count coming in to IF
+    99              1                        117             if (!trst_n) begin
+    105             1                       6490             else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    107                                     6490     Count coming in to CASE
+    108             1                        167                     CAPTURE_IR : ir_shift_reg <= 4'b0001;                    // LSBs must be "01"
+    109             1                        394                     SHIFT_IR   : ir_shift_reg <= {tdi, ir_shift_reg[3:1]};   // shift right, LSB first
+    110             1                        301                     CAPTURE_DR : begin
+    114             1                       2081                     SHIFT_DR   : begin
+    118             1                       3547                     default    : ;
+Branch totals: 5 hits of 5 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    111                                      301     Count coming in to IF
+    111             1                        175                         if (ir_reg == IDCODE) idcode_reg <= IDCODE_VALUE;
+    112             1                        126                         else                  bypass_reg <= 1'b0;            // BYPASS captures 0
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    115                                     2081     Count coming in to IF
+    115             1                       1010                         if (ir_reg == IDCODE) idcode_reg <= {tdi, idcode_reg[31:1]};
+    116             1                       1071                         else                  bypass_reg <= tdi;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    127                                     5630     Count coming in to IF
+    127             1                        116             if (!trst_n) begin
+    132             1                       5514             else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    134                                     5514     Count coming in to IF
+    134             1                        168                 if (state == TEST_LOGIC_RESET) ir_reg <= IDCODE;
+    135             1                        159                 else if (state == UPDATE_IR)   ir_reg <= ir_shift_reg;
+                                            5187     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    140                                     5514     Count coming in to IF
+    140             1                        381                 if (state == SHIFT_IR)
+    142             1                       1579                 else if (state == SHIFT_DR)
+    144             1                       3554                 else
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    143                                     1579     Count coming in to IF
+    143             1                        546                     tdo <= (ir_reg == IDCODE) ? idcode_reg[0] : bypass_reg;
+    143             2                       1033                     tdo <= (ir_reg == IDCODE) ? idcode_reg[0] : bypass_reg;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Condition Terms              6         6         0    100.00
+
+================================Condition Details================================
+
+Condition Coverage for file ../RTL/jtag_tap.sv --
+
+----------------Focused Condition View-------------------
+Line       111 Item    1  (ir_reg == 1)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       115 Item    1  (ir_reg == 1)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       134 Item    1  (state == 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       135 Item    1  (state == 15)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       140 Item    1  (state == 11)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       142 Item    1  (state == 4)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+
+Expression Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Expression Terms            13        13         0    100.00
+
+================================Expression Details================================
+
+Expression Coverage for file ../RTL/jtag_tap.sv --
+
+----------------Focused Expression View-----------------
+Line       138 Item    1  ((state == 11) || (state == 4))
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+-----------Focused Expression View (Bimodal)------------
+Line       143 Item    1  ((ir_reg == 1)? idcode_reg[0]: bypass_reg)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       153 Item    1  (state == 0)
+Expression totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       154 Item    1  (state == 1)
+Expression totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       155 Item    1  (state == 3)
+Expression totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       156 Item    1  (state == 4)
+Expression totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       157 Item    1  (state == 8)
+Expression totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       158 Item    1  (state == 10)
+Expression totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       159 Item    1  (state == 11)
+Expression totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       160 Item    1  (state == 15)
+Expression totals: 1 of 1 input term covered = 100.00%
+
+
+FSM Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FSMs                                                      100.00
+        States                      16        16         0    100.00
+        Transitions                 40        40         0    100.00
+
+================================FSM Details================================
+
+FSM Coverage for file ../RTL/jtag_tap.sv --
+
+FSM_ID: state
+    Current State Object : state
+    ----------------------
+    State Value MapInfo :
+    ---------------------
+Line          State Name               Value
+----          ----------               -----
+  75    TEST_LOGIC_RESET                   0
+  76       RUN_TEST_IDLE                   1
+  77      SELECT_DR_SCAN                   2
+  78          CAPTURE_DR                   3
+  84      SELECT_IR_SCAN                   9
+  79            SHIFT_DR                   4
+  80            EXIT1_DR                   5
+  81            PAUSE_DR                   6
+  83           UPDATE_DR                   8
+  82            EXIT2_DR                   7
+  85          CAPTURE_IR                  10
+  86            SHIFT_IR                  11
+  87            EXIT1_IR                  12
+  88            PAUSE_IR                  13
+  90           UPDATE_IR                  15
+  89            EXIT2_IR                  14
+    Covered States :
+    ----------------
+                   State           Hit_count
+                   -----           ---------
+        TEST_LOGIC_RESET                 389
+           RUN_TEST_IDLE                 680
+          SELECT_DR_SCAN                 627
+              CAPTURE_DR                 306
+          SELECT_IR_SCAN                 318
+                SHIFT_DR                2085
+                EXIT1_DR                 393
+                PAUSE_DR                 295
+               UPDATE_DR                 288
+                EXIT2_DR                 163
+              CAPTURE_IR                 170
+                SHIFT_IR                 398
+                EXIT1_IR                 190
+                PAUSE_IR                  90
+               UPDATE_IR                 159
+                EXIT2_IR                  56
+    Covered Transitions :
+    ---------------------
+Line            Trans_ID           Hit_count          Transition          
+----            --------           ---------          ----------          
+  75                   0                 199          TEST_LOGIC_RESET -> RUN_TEST_IDLE
+  76                   1                 472          RUN_TEST_IDLE -> SELECT_DR_SCAN
+ 100                   2                   7          RUN_TEST_IDLE -> TEST_LOGIC_RESET
+  77                   3                 306          SELECT_DR_SCAN -> CAPTURE_DR
+  77                   4                 318          SELECT_DR_SCAN -> SELECT_IR_SCAN
+ 100                   5                   3          SELECT_DR_SCAN -> TEST_LOGIC_RESET
+  78                   6                 184          CAPTURE_DR -> SHIFT_DR
+  78                   7                 117          CAPTURE_DR -> EXIT1_DR
+ 100                   8                   5          CAPTURE_DR -> TEST_LOGIC_RESET
+  84                   9                 170          SELECT_IR_SCAN -> CAPTURE_IR
+  84                  10                 148          SELECT_IR_SCAN -> TEST_LOGIC_RESET
+  79                  11                 276          SHIFT_DR -> EXIT1_DR
+ 100                  12                   4          SHIFT_DR -> TEST_LOGIC_RESET
+  80                  13                 165          EXIT1_DR -> PAUSE_DR
+  80                  14                 224          EXIT1_DR -> UPDATE_DR
+ 100                  15                   4          EXIT1_DR -> TEST_LOGIC_RESET
+  81                  16                 163          PAUSE_DR -> EXIT2_DR
+ 100                  17                   2          PAUSE_DR -> TEST_LOGIC_RESET
+  83                  18                 185          UPDATE_DR -> RUN_TEST_IDLE
+  83                  19                 102          UPDATE_DR -> SELECT_DR_SCAN
+ 100                  20                   1          UPDATE_DR -> TEST_LOGIC_RESET
+  82                  21                  96          EXIT2_DR -> SHIFT_DR
+  82                  22                  64          EXIT2_DR -> UPDATE_DR
+ 100                  23                   3          EXIT2_DR -> TEST_LOGIC_RESET
+  85                  24                 112          CAPTURE_IR -> SHIFT_IR
+  85                  25                  55          CAPTURE_IR -> EXIT1_IR
+ 100                  26                   3          CAPTURE_IR -> TEST_LOGIC_RESET
+  86                  27                 135          SHIFT_IR -> EXIT1_IR
+ 100                  28                   4          SHIFT_IR -> TEST_LOGIC_RESET
+  87                  29                  58          EXIT1_IR -> PAUSE_IR
+  87                  30                 131          EXIT1_IR -> UPDATE_IR
+ 100                  31                   1          EXIT1_IR -> TEST_LOGIC_RESET
+  88                  32                  56          PAUSE_IR -> EXIT2_IR
+ 100                  33                   2          PAUSE_IR -> TEST_LOGIC_RESET
+  90                  34                 102          UPDATE_IR -> RUN_TEST_IDLE
+  90                  35                  53          UPDATE_IR -> SELECT_DR_SCAN
+ 100                  36                   4          UPDATE_IR -> TEST_LOGIC_RESET
+  89                  37                  27          EXIT2_IR -> SHIFT_IR
+  89                  38                  28          EXIT2_IR -> UPDATE_IR
+ 100                  39                   1          EXIT2_IR -> TEST_LOGIC_RESET
+
+
+    Summary                     Active      Hits    Misses % Covered
+    -------                     ------      ----    ------ ---------
+        States                      16        16         0    100.00
+        Transitions                 40        40         0    100.00
+Toggle Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Toggle Bins                    134       134         0    100.00
+
+================================Toggle Details================================
+
+Toggle Coverage for File ../RTL/jtag_tap.sv --
+
+       Line                                   Node      1H->0L      0L->1H  "Coverage"
+--------------------------------------------------------------------------------------
+
+Total Node Count     =         67 
+Toggled Node Count   =         67 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (134 of 134 bins)
+
+COVERGROUP COVERAGE:
+-----------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal    Status               
+                                                                                              
+-----------------------------------------------------------------------------------------------
+ TYPE /jtag_pkg/jtag_cov/jtag_cg                      100.00%        100    Covered              
+    covered/total bins:                                    99         99                      
+    missing/total bins:                                     0         99                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint jtag_cg::RESET                         100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin ASSERTED                                       96          1    Covered              
+        bin RELEASED                                     7806          1    Covered              
+    Coverpoint jtag_cg::TAP_STATE                     100.00%        100    Covered              
+        covered/total bins:                                16         16                      
+        missing/total bins:                                 0         16                      
+        % Hit:                                        100.00%        100                      
+        bin auto[TEST_LOGIC_RESET]                        428          1    Covered              
+        bin auto[RUN_TEST_IDLE]                           751          1    Covered              
+        bin auto[SELECT_DR_SCAN]                          624          1    Covered              
+        bin auto[CAPTURE_DR]                              301          1    Covered              
+        bin auto[SHIFT_DR]                               3103          1    Covered              
+        bin auto[EXIT1_DR]                                389          1    Covered              
+        bin auto[PAUSE_DR]                                363          1    Covered              
+        bin auto[EXIT2_DR]                                160          1    Covered              
+        bin auto[UPDATE_DR]                               287          1    Covered              
+        bin auto[SELECT_IR_SCAN]                          316          1    Covered              
+        bin auto[CAPTURE_IR]                              167          1    Covered              
+        bin auto[SHIFT_IR]                                404          1    Covered              
+        bin auto[EXIT1_IR]                                189          1    Covered              
+        bin auto[PAUSE_IR]                                114          1    Covered              
+        bin auto[EXIT2_IR]                                 55          1    Covered              
+        bin auto[UPDATE_IR]                               155          1    Covered              
+    Coverpoint jtag_cg::TMS                           100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin auto[0]                                      5237          1    Covered              
+        bin auto[1]                                      2569          1    Covered              
+    Coverpoint jtag_cg::OPCODE                        100.00%        100    Covered              
+        covered/total bins:                                16         16                      
+        missing/total bins:                                 0         16                      
+        % Hit:                                        100.00%        100                      
+        bin op[0]                                         449          1    Covered              
+        bin op[1]                                        4060          1    Covered              
+        bin op[2]                                         250          1    Covered              
+        bin op[3]                                         107          1    Covered              
+        bin op[4]                                         128          1    Covered              
+        bin op[5]                                         102          1    Covered              
+        bin op[6]                                         213          1    Covered              
+        bin op[7]                                         184          1    Covered              
+        bin op[8]                                         328          1    Covered              
+        bin op[9]                                          64          1    Covered              
+        bin op[10]                                        223          1    Covered              
+        bin op[11]                                         73          1    Covered              
+        bin op[12]                                        198          1    Covered              
+        bin op[13]                                        216          1    Covered              
+        bin op[14]                                        162          1    Covered              
+        bin op[15]                                       1049          1    Covered              
+    Coverpoint jtag_cg::INSTRUCTION                   100.00%        100    Covered              
+        covered/total bins:                                 3          3                      
+        missing/total bins:                                 0          3                      
+        % Hit:                                        100.00%        100                      
+        bin IDCODE                                       4060          1    Covered              
+        bin BYPASS                                       1049          1    Covered              
+        bin UNUSED                                       2697          1    Covered              
+    Coverpoint jtag_cg::DR_STATE                      100.00%        100    Covered              
+        covered/total bins:                                 6          6                      
+        missing/total bins:                                 0          6                      
+        % Hit:                                        100.00%        100                      
+        bin CAPTURE                                       301          1    Covered              
+        bin SHIFT                                        3103          1    Covered              
+        bin EXIT1                                         389          1    Covered              
+        bin PAUSE                                         363          1    Covered              
+        bin EXIT2                                         160          1    Covered              
+        bin UPDATE                                        287          1    Covered              
+    Coverpoint jtag_cg::TDI_SHIFT                     100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin ZERO                                         1971          1    Covered              
+        bin ONE                                          1536          1    Covered              
+    Coverpoint jtag_cg::TDO_SHIFT                     100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin ZERO                                         1764          1    Covered              
+        bin ONE                                          1743          1    Covered              
+    Cross jtag_cg::TRANSITION                         100.00%        100    Covered              
+        covered/total bins:                                32         32                      
+        missing/total bins:                                 0         32                      
+        % Hit:                                        100.00%        100                      
+        bin <auto[TEST_LOGIC_RESET],auto[0]>              199          1    Covered              
+        bin <auto[RUN_TEST_IDLE],auto[0]>                 279          1    Covered              
+        bin <auto[SELECT_DR_SCAN],auto[0]>                306          1    Covered              
+        bin <auto[CAPTURE_DR],auto[0]>                    184          1    Covered              
+        bin <auto[SHIFT_DR],auto[0]>                     2827          1    Covered              
+        bin <auto[EXIT1_DR],auto[0]>                      165          1    Covered              
+        bin <auto[UPDATE_DR],auto[0]>                     185          1    Covered              
+        bin <auto[SELECT_IR_SCAN],auto[0]>                170          1    Covered              
+        bin <auto[CAPTURE_IR],auto[0]>                    112          1    Covered              
+        bin <auto[SHIFT_IR],auto[0]>                      269          1    Covered              
+        bin <auto[EXIT1_IR],auto[0]>                       58          1    Covered              
+        bin <auto[UPDATE_IR],auto[0]>                     102          1    Covered              
+        bin <auto[TEST_LOGIC_RESET],auto[1]>              229          1    Covered              
+        bin <auto[RUN_TEST_IDLE],auto[1]>                 472          1    Covered              
+        bin <auto[SELECT_DR_SCAN],auto[1]>                318          1    Covered              
+        bin <auto[CAPTURE_DR],auto[1]>                    117          1    Covered              
+        bin <auto[SHIFT_DR],auto[1]>                      276          1    Covered              
+        bin <auto[EXIT1_DR],auto[1]>                      224          1    Covered              
+        bin <auto[PAUSE_DR],auto[1]>                      163          1    Covered              
+        bin <auto[EXIT2_DR],auto[1]>                       64          1    Covered              
+        bin <auto[UPDATE_DR],auto[1]>                     102          1    Covered              
+        bin <auto[SELECT_IR_SCAN],auto[1]>                146          1    Covered              
+        bin <auto[CAPTURE_IR],auto[1]>                     55          1    Covered              
+        bin <auto[SHIFT_IR],auto[1]>                      135          1    Covered              
+        bin <auto[EXIT1_IR],auto[1]>                      131          1    Covered              
+        bin <auto[PAUSE_IR],auto[1]>                       56          1    Covered              
+        bin <auto[EXIT2_IR],auto[1]>                       28          1    Covered              
+        bin <auto[UPDATE_IR],auto[1]>                      53          1    Covered              
+        bin <auto[PAUSE_DR],auto[0]>                      200          1    Covered              
+        bin <auto[EXIT2_DR],auto[0]>                       96          1    Covered              
+        bin <auto[PAUSE_IR],auto[0]>                       58          1    Covered              
+        bin <auto[EXIT2_IR],auto[0]>                       27          1    Covered              
+    Cross jtag_cg::INSTR_X_DR                         100.00%        100    Covered              
+        covered/total bins:                                18         18                      
+        missing/total bins:                                 0         18                      
+        % Hit:                                        100.00%        100                      
+        bin <IDCODE,CAPTURE>                              175          1    Covered              
+        bin <IDCODE,SHIFT>                               1027          1    Covered              
+        bin <IDCODE,EXIT1>                                229          1    Covered              
+        bin <IDCODE,PAUSE>                                233          1    Covered              
+        bin <IDCODE,EXIT2>                                110          1    Covered              
+        bin <IDCODE,UPDATE>                               167          1    Covered              
+        bin <BYPASS,CAPTURE>                               31          1    Covered              
+        bin <UNUSED,CAPTURE>                               95          1    Covered              
+        bin <BYPASS,SHIFT>                                735          1    Covered              
+        bin <UNUSED,SHIFT>                               1341          1    Covered              
+        bin <BYPASS,EXIT1>                                 32          1    Covered              
+        bin <UNUSED,EXIT1>                                128          1    Covered              
+        bin <BYPASS,UPDATE>                                30          1    Covered              
+        bin <UNUSED,UPDATE>                                90          1    Covered              
+        bin <BYPASS,PAUSE>                                  8          1    Covered              
+        bin <UNUSED,PAUSE>                                122          1    Covered              
+        bin <BYPASS,EXIT2>                                  2          1    Covered              
+        bin <UNUSED,EXIT2>                                 48          1    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+DIRECTIVE COVERAGE:
+---------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Count Status    
+                                         Unit   UnitType                                      
+---------------------------------------------------------------------------------------------
+/jtag_top/JTAG_DUT/JTAG_SVA/C_TRST_RESET jtag_sva Verilog  SVA  ../TOP/jtag_sva.sv(99)
+                                                                                 58 Covered   
+/jtag_top/JTAG_DUT/JTAG_SVA/C_TMS_5_RESET 
+                                         jtag_sva Verilog  SVA  ../TOP/jtag_sva.sv(104)
+                                                                                168 Covered   
+/jtag_top/JTAG_DUT/JTAG_SVA/C_PAUSE_DR_RESUME 
+                                         jtag_sva Verilog  SVA  ../TOP/jtag_sva.sv(109)
+                                                                                 95 Covered   
+/jtag_top/JTAG_DUT/JTAG_SVA/C_PAUSE_IR_RESUME 
+                                         jtag_sva Verilog  SVA  ../TOP/jtag_sva.sv(113)
+                                                                                 27 Covered   
+/jtag_top/JTAG_DUT/JTAG_SVA/C_IR_CAPTURE jtag_sva Verilog  SVA  ../TOP/jtag_sva.sv(118)
+                                                                                167 Covered   
+/jtag_top/JTAG_DUT/JTAG_SVA/C_IR_UPDATE  jtag_sva Verilog  SVA  ../TOP/jtag_sva.sv(123)
+                                                                                159 Covered   
+/jtag_top/JTAG_DUT/JTAG_SVA/C_IDCODE_CAPTURE 
+                                         jtag_sva Verilog  SVA  ../TOP/jtag_sva.sv(128)
+                                                                                175 Covered   
+/jtag_top/JTAG_DUT/JTAG_SVA/C_BYPASS_CAPTURE 
+                                         jtag_sva Verilog  SVA  ../TOP/jtag_sva.sv(133)
+                                                                                126 Covered   
+/jtag_top/JTAG_DUT/JTAG_SVA/C_TDO_ENABLE jtag_sva Verilog  SVA  ../TOP/jtag_sva.sv(138)
+                                                                                416 Covered   
+/jtag_top/JTAG_DUT/JTAG_SVA/C_IR_SHIFT   jtag_sva Verilog  SVA  ../TOP/jtag_sva.sv(143)
+                                                                                404 Covered   
+/jtag_top/JTAG_DUT/JTAG_SVA/C_DR_SELECT  jtag_sva Verilog  SVA  ../TOP/jtag_sva.sv(148)
+                                                                               2076 Covered   
+/jtag_top/JTAG_DUT/JTAG_SVA/C_RESET_IN_SHIFT 
+                                         jtag_sva Verilog  SVA  ../TOP/jtag_sva.sv(153)
+                                                                                  7 Covered   
+
+TOTAL DIRECTIVE COVERAGE: 100.00%  COVERS: 12
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/jtag_top/JTAG_DUT/JTAG_SVA/A_TRST_RESET
+                     ../TOP/jtag_sva.sv(23)             0          7
+/jtag_top/JTAG_DUT/JTAG_SVA/A_TMS_5_RESET
+                     ../TOP/jtag_sva.sv(28)             0          4
+/jtag_top/JTAG_DUT/JTAG_SVA/A_LEGAL_TRANSITION
+                     ../TOP/jtag_sva.sv(33)             0          7
+/jtag_top/JTAG_DUT/JTAG_SVA/A_IR_CAPTURE
+                     ../TOP/jtag_sva.sv(38)             0          7
+/jtag_top/JTAG_DUT/JTAG_SVA/A_IR_UPDATE
+                     ../TOP/jtag_sva.sv(43)             0          7
+/jtag_top/JTAG_DUT/JTAG_SVA/A_IR_STABLE
+                     ../TOP/jtag_sva.sv(48)             0          7
+/jtag_top/JTAG_DUT/JTAG_SVA/A_IDCODE_CAPTURE
+                     ../TOP/jtag_sva.sv(53)             0          6
+/jtag_top/JTAG_DUT/JTAG_SVA/A_BYPASS_CAPTURE
+                     ../TOP/jtag_sva.sv(58)             0          4
+/jtag_top/JTAG_DUT/JTAG_SVA/A_TDO_ENABLE
+                     ../TOP/jtag_sva.sv(63)             0          7
+/jtag_top/JTAG_DUT/JTAG_SVA/A_TDO_FALLING_EDGE
+                     ../TOP/jtag_sva.sv(69)             0          7
+/jtag_top/JTAG_DUT/JTAG_SVA/A_TLR_IDCODE
+                     ../TOP/jtag_sva.sv(75)             0          4
+/jtag_top/JTAG_DUT/JTAG_SVA/A_IR_SHIFT
+                     ../TOP/jtag_sva.sv(81)             0          7
+/jtag_top/JTAG_DUT/JTAG_SVA/A_DR_SELECT
+                     ../TOP/jtag_sva.sv(88)             0          4
+
+Total Coverage By File (code coverage only, filtered view): 100.00%
+

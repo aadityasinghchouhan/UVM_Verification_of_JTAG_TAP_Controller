@@ -1,0 +1,170 @@
+# Saving coverage database on exit...
+# End time: 23:15:44 on Nov 27,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -coverage -vopt -onfinish stop jtag_top "+UVM_TESTNAME=jtag_corner_tc7" 
+# Start time: 23:15:44 on Nov 27,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.jtag_if(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.jtag_pkg(fast)
+# Loading work.jtag_top_sv_unit(fast)
+# Loading work.jtag_top(fast)
+# Loading work.jtag_tap(fast)
+# Loading work.jtag_sva(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading C:/questasim64_10.7c/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(216) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test jtag_corner_tc7...
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# ------------------------------------------------------------------
+# Name                       Type                        Size  Value
+# ------------------------------------------------------------------
+# uvm_test_top               jtag_corner_tc7             -     @472 
+#   env_h                    jtag_env                    -     @485 
+#     agent_h                jtag_agent                  -     @492 
+#       drv_h                jtag_drv                    -     @586 
+#         rsp_port           uvm_analysis_port           -     @601 
+#         seq_item_port      uvm_seq_item_pull_port      -     @593 
+#       mon_h                jtag_mon                    -     @571 
+#         analysis_port      uvm_analysis_port           -     @578 
+#       seqr_h               jtag_seqr                   -     @609 
+#         rsp_export         uvm_analysis_export         -     @616 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @710 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     cov_h                  jtag_cov                    -     @553 
+#       analysis_imp         uvm_analysis_imp            -     @560 
+#     sb_h                   jtag_sb                     -     @499 
+#       mon_analysis_fifo    uvm_tlm_analysis_fifo #(T)  -     @506 
+#         analysis_export    uvm_analysis_imp            -     @545 
+#         get_ap             uvm_analysis_port           -     @537 
+#         get_peek_export    uvm_get_peek_imp            -     @521 
+#         put_ap             uvm_analysis_port           -     @529 
+#         put_export         uvm_put_imp                 -     @513 
+# ------------------------------------------------------------------
+# 
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(19) @ 30: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC7_CORNER] 1. IR scan with long pause
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 255: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #1 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 385: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #1 : register = BYPASS | length = 8 | TDI in = 0x3c | TDO out = 0x78 | expected = 0x78 --> MATCH
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(24) @ 390: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC7_CORNER] 2. IDCODE read with pause
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 485: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #2 : length = 4 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0001 (IDCODE) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 915: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #2 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 1345: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #3 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(30) @ 1350: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC7_CORNER] 3. BYPASS / unused opcode with pause
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 1445: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #3 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 1715: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #4 : register = BYPASS | length = 16 | TDI in = 0x5aa5 | TDO out = 0xb54a | expected = 0xb54a --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 1815: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #4 : length = 4 | TDI in = 0x6 | TDO out = 0x1 | expected = 0x1 | new instruction = 0110 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 2085: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #5 : register = BYPASS | length = 16 | TDI in = 0xc3c3 | TDO out = 0x8786 | expected = 0x8786 --> MATCH
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(37) @ 2090: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC7_CORNER] 4. 1-bit IDCODE read
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 2185: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #5 : length = 4 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0001 (IDCODE) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 2245: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #6 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(42) @ 2250: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC7_CORNER] 5. 8-bit IR scan (last 4 bits = BYPASS)
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 2385: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #6 : length = 8 | TDI in = 0xf1 | TDO out = 0x11 | expected = 0x11 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 2475: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #7 : register = BYPASS | length = 4 | TDI in = 0xa | TDO out = 0x4 | expected = 0x4 --> MATCH
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(47) @ 2480: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC7_CORNER] 6. Capture -> Exit1 -> Update with no shift
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 2955: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #8 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(53) @ 2960: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC7_CORNER] 7. Pause -> Exit2 -> Update
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 3065: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #9 : register = IDCODE | length = 3 | TDI in = 0x5 | TDO out = 0x7 | expected = 0x7 --> MATCH
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(62) @ 3070: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC7_CORNER] 8. Back-to-back DR scans
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 3435: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #10 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 3795: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #11 : register = IDCODE | length = 32 | TDI in = 0xffffffff | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(71) @ 3800: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC7_CORNER] 9. Back-to-back IR scans
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 3895: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #7 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 3985: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #8 : length = 4 | TDI in = 0x1 | TDO out = 0x1 | expected = 0x1 | new instruction = 0001 (IDCODE) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 4355: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #12 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(81) @ 4360: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC7_CORNER] 10. TRST_N during Shift-DR
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 4455: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #9 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 4925: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #13 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(90) @ 4930: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC7_CORNER] 11. TRST_N during Shift-IR
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 5375: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #14 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(98) @ 5380: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC7_CORNER] 12. TMS reset during Shift-DR
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 5475: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #10 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 5565: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #15 : register = BYPASS | length = 4 | TDI in = 0x7 | TDO out = 0xe | expected = 0xe --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 5965: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #16 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../TEST/jtag_corner_seqs_tc7.sv(106) @ 5970: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC7_CORNER] 13. Long Test-Logic-Reset / Run-Test-Idle
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 6535: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #17 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 6590: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# -----------------------------------------------------------
+#                  JTAG FUNCTIONAL COVERAGE
+# -----------------------------------------------------------
+#  Reset                   : 100.00 %
+#  TAP states              : 100.00 %
+#  State transitions       :  96.88 %
+#  Opcodes loaded          :  18.75 %
+#  Instruction class       : 100.00 %
+#  Instruction x DR state  : 100.00 %
+#  TDI shifted in          : 100.00 %
+#  TDO shifted out         : 100.00 %
+# -----------------------------------------------------------
+#  JTAG - Total Coverage   :  91.56 %
+# -----------------------------------------------------------
+# -----------------------------------------------------------
+#                  ASSERTION COVER SUMMARY
+# -----------------------------------------------------------
+#  C_TRST_RESET        (A_TRST_RESET)          : 3
+#  C_TMS_5_RESET       (A_TMS_5_RESET/TLR)     : 4
+#  C_PAUSE_DR_RESUME   (A_LEGAL_TRANSITION)    : 4
+#  C_PAUSE_IR_RESUME   (A_LEGAL_TRANSITION)    : 1
+#  C_IR_CAPTURE        (A_IR_CAPTURE)          : 12
+#  C_IR_UPDATE         (A_IR_UPDATE/STABLE)    : 11
+#  C_IDCODE_CAPTURE    (A_IDCODE_CAPTURE)      : 12
+#  C_BYPASS_CAPTURE    (A_BYPASS_CAPTURE)      : 7
+#  C_TDO_ENABLE        (A_TDO_ENABLE/EDGE)     : 34
+#  C_IR_SHIFT          (A_IR_SHIFT)            : 46
+#  C_DR_SELECT         (A_DR_SELECT)           : 53
+#  C_RESET_IN_SHIFT    (TRST_N during a scan)  : 2
+# -----------------------------------------------------------
+# -----------------------------------------------------------
+#                  JTAG SCOREBOARD SUMMARY
+# -----------------------------------------------------------
+#  TCK cycles checked     : 659
+#  Cycle mismatches       : 0
+#  IR scans checked       : 10
+#  DR scans checked       : 17
+#  Scans matched          : 27
+#  Scans mis-matched      : 0
+#  RESULT                 : TEST PASSED
+# -----------------------------------------------------------
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   45
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [JTAG_SB]    27
+# [Questa UVM]     2
+# [RNTST]     1
+# [TC7_CORNER]    13
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# ** Note: $finish    : C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 6590 ns  Iteration: 54  Instance: /jtag_top
+# Break in Task uvm_pkg/uvm_root::run_test at C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# Stopped at C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430

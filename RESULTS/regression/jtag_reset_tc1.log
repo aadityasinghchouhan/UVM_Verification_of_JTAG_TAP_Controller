@@ -1,0 +1,169 @@
+# End time: 23:13:03 on Nov 27,2026, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 0
+# vsim -vopt -onfinish stop jtag_top "+UVM_TESTNAME=jtag_reset_tc1" 
+# Start time: 23:13:03 on Nov 27,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.jtag_if(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.jtag_pkg(fast)
+# Loading work.jtag_top_sv_unit(fast)
+# Loading work.jtag_top(fast)
+# Loading work.jtag_tap(fast)
+# Loading work.jtag_sva(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading C:/questasim64_10.7c/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(216) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test jtag_reset_tc1...
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# ------------------------------------------------------------------
+# Name                       Type                        Size  Value
+# ------------------------------------------------------------------
+# uvm_test_top               jtag_reset_tc1              -     @472 
+#   env_h                    jtag_env                    -     @485 
+#     agent_h                jtag_agent                  -     @492 
+#       drv_h                jtag_drv                    -     @586 
+#         rsp_port           uvm_analysis_port           -     @601 
+#         seq_item_port      uvm_seq_item_pull_port      -     @593 
+#       mon_h                jtag_mon                    -     @571 
+#         analysis_port      uvm_analysis_port           -     @578 
+#       seqr_h               jtag_seqr                   -     @609 
+#         rsp_export         uvm_analysis_export         -     @616 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @710 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     cov_h                  jtag_cov                    -     @553 
+#       analysis_imp         uvm_analysis_imp            -     @560 
+#     sb_h                   jtag_sb                     -     @499 
+#       mon_analysis_fifo    uvm_tlm_analysis_fifo #(T)  -     @506 
+#         analysis_export    uvm_analysis_imp            -     @545 
+#         get_ap             uvm_analysis_port           -     @537 
+#         get_peek_export    uvm_get_peek_imp            -     @521 
+#         put_ap             uvm_analysis_port           -     @529 
+#         put_export         uvm_put_imp                 -     @513 
+# ------------------------------------------------------------------
+# 
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 395: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #1 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 495: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #1 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 895: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #2 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 995: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #2 : length = 4 | TDI in = 0xf | TDO out = 0x1 | expected = 0x1 | new instruction = 1111 (BYPASS) --> MATCH
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 1425: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #3 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1480: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TMS reset (5 x TMS=1) from state TEST_LOGIC_RESET
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1540: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TMS reset (5 x TMS=1) from state RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1670: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TMS reset (5 x TMS=1) from state SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1810: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TMS reset (5 x TMS=1) from state CAPTURE_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 1960: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TMS reset (5 x TMS=1) from state SHIFT_DR
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 1985: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #4 : register = IDCODE | length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 --> MATCH
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2110: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TMS reset (5 x TMS=1) from state EXIT1_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2270: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TMS reset (5 x TMS=1) from state PAUSE_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2440: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TMS reset (5 x TMS=1) from state EXIT2_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2600: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TMS reset (5 x TMS=1) from state UPDATE_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2740: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TMS reset (5 x TMS=1) from state SELECT_IR_SCAN
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 2890: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TMS reset (5 x TMS=1) from state CAPTURE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3050: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TMS reset (5 x TMS=1) from state SHIFT_IR
+# UVM_INFO ../ENV/jtag_sb.sv(216) @ 3075: uvm_test_top.env_h.sb_h [JTAG_SB] IR SCAN #3 : length = 1 | TDI in = 0x0 | TDO out = 0x1 | expected = 0x1 | new instruction = 0000 (UNUSED -> BYPASS) --> MATCH
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3210: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TMS reset (5 x TMS=1) from state EXIT1_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3380: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TMS reset (5 x TMS=1) from state PAUSE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3560: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TMS reset (5 x TMS=1) from state EXIT2_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(41) @ 3730: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TMS reset (5 x TMS=1) from state UPDATE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 3840: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TRST_N reset from state TEST_LOGIC_RESET
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 3870: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TRST_N reset from state RUN_TEST_IDLE
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 3970: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TRST_N reset from state SELECT_DR_SCAN
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4080: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TRST_N reset from state CAPTURE_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4200: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TRST_N reset from state SHIFT_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4320: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TRST_N reset from state EXIT1_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4450: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TRST_N reset from state PAUSE_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4590: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TRST_N reset from state EXIT2_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4720: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TRST_N reset from state UPDATE_DR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4830: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TRST_N reset from state SELECT_IR_SCAN
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 4950: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TRST_N reset from state CAPTURE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5080: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TRST_N reset from state SHIFT_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5210: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TRST_N reset from state EXIT1_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5350: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TRST_N reset from state PAUSE_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5500: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TRST_N reset from state EXIT2_IR
+# UVM_INFO ../TEST/jtag_reset_seqs_tc1.sv(50) @ 5640: uvm_test_top.env_h.agent_h.seqr_h@@seqs_h_tc [TC1_RESET] TRST_N reset from state UPDATE_IR
+# UVM_INFO ../ENV/jtag_sb.sv(219) @ 6105: uvm_test_top.env_h.sb_h [JTAG_SB] DR SCAN #5 : register = IDCODE | length = 32 | TDI in = 0x0 | TDO out = 0x1cafe157 | expected = 0x1cafe157 --> MATCH
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 6160: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# -----------------------------------------------------------
+#                  JTAG FUNCTIONAL COVERAGE
+# -----------------------------------------------------------
+#  Reset                   : 100.00 %
+#  TAP states              : 100.00 %
+#  State transitions       :  87.50 %
+#  Opcodes loaded          :  18.75 %
+#  Instruction class       : 100.00 %
+#  Instruction x DR state  :  33.33 %
+#  TDI shifted in          : 100.00 %
+#  TDO shifted out         : 100.00 %
+# -----------------------------------------------------------
+#  JTAG - Total Coverage   :  83.96 %
+# -----------------------------------------------------------
+# -----------------------------------------------------------
+#                  ASSERTION COVER SUMMARY
+# -----------------------------------------------------------
+#  C_TRST_RESET        (A_TRST_RESET)          : 19
+#  C_TMS_5_RESET       (A_TMS_5_RESET/TLR)     : 58
+#  C_PAUSE_DR_RESUME   (A_LEGAL_TRANSITION)    : 0
+#  C_PAUSE_IR_RESUME   (A_LEGAL_TRANSITION)    : 0
+#  C_IR_CAPTURE        (A_IR_CAPTURE)          : 13
+#  C_IR_UPDATE         (A_IR_UPDATE/STABLE)    : 9
+#  C_IDCODE_CAPTURE    (A_IDCODE_CAPTURE)      : 15
+#  C_BYPASS_CAPTURE    (A_BYPASS_CAPTURE)      : 0
+#  C_TDO_ENABLE        (A_TDO_ENABLE/EDGE)     : 8
+#  C_IR_SHIFT          (A_IR_SHIFT)            : 9
+#  C_DR_SELECT         (A_DR_SELECT)           : 0
+#  C_RESET_IN_SHIFT    (TRST_N during a scan)  : 0
+# -----------------------------------------------------------
+# -----------------------------------------------------------
+#                  JTAG SCOREBOARD SUMMARY
+# -----------------------------------------------------------
+#  TCK cycles checked     : 616
+#  Cycle mismatches       : 0
+#  IR scans checked       : 3
+#  DR scans checked       : 5
+#  Scans matched          : 8
+#  Scans mis-matched      : 0
+#  RESULT                 : TEST PASSED
+# -----------------------------------------------------------
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   45
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [JTAG_SB]     8
+# [Questa UVM]     2
+# [RNTST]     1
+# [TC1_RESET]    32
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# ** Note: $finish    : C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 6160 ns  Iteration: 54  Instance: /jtag_top
+# Break in Task uvm_pkg/uvm_root::run_test at C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# Stopped at C:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430

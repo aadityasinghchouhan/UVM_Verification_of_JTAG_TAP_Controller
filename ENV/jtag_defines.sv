@@ -62,4 +62,12 @@ function automatic tap_state_e tap_next_state(tap_state_e cur, bit tms);
     endcase
 endfunction
 
+//-----------------------------------------------------------------------------
+// Cover-property hit counters. Incremented by the cover properties in
+// TOP/jtag_sva.sv and printed by jtag_cov in the report phase.
+//-----------------------------------------------------------------------------
+int unsigned c_trst_reset, c_tms_5_reset, c_pause_dr_resume, c_pause_ir_resume;
+int unsigned c_ir_capture, c_ir_update, c_idcode_capture, c_bypass_capture;
+int unsigned c_tdo_enable, c_reset_in_shift, c_ir_shift, c_dr_select;
+
 `endif
